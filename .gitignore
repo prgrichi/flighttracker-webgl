@@ -1,0 +1,42 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies
+node_modules/
+
+# Build & coverage
+.nuxt/
+.output/
+dist/
+dist-ssr/
+coverage/
+*.tsbuildinfo
+.eslintcache
+
+# Environment files
+.env
+.env.local
+.env.*.local
+.env.production
+!.env.example
+
+# Local config
+*.local
+
+# OS files
+.DS_Store
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

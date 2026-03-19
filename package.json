@@ -1,0 +1,32 @@
+{
+  "name": "flighttracker",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "preview": "nuxt preview",
+    "lint": "eslint . --fix",
+    "format": "prettier --write \"{app,pages,components,layouts,plugins,assets,composables}/**/*.{js,ts,vue,css,json,md}\""
+  },
+  "dependencies": {
+    "@iconify-json/lucide": "^1.2.98",
+    "@nuxt/ui": "^4.5.1",
+    "@pinia/nuxt": "^0.11.3",
+    "leaflet": "^1.9.4",
+    "nuxt": "^4.2.2",
+    "pinia": "^3.0.4",
+    "vue": "^3.5.25"
+  },
+  "devDependencies": {
+    "@vue/eslint-config-prettier": "^10.2.0",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-vue": "^10.6.2",
+    "prettier": "^3.7.4"
+  }
+}

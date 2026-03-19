@@ -1,0 +1,28 @@
+@config '../../tailwind.config.js';
+@reference 'tailwindcss';
+
+@layer components {
+  .app-shell {
+    @apply min-h-screen bg-page text-text-main flex flex-col;
+  }
+
+  .container {
+    @apply mx-auto max-w-app px-app-md sm:px-app-lg;
+  }
+
+  .page {
+    @apply py-app-xl sm:py-app-2xl;
+  }
+
+  .section {
+    @apply mb-app-xl;
+  }
+
+  .grid-2 {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-app-lg;
+  }
+
+  .grid-3 {
+    @apply grid grid-cols-1 md:grid-cols-3 gap-app-lg;
+  }
+}

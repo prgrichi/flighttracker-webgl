@@ -1,0 +1,48 @@
+@config "../../tailwind.config.js";
+@import 'tailwindcss';
+@import '@nuxt/ui';
+
+@import './ui.css';
+
+@layer base {
+  button,
+  [role='button'] {
+    cursor: pointer;
+  }
+  button:disabled,
+  [role='button'][aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+}
+
+/* === Dark Mode Variables === */
+:root {
+  --color-brand: #2563eb;
+  --color-brand-hover: #1d4ed8;
+
+  --color-bg-page: #f9fafb;
+  --color-bg-surface: #ffffff;
+
+  --color-text-primary: #111827;
+  --color-text-secondary: #6b7280;
+
+  --color-border: #e5e7eb;
+
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+}
+
+.dark {
+  /* Dark Mode */
+  /* --color-background: #0f172a; */
+  /* neutral-900 */
+  /* --color-foreground: #f8fafc; */
+}
