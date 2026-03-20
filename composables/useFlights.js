@@ -9,13 +9,6 @@ export const useFlights = (initialRegion = 'bavaria') => {
     default: () => [],
   });
 
-  // const hasError = computed(() => !!error.value);
-
-  // function setRegion(newRegion) {
-  //   region.value = newRegion;
-  //   refresh();
-  // }
-
   let interval = null;
 
   function startPolling() {
@@ -24,27 +17,18 @@ export const useFlights = (initialRegion = 'bavaria') => {
     interval = setInterval(() => {
       console.log('fetching flights...');
       refresh();
-    }, 30000);
+    }, 20000);
   }
-
-  // function stopPolling() {
-  //   if (!interval) return;
-
-  //   clearInterval(interval);
-  //   interval = null;
-  // }
 
   onMounted(() => {
     startPolling();
   });
 
   return {
-    flights: data,
+    geoJson: data,
     pending,
     error,
-    // hasError,
     region,
-    // setRegion,
     refresh,
   };
 };

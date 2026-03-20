@@ -5,9 +5,9 @@ import mockData from '../data/mockFlights.json';
 export default defineEventHandler(async event => {
   const query = getQuery(event);
 
-  const region = query.region || 'germany';
-  const useMock = process.env.USE_MOCK === 'true';
-  const bbox = BBOX[region] || BBOX.germany;
+  const region = query.region || 'bavaria';
+  const useMock = process.env.NUXT__USE_MOCK === 'true';
+  const bbox = BBOX[region] || BBOX.bavaria;
 
   let raw;
 
@@ -24,5 +24,28 @@ export default defineEventHandler(async event => {
     raw = mockData;
   }
 
-  return raw.states.map(mapOpenSkyState).filter(f => f !== null);
+  // return raw.states.map(mapOpenSkyState).filter(f => f !== null);
+
+  const flights = raw.states.map(mapOpenSkyState).filter(f => f !== null);
+
+  return {
+    type: 'FeatureCollection',
+    features: flights.map(f => ({
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [f.lon, f.lat], // lng, lat!
+      },
+      properties: {
+        icao24: f.icao24,
+        callsign: f.callsign,
+        heading: f.heading,
+        altitudeFt: f.altitudeFt,
+        speedKmh: f.speedKmh,
+        climbing: f.climbing,
+        descending: f.descending,
+        onGround: f.onGround,
+      },
+    })),
+  };
 });

@@ -1,6 +1,4 @@
 <script setup>
-import 'leaflet/dist/leaflet.css';
-
 useHead({
   meta: [{ name: 'viewport', content: 'width=device-width, initial-scale=1' }],
   link: [{ rel: 'icon', href: '/favicon.ico' }],
