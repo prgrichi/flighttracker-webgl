@@ -2,74 +2,113 @@
 
 import { watch } from 'vue';
 import { useMapInstance } from './useMapInstance';
+import { useSelectedFlight } from './useSelectedFlight';
+
+const FLIGHTS_SOURCE_ID = 'flights';
+const FLIGHTS_LAYER_ID = 'flights-layer';
+const PLANE_IMAGE_ID = 'plane';
+
+const EMPTY_COLLECTION = {
+  type: 'FeatureCollection',
+  features: [],
+};
 
 export function useFlightLayer(geoJson) {
   const { map } = useMapInstance();
   const { selectedFlight } = useSelectedFlight();
 
-  // Map load → Layer setup
-  watch(map, mapInstance => {
-    if (!mapInstance || mapInstance._flightsInitialized) return;
-    if (!mapInstance) return;
-
-    mapInstance.on('load', async () => {
-      mapInstance.addSource('flights', {
-        type: 'geojson',
-        data: {
-          type: 'FeatureCollection',
-          features: [],
-        },
-      });
-
-      try {
-        const image = await mapInstance.loadImage('/plane.png');
-
-        if (!mapInstance.hasImage('plane')) {
-          mapInstance.addImage('plane', image.data);
-        }
-
-        mapInstance.addLayer({
-          id: 'flights-layer',
-          type: 'symbol',
-          source: 'flights',
-          layout: {
-            'icon-image': 'plane',
-            'icon-size': ['interpolate', ['linear'], ['zoom'], 5, 0.15, 8, 0.25, 12, 0.4],
-            'icon-rotate': ['get', 'heading'],
-            'icon-rotation-alignment': 'map',
-            'icon-allow-overlap': true,
-            'icon-anchor': 'center',
-          },
-        });
-
-        mapInstance.on('click', 'flights-layer', e => {
-          const feature = e.features?.[0];
-          if (!feature) return;
-
-          selectedFlight.value = feature.properties;
-        });
-        mapInstance.on('click', e => {
-          const features = mapInstance.queryRenderedFeatures(e.point, {
-            layers: ['flights-layer'],
-          });
-
-          if (!features.length) {
-            selectedFlight.value = null;
-          }
-        });
-      } catch (err) {
-        console.error('Image load failed:', err);
-      }
-    });
-  });
-
-  // Daten updaten
-  watch([geoJson, map], ([data, mapInstance]) => {
+  function updateFlightData(mapInstance, data) {
     if (!data || !mapInstance) return;
 
-    const source = mapInstance.getSource('flights');
+    const source = mapInstance.getSource(FLIGHTS_SOURCE_ID);
     if (!source) return;
 
     source.setData(data);
-  });
+  }
+
+  async function ensureFlightLayer(mapInstance) {
+    if (!mapInstance.getSource(FLIGHTS_SOURCE_ID)) {
+      mapInstance.addSource(FLIGHTS_SOURCE_ID, {
+        type: 'geojson',
+        data: EMPTY_COLLECTION,
+      });
+    }
+
+    if (!mapInstance.hasImage(PLANE_IMAGE_ID)) {
+      try {
+        const image = await mapInstance.loadImage('/plane.png');
+        mapInstance.addImage(PLANE_IMAGE_ID, image.data);
+      } catch (error) {
+        console.error('Image load failed:', error);
+      }
+    }
+
+    if (!mapInstance.getLayer(FLIGHTS_LAYER_ID)) {
+      mapInstance.addLayer({
+        id: FLIGHTS_LAYER_ID,
+        type: 'symbol',
+        source: FLIGHTS_SOURCE_ID,
+        layout: {
+          'icon-image': PLANE_IMAGE_ID,
+          'icon-size': ['interpolate', ['linear'], ['zoom'], 5, 0.15, 8, 0.25, 12, 0.4],
+          'icon-rotate': ['get', 'heading'],
+          'icon-rotation-alignment': 'map',
+          'icon-allow-overlap': true,
+          'icon-anchor': 'center',
+        },
+      });
+    }
+  }
+
+  watch(
+    map,
+    (mapInstance, _, onCleanup) => {
+      if (!mapInstance) return;
+
+      const handleFlightCardClick = event => {
+        const feature = event.features?.[0];
+        if (!feature) return;
+
+        selectedFlight.value = feature.properties;
+      };
+
+      const handleMapClick = event => {
+        const features = mapInstance.queryRenderedFeatures(event.point, {
+          layers: [FLIGHTS_LAYER_ID],
+        });
+
+        if (!features.length) {
+          selectedFlight.value = null;
+        }
+      };
+
+      const initializeLayer = async () => {
+        await ensureFlightLayer(mapInstance);
+        updateFlightData(mapInstance, geoJson.value);
+        mapInstance.on('click', FLIGHTS_LAYER_ID, handleFlightCardClick);
+        mapInstance.on('click', handleMapClick);
+      };
+
+      if (mapInstance.loaded()) {
+        initializeLayer();
+      } else {
+        mapInstance.once('load', initializeLayer);
+      }
+
+      onCleanup(() => {
+        mapInstance.off('load', initializeLayer);
+        mapInstance.off('click', FLIGHTS_LAYER_ID, handleFlightCardClick);
+        mapInstance.off('click', handleMapClick);
+      });
+    },
+    { immediate: true }
+  );
+
+  watch(
+    [geoJson, map],
+    ([data, mapInstance]) => {
+      updateFlightData(mapInstance, data);
+    },
+    { immediate: true }
+  );
 }
