@@ -5,9 +5,11 @@ import { useMapInstance } from './useMapInstance';
 
 export function useFlightLayer(geoJson) {
   const { map } = useMapInstance();
+  const { selectedFlight } = useSelectedFlight();
 
   // Map load → Layer setup
   watch(map, mapInstance => {
+    if (!mapInstance || mapInstance._flightsInitialized) return;
     if (!mapInstance) return;
 
     mapInstance.on('load', async () => {
@@ -38,6 +40,22 @@ export function useFlightLayer(geoJson) {
             'icon-allow-overlap': true,
             'icon-anchor': 'center',
           },
+        });
+
+        mapInstance.on('click', 'flights-layer', e => {
+          const feature = e.features?.[0];
+          if (!feature) return;
+
+          selectedFlight.value = feature.properties;
+        });
+        mapInstance.on('click', e => {
+          const features = mapInstance.queryRenderedFeatures(e.point, {
+            layers: ['flights-layer'],
+          });
+
+          if (!features.length) {
+            selectedFlight.value = null;
+          }
         });
       } catch (err) {
         console.error('Image load failed:', err);

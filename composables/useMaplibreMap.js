@@ -41,9 +41,9 @@ export function useMaplibreMap(containerRef) {
     try {
       map.value = new maplibregl.Map({
         container: containerRef.value,
-        // style: `https://api.maptiler.com/maps/streets/style.json?key=${config.public.maptilerKey}`,
+        style: `https://api.maptiler.com/maps/streets/style.json?key=${config.public.maptilerKey}`,
         // style: `https://api.maptiler.com/maps/dataviz-dark/style.json?key=${config.public.maptilerKey}`,
-        style: `https://api.maptiler.com/maps/satellite/style.json?key=${config.public.maptilerKey}`,
+        // style: `https://api.maptiler.com/maps/satellite/style.json?key=${config.public.maptilerKey}`,
         // style: 'https://tiles.openfreemap.org/styles/bright',
         // style: 'https://tiles.openfreemap.org/styles/dark',
         // style: 'https://tiles.openfreemap.org/styles/bright',

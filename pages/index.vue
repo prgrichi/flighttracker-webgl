@@ -32,13 +32,9 @@
           @update:modelValue="setMapType"
         /> -->
 
-        <!-- <Transition name="slide-up">
-          <FlightCard
-            v-if="selectedFlight"
-            :flight="selectedFlight"
-            @close="clearSelectedFlight()"
-          />
-        </Transition> -->
+        <Transition name="slide-up">
+          <FlightCard v-if="selectedFlight" :flight="selectedFlight" @close="closeFLightCard()" />
+        </Transition>
       </div>
     </template>
   </div>
@@ -52,8 +48,15 @@ definePageMeta({
 const mapContainer = ref(null);
 const { isLoaded, mapError } = useMaplibreMap(mapContainer);
 const { geoJson } = useFlights();
-
+const { selectedFlight } = useSelectedFlight();
 const isLoading = computed(() => !isLoaded.value && !mapError.value);
 
 useFlightLayer(geoJson);
+
+const closeFLightCard = () => {
+  console.log('clear selected flight');
+  if (!selectedFlight.value) return;
+
+  selectedFlight.value = null;
+};
 </script>
