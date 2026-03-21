@@ -36,8 +36,8 @@ export function useMapControls() {
     if (!map.value) return;
 
     map.value.easeTo({
-      center: [10, 50],
-      zoom: 4.5,
+      center: [12.4053, 48.0006],
+      zoom: 8,
       duration: 500,
     });
   }

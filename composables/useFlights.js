@@ -24,6 +24,13 @@ export const useFlights = (initialRegion = 'bavaria') => {
     startPolling();
   });
 
+  onUnmounted(() => {
+    if (!interval) return;
+
+    clearInterval(interval);
+    interval = null;
+  });
+
   return {
     geoJson: data,
     pending,
