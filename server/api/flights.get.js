@@ -34,13 +34,13 @@ export default defineEventHandler(async event => {
       type: 'Feature',
       geometry: {
         type: 'Point',
-        coordinates: [f.lon, f.lat], // lng, lat!
+        coordinates: [f.lon, f.lat],
       },
       properties: {
         icao24: f.icao24,
         callsign: f.callsign,
         heading: f.heading,
-        altitudeFt: f.altitudeFt,
+        altitudeM: f.altitudeM,
         speedKmh: f.speedKmh,
         climbing: f.climbing,
         descending: f.descending,

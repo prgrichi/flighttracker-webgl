@@ -3,3 +3,5 @@
     <UIcon name="i-lucide-loader-2" class="w-8 h-8 text-green-500 animate-spin" />
   </div>
 </template>
+
+<script setup></script>

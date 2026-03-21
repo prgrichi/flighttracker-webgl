@@ -1,5 +1,6 @@
 <template>
-  <div class="relative h-screen w-full overflow-hidden bg-neutral-100">
+  <div class="relative w-full h-full">
+    <!-- <div class="relative h-screen w-full overflow-hidden bg-neutral-100"> -->
     <div v-if="mapError" class="flex h-full w-full items-center justify-center p-6">
       <div class="max-w-lg rounded-2xl border border-red-200 bg-white/95 p-6 shadow-sm">
         <p class="text-sm font-semibold uppercase tracking-[0.18em] text-red-600">
@@ -18,69 +19,37 @@
       </div>
     </div>
 
-    <div v-else ref="mapContainer" class="h-full w-full"></div>
+    <template v-else>
+      <div class="relative w-full h-full">
+        <div ref="mapContainer" class="h-full w-full"></div>
+
+        <MapLoader v-if="isLoading" />
+        <MapZoomControls v-if="isLoaded" />
+        <MapReset v-if="isLoaded" />
+        <!-- <MapTypeSwitcher
+          v-model="currentMapType"
+          :mapTypes="MAP_TYPES"
+          @update:modelValue="setMapType"
+        /> -->
+
+        <!-- <Transition name="slide-up">
+          <FlightCard
+            v-if="selectedFlight"
+            :flight="selectedFlight"
+            @close="clearSelectedFlight()"
+          />
+        </Transition> -->
+      </div>
+    </template>
   </div>
 </template>
 
 <script setup>
-import { watch } from 'vue';
-
+const mapContainer = ref(null);
+const { isLoaded, mapError } = useMaplibreMap(mapContainer);
 const { geoJson } = useFlights();
 
-const mapContainer = ref(null);
-const { map, mapError } = useMaplibreMap(mapContainer);
+const isLoading = computed(() => !isLoaded.value && !mapError.value);
 
-// Map Setup
-watch(map, mapInstance => {
-  if (!mapInstance) return;
-
-  mapInstance.on('load', async () => {
-    console.log('Map ready 🚀');
-
-    // 1. Source
-    mapInstance.addSource('flights', {
-      type: 'geojson',
-      data: {
-        type: 'FeatureCollection',
-        features: [],
-      },
-    });
-
-    try {
-      // 2. Image laden (async)
-      const image = await mapInstance.loadImage('/plane.png');
-
-      if (!mapInstance.hasImage('plane')) {
-        mapInstance.addImage('plane', image.data);
-      }
-
-      // 3. Layer
-      mapInstance.addLayer({
-        id: 'flights-layer',
-        type: 'symbol',
-        source: 'flights',
-        layout: {
-          'icon-image': 'plane',
-          'icon-size': ['interpolate', ['linear'], ['zoom'], 5, 0.15, 8, 0.25, 12, 0.4],
-          'icon-rotate': ['get', 'heading'], // 👈 DAS ist dein Heading
-          'icon-rotation-alignment': 'map', // 👈 wichtig!
-          'icon-allow-overlap': true,
-          'icon-anchor': 'center',
-        },
-      });
-    } catch (err) {
-      console.error('Image load failed:', err);
-    }
-  });
-});
-
-// 🔵 Daten → Map
-watch([geoJson, map], ([data, mapInstance]) => {
-  if (!data || !mapInstance) return;
-
-  const source = mapInstance.getSource('flights');
-  if (!source) return;
-
-  source.setData(data);
-});
+useFlightLayer(geoJson);
 </script>

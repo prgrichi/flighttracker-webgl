@@ -9,7 +9,5 @@
 </template>
 
 <script setup>
-import { useMap } from '@/composables/useMap';
-
-const { resetView } = useMap();
+const { resetView } = useMapControls();
 </script>
