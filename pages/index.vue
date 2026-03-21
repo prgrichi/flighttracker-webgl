@@ -45,6 +45,10 @@
 </template>
 
 <script setup>
+definePageMeta({
+  keepalive: true,
+});
+
 const mapContainer = ref(null);
 const { isLoaded, mapError } = useMaplibreMap(mapContainer);
 const { geoJson } = useFlights();

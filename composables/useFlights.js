@@ -20,15 +20,27 @@ export const useFlights = (initialRegion = 'bavaria') => {
     }, 20000);
   }
 
-  onMounted(() => {
-    startPolling();
-  });
-
-  onUnmounted(() => {
+  function stopPolling() {
     if (!interval) return;
 
     clearInterval(interval);
     interval = null;
+  }
+
+  onMounted(() => {
+    startPolling();
+  });
+
+  onActivated(() => {
+    startPolling();
+  });
+
+  onDeactivated(() => {
+    stopPolling();
+  });
+
+  onUnmounted(() => {
+    stopPolling();
   });
 
   return {
