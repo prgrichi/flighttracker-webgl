@@ -11,8 +11,7 @@
           </div>
           <div class="text-sm text-gray-500">ICAO24: {{ flight.icao24 }}</div>
         </div>
-
-        <span class="text-gray-400">✕</span>
+        <UIcon name="i-lucide-x" class="w-5 h-5 text-gray-400" />
       </div>
 
       <div class="mt-3 grid grid-cols-2 gap-2 text-sm">
