@@ -1,5 +1,7 @@
 export const useFlights = (initialRegion = 'bavaria') => {
   const region = ref(initialRegion);
+  const toast = useToast();
+  let lastErrorKey = null;
 
   const query = computed(() => ({
     region: region.value,
@@ -58,6 +60,27 @@ export const useFlights = (initialRegion = 'bavaria') => {
 
   watch(region, () => {
     refresh();
+  });
+
+  watch(error, value => {
+    if (!value) {
+      lastErrorKey = null;
+      return;
+    }
+
+    const message =
+      value.statusMessage || value.message || 'Flight-Daten konnten nicht geladen werden.';
+    const errorKey = `${value.statusCode || 'unknown'}:${message}`;
+
+    if (errorKey === lastErrorKey) return;
+
+    lastErrorKey = errorKey;
+
+    toast.add({
+      title: 'Flight-Update fehlgeschlagen',
+      description: message,
+      color: 'error',
+    });
   });
 
   return {
