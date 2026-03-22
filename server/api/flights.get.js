@@ -1,23 +1,13 @@
 import { mapOpenSkyState } from '../utils/mapOpenSky';
 import { BBOX } from '../utils/bbox';
 import mockData from '../data/mockFlights.json';
-import { fetchOpenSkyToken } from '~/server/utils/opensky';
+import { fetchOpenSkyToken } from '@/server/utils/opensky';
 
 let regionCache = {};
+let openskyCalls = 0;
 
-export default defineEventHandler(async event => {
-  const query = getQuery(event);
-
-  const region = query.region || 'bavaria';
-  const useMock = process.env.NUXT__USE_MOCK === 'true';
-  const bbox = BBOX[region] || BBOX.bavaria;
-
-  const now = Date.now();
-  const cachedEntry = regionCache[region];
-
-  if (!useMock && cachedEntry && now < cachedEntry.expiresAt) {
-    return cachedEntry.data;
-  }
+async function loadFlights(bbox, useMock) {
+  console.log('🔴 FETCHING FROM OPENSKY', ++openskyCalls);
 
   let raw;
 
@@ -42,7 +32,7 @@ export default defineEventHandler(async event => {
 
   const flights = (raw.states || []).map(mapOpenSkyState).filter(f => f !== null);
 
-  const response = {
+  return {
     type: 'FeatureCollection',
     features: flights.map(f => ({
       type: 'Feature',
@@ -62,11 +52,31 @@ export default defineEventHandler(async event => {
       },
     })),
   };
+}
+
+export default defineEventHandler(async event => {
+  const query = getQuery(event);
+
+  const region = query.region || 'bavaria';
+  const useMock = process.env.NUXT_USE_MOCK === 'true';
+  const bbox = BBOX[region] || BBOX.bavaria;
+
+  const now = Date.now();
+  const cachedEntry = regionCache[region];
+
+  console.log('➡️ Incoming request');
+
+  if (!useMock && cachedEntry && now < cachedEntry.expiresAt) {
+    console.log('🟢 SERVED FROM CACHE');
+    return cachedEntry.data;
+  }
+
+  const response = await loadFlights(bbox, useMock);
 
   if (!useMock) {
     regionCache[region] = {
       data: response,
-      expiresAt: now + 10_000,
+      expiresAt: Date.now() + 15_000,
     };
   }
 

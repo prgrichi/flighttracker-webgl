@@ -11,35 +11,54 @@ export const useFlights = (initialRegion = 'bavaria') => {
       type: 'FeatureCollection',
       features: [],
     }),
+    server: false,
+    immediate: false,
+    watch: false,
   });
 
   let interval = null;
+  let hasActivatedOnce = false;
 
   function startPolling() {
     if (interval) return;
 
     interval = setInterval(() => {
-      console.log('fetch flights');
+      console.log('poll refresh');
       refresh();
     }, 20_000);
   }
 
   function stopPolling() {
     if (!interval) return;
-
     clearInterval(interval);
     interval = null;
   }
 
-  onMounted(startPolling);
-
-  onActivated(() => {
-    refresh();
+  onMounted(async () => {
+    await refresh(); // erster Request ganz bewusst hier
     startPolling();
   });
 
-  onDeactivated(stopPolling);
-  onUnmounted(stopPolling);
+  onActivated(() => {
+    if (hasActivatedOnce) {
+      refresh();
+    }
+
+    hasActivatedOnce = true;
+    startPolling();
+  });
+
+  onDeactivated(() => {
+    stopPolling();
+  });
+
+  onUnmounted(() => {
+    stopPolling();
+  });
+
+  watch(region, () => {
+    refresh();
+  });
 
   return {
     geoJson: data,
