@@ -1,12 +1,16 @@
 export const useFlights = (initialRegion = 'bavaria') => {
   const region = ref(initialRegion);
+
   const query = computed(() => ({
     region: region.value,
   }));
 
   const { data, pending, error, refresh } = useFetch('/api/flights', {
     query,
-    default: () => [],
+    default: () => ({
+      type: 'FeatureCollection',
+      features: [],
+    }),
   });
 
   let interval = null;
@@ -15,9 +19,9 @@ export const useFlights = (initialRegion = 'bavaria') => {
     if (interval) return;
 
     interval = setInterval(() => {
-      console.log('fetching flights...');
+      console.log('fetch flights');
       refresh();
-    }, 20000);
+    }, 20_000);
   }
 
   function stopPolling() {
@@ -27,21 +31,15 @@ export const useFlights = (initialRegion = 'bavaria') => {
     interval = null;
   }
 
-  onMounted(() => {
-    startPolling();
-  });
+  onMounted(startPolling);
 
   onActivated(() => {
+    refresh();
     startPolling();
   });
 
-  onDeactivated(() => {
-    stopPolling();
-  });
-
-  onUnmounted(() => {
-    stopPolling();
-  });
+  onDeactivated(stopPolling);
+  onUnmounted(stopPolling);
 
   return {
     geoJson: data,

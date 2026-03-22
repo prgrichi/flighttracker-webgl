@@ -1,8 +1,10 @@
-// nuxt.config.ts
 export default defineNuxtConfig({
   devtools: { enabled: false },
 
   runtimeConfig: {
+    openskyClientId: process.env.OPENSKY_CLIENT_ID,
+    openskyClientSecret: process.env.OPENSKY_CLIENT_SECRET,
+
     public: {
       maptilerKey: process.env.NUXT_PUBLIC_MAPTILER_KEY || '',
     },
