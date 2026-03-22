@@ -1,9 +1,7 @@
 <template>
   <div class="absolute bottom-3 left-3 right-3 z-[1000]">
-    <UCard
-      class="w-full cursor-pointer rounded-2xl shadow-xl backdrop-blur bg-white/80"
-      @click="emit('close')"
-    >
+    <UCard class="w-full cursor-pointer rounded-2xl shadow-xl backdrop-blur bg-white/80">
+      <div class="w-10 h-1 bg-gray-200 rounded-full mx-auto mb-2"></div>
       <div class="flex justify-between items-start">
         <div>
           <div class="font-bold text-lg">
@@ -11,7 +9,9 @@
           </div>
           <div class="text-sm text-gray-500">ICAO24: {{ flight.icao24 }}</div>
         </div>
-        <UIcon name="i-lucide-x" class="w-5 h-5 text-gray-400" />
+        <div class="p-2 -m-2 rounded-lg cursor-pointer" @click.stop="emit('close')">
+          <UIcon name="i-lucide-x" class="w-5 h-5 text-gray-400" />
+        </div>
       </div>
 
       <div class="mt-3 grid grid-cols-2 gap-2 text-sm">

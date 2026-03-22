@@ -65,17 +65,15 @@ export function useFlightLayer(geoJson) {
     (mapInstance, _, onCleanup) => {
       if (!mapInstance) return;
 
-      const handleFlightCardClick = event => {
-        const feature = event.features?.[0];
-        if (!feature) return;
-
-        selectedFlight.value = feature.properties;
-      };
-
       const handleMapClick = event => {
         const features = mapInstance.queryRenderedFeatures(event.point, {
           layers: [FLIGHTS_LAYER_ID],
         });
+
+        if (features.length) {
+          selectedFlight.value = features[0].properties;
+          return;
+        }
 
         if (!features.length) {
           selectedFlight.value = null;
@@ -85,8 +83,6 @@ export function useFlightLayer(geoJson) {
       const initializeLayer = async () => {
         await ensureFlightLayer(mapInstance);
         updateFlightData(mapInstance, geoJson.value);
-        mapInstance.on('click', FLIGHTS_LAYER_ID, handleFlightCardClick);
-        mapInstance.on('click', handleMapClick);
       };
 
       if (mapInstance.loaded()) {
@@ -95,9 +91,12 @@ export function useFlightLayer(geoJson) {
         mapInstance.once('load', initializeLayer);
       }
 
+      mapInstance.on('style.load', initializeLayer);
+      mapInstance.on('click', handleMapClick);
+
       onCleanup(() => {
         mapInstance.off('load', initializeLayer);
-        mapInstance.off('click', FLIGHTS_LAYER_ID, handleFlightCardClick);
+        mapInstance.off('style.load', initializeLayer);
         mapInstance.off('click', handleMapClick);
       });
     },

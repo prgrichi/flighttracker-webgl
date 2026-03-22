@@ -1,6 +1,5 @@
 <template>
-  <div class="relative w-full h-full">
-    <!-- <div class="relative h-screen w-full overflow-hidden bg-neutral-100"> -->
+  <div class="relative w-full h-full overflow-hidden">
     <div v-if="mapError" class="flex h-full w-full items-center justify-center p-6">
       <div class="max-w-lg rounded-2xl border border-red-200 bg-white/95 p-6 shadow-sm">
         <p class="text-sm font-semibold uppercase tracking-[0.18em] text-red-600">
@@ -26,14 +25,14 @@
         <MapLoader v-if="isLoading" />
         <MapZoomControls v-if="isLoaded" />
         <MapReset v-if="isLoaded" />
-        <!-- <MapTypeSwitcher
-          v-model="currentMapType"
+        <MapTypeSwitcher
+          :model-value="currentMapType"
           :mapTypes="MAP_TYPES"
           @update:modelValue="setMapType"
-        /> -->
+        />
 
         <Transition name="slide-up">
-          <FlightCard v-if="selectedFlight" :flight="selectedFlight" @close="closeFLightCard()" />
+          <FlightCard v-if="selectedFlight" :flight="selectedFlight" @close="closeFLightCard" />
         </Transition>
       </div>
     </template>
@@ -41,6 +40,8 @@
 </template>
 
 <script setup>
+import { useMapType } from '../composables/useMapType';
+
 definePageMeta({
   keepalive: true,
 });
@@ -49,6 +50,8 @@ const mapContainer = ref(null);
 const { isLoaded, mapError } = useMaplibreMap(mapContainer);
 const { geoJson } = useFlights();
 const { selectedFlight } = useSelectedFlight();
+const { currentMapType, MAP_TYPES, setMapType } = useMapType();
+
 const isLoading = computed(() => !isLoaded.value && !mapError.value);
 
 useFlightLayer(geoJson);
@@ -60,3 +63,22 @@ const closeFLightCard = () => {
   selectedFlight.value = null;
 };
 </script>
+
+<style>
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: all 0.25s ease;
+}
+
+.slide-up-enter-from,
+.slide-up-leave-to {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.slide-up-enter-to,
+.slide-up-leave-from {
+  transform: translateY(0);
+  opacity: 1;
+}
+</style>

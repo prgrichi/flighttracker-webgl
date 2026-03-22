@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute bottom-6 right-6 z-[1000]">
+  <div class="absolute bottom-10 right-6 z-[1000]">
     <UPopover>
       <div class="p-2">
         <UButton
