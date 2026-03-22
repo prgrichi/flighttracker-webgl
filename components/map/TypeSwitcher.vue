@@ -1,6 +1,6 @@
 <template>
   <div class="absolute bottom-10 right-6 z-[1000]">
-    <UPopover>
+    <UPopover :ui="{ content: 'mr-6' }">
       <div class="p-2">
         <UButton
           icon="i-lucide-layers"
