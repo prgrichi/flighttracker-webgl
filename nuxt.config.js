@@ -7,6 +7,7 @@ export default defineNuxtConfig({
 
     public: {
       maptilerKey: process.env.NUXT_PUBLIC_MAPTILER_KEY || '',
+      stadiaKey: process.env.NUXT_PUBLIC_STADIA_KEY || '',
     },
   },
 

@@ -3,22 +3,27 @@ import { useMapInstance } from './useMapInstance';
 export const useMapType = () => {
   const config = useRuntimeConfig();
   const { map } = useMapInstance();
-  const currentMapType = useState('current-map-type', () => 'default');
+  const currentMapType = useState('current-map-type', () => 'Default');
 
   const MAP_TYPES = {
-    default: {
+    Default: {
       name: 'Default',
-      url: 'https://tiles.openfreemap.org/styles/bright',
+      url: `https://tiles.stadiamaps.com/styles/osm_bright.json?api_key=${config.public.stadiaKey}`,
       preview: '/map-previews/default.png',
     },
-    light: {
-      name: 'Positron',
-      url: 'https://tiles.openfreemap.org/styles/positron',
-      preview: '/map-previews/light.png',
+    Light: {
+      name: 'Light',
+      url: `https://tiles.stadiamaps.com/styles/alidade_smooth.json?api_key=${config.public.stadiaKey}`,
+      preview: '/map-previews/bright.png',
     },
-    dark: {
+    Terrain: {
+      name: 'Terrain',
+      url: `https://tiles.stadiamaps.com/styles/stamen_terrain.json?api_key=${config.public.stadiaKey}`,
+      preview: '/map-previews/dark.png',
+    },
+    Dark: {
       name: 'Dark',
-      url: `https://api.maptiler.com/maps/dataviz-dark/style.json?key=${config.public.maptilerKey}`,
+      url: `https://tiles.stadiamaps.com/styles/alidade_smooth_dark.json?api_key=${config.public.stadiaKey}`,
       preview: '/map-previews/dark.png',
     },
   };
@@ -31,7 +36,7 @@ export const useMapType = () => {
 
     if (!map.value) return;
 
-    map.value.setStyle(MAP_TYPES[mapTypeKey].url);
+    map.value.setStyle(MAP_TYPES[mapTypeKey].style ?? MAP_TYPES[mapTypeKey].url);
   };
 
   return {

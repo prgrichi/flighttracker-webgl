@@ -37,11 +37,15 @@ export function useMaplibreMap(containerRef) {
     try {
       map.value = new maplibregl.Map({
         container: containerRef.value,
-        style: MAP_TYPES[currentMapType.value].url,
+        style: MAP_TYPES[currentMapType.value].style || MAP_TYPES[currentMapType.value].url,
         center: [12.4053, 48.0006],
         zoom: 8,
         minZoom: 3,
-        maxZoom: 15,
+        maxZoom: 11,
+        maxBounds: [
+          [-10, 35],
+          [30, 60],
+        ],
       });
 
       map.value.on('load', () => {
