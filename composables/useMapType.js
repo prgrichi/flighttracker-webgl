@@ -19,7 +19,7 @@ export const useMapType = () => {
     Terrain: {
       name: 'Terrain',
       url: `https://tiles.stadiamaps.com/styles/stamen_terrain.json?api_key=${config.public.stadiaKey}`,
-      preview: '/map-previews/dark.png',
+      preview: '/map-previews/terrain.png',
     },
     Dark: {
       name: 'Dark',
