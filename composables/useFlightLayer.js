@@ -36,7 +36,7 @@ export function useFlightLayer(geoJson) {
 
     if (!mapInstance.hasImage(PLANE_IMAGE_ID)) {
       try {
-        const image = await mapInstance.loadImage('/plane.png');
+        const image = await mapInstance.loadImage('/plane-v2.png');
         mapInstance.addImage(PLANE_IMAGE_ID, image.data);
       } catch (error) {
         console.error('Image load failed:', error);
