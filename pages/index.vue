@@ -40,6 +40,8 @@
 </template>
 
 <script setup>
+console.log('PAGE SCRIPT SETUP RUNS');
+
 import { useMapType } from '../composables/useMapType';
 
 definePageMeta({
@@ -48,7 +50,9 @@ definePageMeta({
 
 const mapContainer = ref(null);
 const { isLoaded, mapError } = useMaplibreMap(mapContainer);
+console.log('before useFlights');
 const { geoJson } = useFlights('bavaria');
+console.log('after useFlights');
 const { selectedFlight } = useSelectedFlight();
 const { currentMapType, MAP_TYPES, setMapType } = useMapType();
 
