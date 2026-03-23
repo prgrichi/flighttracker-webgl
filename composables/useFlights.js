@@ -37,9 +37,7 @@ export const useFlights = (initialRegion = 'bavaria') => {
   }
 
   onMounted(async () => {
-    console.log('MOUNTED');
     await refresh(); // erster Request ganz bewusst hier
-    console.log('after refresh / before polling');
     startPolling();
   });
 
