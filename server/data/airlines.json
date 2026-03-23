@@ -1,0 +1,214 @@
+{
+  "AAL": "American Airlines",
+  "AAR": "Asiana Airlines",
+  "ACA": "Air Canada",
+  "AFR": "Air France",
+  "AFL": "Aeroflot",
+  "AIC": "Air India",
+  "AMX": "Aeromexico",
+  "ANA": "All Nippon Airways",
+  "ASA": "Alaska Airlines",
+  "ASL": "ASL Airlines Ireland",
+  "AUA": "Austrian Airlines",
+  "AVA": "Avianca",
+  "AZG": "Silk Way West Airlines",
+
+  "BAW": "British Airways",
+  "BEL": "Brussels Airlines",
+  "BER": "Air Berlin",
+  "BCS": "European Air Transport Leipzig (DHL)",
+  "BEE": "Flybe",
+
+  "CAL": "China Airlines",
+  "CCA": "Air China",
+  "CES": "China Eastern",
+  "CFG": "Condor",
+  "CHH": "Hainan Airlines",
+  "CLX": "Cargolux",
+  "CPA": "Cathay Pacific",
+  "CSN": "China Southern",
+
+  "DAL": "Delta Air Lines",
+  "DLH": "Lufthansa",
+  "DHX": "DHL Air UK",
+  "FDX": "FedEx Express",
+
+  "EIN": "Aer Lingus",
+  "ELY": "El Al",
+  "EMR": "Emirates",
+  "ETD": "Etihad Airways",
+  "EVA": "EVA Air",
+  "EZY": "easyJet",
+
+  "FIN": "Finnair",
+  "FHY": "Freebird Airlines",
+  "FFT": "Frontier Airlines",
+
+  "GEC": "Lufthansa Cargo",
+  "GWI": "Eurowings",
+
+  "IBE": "Iberia",
+  "ICE": "Icelandair",
+  "IRA": "Iran Air",
+
+  "JAL": "Japan Airlines",
+  "JBU": "JetBlue",
+
+  "KAL": "Korean Air",
+  "KLM": "KLM Royal Dutch Airlines",
+
+  "LAN": "LATAM Airlines",
+  "LOT": "LOT Polish Airlines",
+  "LTU": "LTU International",
+
+  "MSR": "EgyptAir",
+
+  "NAX": "Norwegian Air Shuttle",
+  "NOS": "Neos",
+  "NPT": "West Atlantic UK",
+
+  "OMA": "Oman Air",
+
+  "QFA": "Qantas",
+  "QTR": "Qatar Airways",
+
+  "RYR": "Ryanair",
+
+  "SAS": "Scandinavian Airlines",
+  "SBI": "S7 Airlines",
+  "SIA": "Singapore Airlines",
+  "SWR": "Swiss International Air Lines",
+
+  "TAP": "TAP Air Portugal",
+  "TAY": "ASL Airlines Belgium",
+  "THY": "Turkish Airlines",
+  "TRA": "Transavia",
+
+  "UAE": "Emirates",
+  "UAL": "United Airlines",
+  "UPS": "UPS Airlines",
+
+  "VIR": "Virgin Atlantic",
+  "VLG": "Vueling",
+
+  "WZZ": "Wizz Air",
+
+  "BOX": "DHL Air Germany",
+  "BIX": "Braathens International Airways",
+  "BTI": "Air Baltic",
+  "EJU": "easyJet Europe",
+  "EWG": "Eurowings Europe",
+  "PGT": "Pegasus Airlines",
+  "SUN": "TUIfly",
+  "TUI": "TUIfly",
+  "TVF": "Transavia France",
+  "VOE": "Volotea",
+
+  "AFG": "Ariana Afghan Airlines",
+  "AHY": "Azerbaijan Airlines",
+  "AJM": "Air Jamaica",
+  "ALK": "SriLankan Airlines",
+  "AMC": "Air Malta",
+  "ANZ": "Air New Zealand",
+  "APG": "Air France Hop",
+  "ARG": "Aerolineas Argentinas",
+  "ATC": "Air Tanzania",
+  "AWE": "US Airways",
+
+  "BBD": "Bluebird Nordic",
+  "BKP": "Bangkok Airways",
+  "BLX": "Sunclass Airlines",
+  "BMS": "BMI Regional",
+  "BRU": "Belavia",
+  "BTV": "Bulgaria Air",
+
+  "CAI": "Corendon Airlines",
+  "CBJ": "Beijing Capital Airlines",
+  "CJT": "Cargojet Airways",
+  "CKS": "Kalitta Air",
+  "CMN": "Air China Cargo",
+
+  "DHK": "DHL International Aviation",
+  "DLA": "Delta Connection",
+  "DWI": "AeroMéxico Connect",
+
+  "EAL": "Eastern Air Lines",
+  "EDV": "Endeavor Air",
+  "ENY": "Envoy Air",
+
+  "HAL": "Hawaiian Airlines",
+  "HOP": "Air France Hop",
+  "HVN": "Vietnam Airlines",
+
+  "IGO": "IndiGo",
+  "ISR": "Israir Airlines",
+
+  "JAF": "TUI fly Belgium",
+  "JZR": "Jazeera Airways",
+
+  "KZR": "Air Astana",
+
+  "LGL": "Luxair",
+  "LNI": "Lion Air",
+
+  "MAB": "LATAM Brasil",
+  "MAU": "Air Mauritius",
+  "MEA": "Middle East Airlines",
+  "MLD": "Maldivian",
+
+  "NKS": "Spirit Airlines",
+
+  "OKA": "Okay Airways",
+  "OXF": "Oxford Aviation",
+
+  "PGA": "Portugalia",
+  "PIA": "Pakistan International Airlines",
+  "PRX": "Priester Aviation",
+
+  "RAM": "Royal Air Maroc",
+  "RBA": "Royal Brunei Airlines",
+  "RLU": "RusLine",
+  "ROT": "Tarom",
+
+  "SVA": "Saudia",
+  "SCX": "SunExpress",
+  "SDM": "Rossiya Airlines",
+  "SEH": "Sky Express",
+  "SJY": "Somon Air",
+
+  "TFL": "TUI fly Netherlands",
+  "THA": "Thai Airways",
+  "TOM": "TUI Airways",
+  "TVS": "Smartwings",
+
+  "URO": "Ural Airlines",
+
+  "VOZ": "Virgin Australia",
+
+  "XAX": "AirAsia X",
+  "XLF": "XL Airways",
+
+  "YMM": "Myanmar Airways",
+  "YZR": "Air Burkina",
+
+  "AEE": "Aegean Airlines",
+  "AEA": "Air Europa",
+  "AZA": "Alitalia",
+  "ITY": "ITA Airways",
+  "CEB": "Cebu Pacific",
+  "CLH": "Lufthansa CityLine",
+  "CMP": "Copa Airlines",
+  "CSA": "Czech Airlines",
+  "CTN": "Croatia Airlines",
+  "DAH": "Air Algerie",
+  "ETH": "Ethiopian Airlines",
+  "GIA": "Garuda Indonesia",
+  "GLO": "GOL Linhas Aéreas",
+  "JST": "Jetstar",
+  "KAC": "Kuwait Airways",
+  "KQA": "Kenya Airways",
+  "PAL": "Philippine Airlines",
+  "SAA": "South African Airways",
+  "TAM": "TAM Linhas Aéreas",
+  "WJA": "WestJet"
+}
