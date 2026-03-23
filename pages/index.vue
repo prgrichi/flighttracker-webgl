@@ -48,7 +48,7 @@ definePageMeta({
 
 const mapContainer = ref(null);
 const { isLoaded, mapError } = useMaplibreMap(mapContainer);
-const { geoJson } = useFlights();
+const { geoJson } = useFlights('bavaria');
 const { selectedFlight } = useSelectedFlight();
 const { currentMapType, MAP_TYPES, setMapType } = useMapType();
 

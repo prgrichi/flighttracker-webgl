@@ -1,0 +1,594 @@
+{
+  "A306": {
+    "manufacturer": "Airbus",
+    "model": "A300-600",
+    "label": "Airbus A300-600",
+    "category": "airliner"
+  },
+  "A310": {
+    "manufacturer": "Airbus",
+    "model": "A310",
+    "label": "Airbus A310",
+    "category": "airliner"
+  },
+  "A318": {
+    "manufacturer": "Airbus",
+    "model": "A318",
+    "label": "Airbus A318",
+    "category": "airliner"
+  },
+  "A319": {
+    "manufacturer": "Airbus",
+    "model": "A319",
+    "label": "Airbus A319",
+    "category": "airliner"
+  },
+  "A320": {
+    "manufacturer": "Airbus",
+    "model": "A320",
+    "label": "Airbus A320",
+    "category": "airliner"
+  },
+  "A321": {
+    "manufacturer": "Airbus",
+    "model": "A321",
+    "label": "Airbus A321",
+    "category": "airliner"
+  },
+  "A20N": {
+    "manufacturer": "Airbus",
+    "model": "A320neo",
+    "label": "Airbus A320neo",
+    "category": "airliner"
+  },
+  "A21N": {
+    "manufacturer": "Airbus",
+    "model": "A321neo",
+    "label": "Airbus A321neo",
+    "category": "airliner"
+  },
+  "A332": {
+    "manufacturer": "Airbus",
+    "model": "A330-200",
+    "label": "Airbus A330-200",
+    "category": "airliner"
+  },
+  "A333": {
+    "manufacturer": "Airbus",
+    "model": "A330-300",
+    "label": "Airbus A330-300",
+    "category": "airliner"
+  },
+  "A339": {
+    "manufacturer": "Airbus",
+    "model": "A330-900neo",
+    "label": "Airbus A330-900neo",
+    "category": "airliner"
+  },
+  "A343": {
+    "manufacturer": "Airbus",
+    "model": "A340-300",
+    "label": "Airbus A340-300",
+    "category": "airliner"
+  },
+  "A346": {
+    "manufacturer": "Airbus",
+    "model": "A340-600",
+    "label": "Airbus A340-600",
+    "category": "airliner"
+  },
+  "A359": {
+    "manufacturer": "Airbus",
+    "model": "A350-900",
+    "label": "Airbus A350-900",
+    "category": "airliner"
+  },
+  "A35K": {
+    "manufacturer": "Airbus",
+    "model": "A350-1000",
+    "label": "Airbus A350-1000",
+    "category": "airliner"
+  },
+  "A388": {
+    "manufacturer": "Airbus",
+    "model": "A380-800",
+    "label": "Airbus A380-800",
+    "category": "airliner"
+  },
+
+  "B733": {
+    "manufacturer": "Boeing",
+    "model": "737-300",
+    "label": "Boeing 737-300",
+    "category": "airliner"
+  },
+  "B734": {
+    "manufacturer": "Boeing",
+    "model": "737-400",
+    "label": "Boeing 737-400",
+    "category": "airliner"
+  },
+  "B735": {
+    "manufacturer": "Boeing",
+    "model": "737-500",
+    "label": "Boeing 737-500",
+    "category": "airliner"
+  },
+  "B736": {
+    "manufacturer": "Boeing",
+    "model": "737-600",
+    "label": "Boeing 737-600",
+    "category": "airliner"
+  },
+  "B737": {
+    "manufacturer": "Boeing",
+    "model": "737 (unspecified)",
+    "label": "Boeing 737",
+    "category": "airliner"
+  },
+  "B8200": {
+    "manufacturer": "Boeing",
+    "model": "737 MAX 8-200",
+    "label": "Boeing 737 MAX 8-200",
+    "category": "airliner"
+  },
+  "B738": {
+    "manufacturer": "Boeing",
+    "model": "737-800",
+    "label": "Boeing 737-800",
+    "category": "airliner"
+  },
+  "B739": {
+    "manufacturer": "Boeing",
+    "model": "737-900",
+    "label": "Boeing 737-900",
+    "category": "airliner"
+  },
+  "B38M": {
+    "manufacturer": "Boeing",
+    "model": "737 MAX 8",
+    "label": "Boeing 737 MAX 8",
+    "category": "airliner"
+  },
+  "B39M": {
+    "manufacturer": "Boeing",
+    "model": "737 MAX 9",
+    "label": "Boeing 737 MAX 9",
+    "category": "airliner"
+  },
+  "B744F": {
+    "manufacturer": "Boeing",
+    "model": "747-400F",
+    "label": "Boeing 747-400 Freighter",
+    "category": "airliner"
+  },
+  "B77L": {
+    "manufacturer": "Boeing",
+    "model": "777-200LR",
+    "label": "Boeing 777-200LR",
+    "category": "airliner"
+  },
+  "B77F": {
+    "manufacturer": "Boeing",
+    "model": "777F",
+    "label": "Boeing 777 Freighter",
+    "category": "airliner"
+  },
+  "B744": {
+    "manufacturer": "Boeing",
+    "model": "747-400",
+    "label": "Boeing 747-400",
+    "category": "airliner"
+  },
+  "B748": {
+    "manufacturer": "Boeing",
+    "model": "747-8",
+    "label": "Boeing 747-8",
+    "category": "airliner"
+  },
+  "B752": {
+    "manufacturer": "Boeing",
+    "model": "757-200",
+    "label": "Boeing 757-200",
+    "category": "airliner"
+  },
+  "B763": {
+    "manufacturer": "Boeing",
+    "model": "767-300",
+    "label": "Boeing 767-300",
+    "category": "airliner"
+  },
+  "B772": {
+    "manufacturer": "Boeing",
+    "model": "777-200",
+    "label": "Boeing 777-200",
+    "category": "airliner"
+  },
+  "B77W": {
+    "manufacturer": "Boeing",
+    "model": "777-300ER",
+    "label": "Boeing 777-300ER",
+    "category": "airliner"
+  },
+  "B788": {
+    "manufacturer": "Boeing",
+    "model": "787-8",
+    "label": "Boeing 787-8",
+    "category": "airliner"
+  },
+  "B789": {
+    "manufacturer": "Boeing",
+    "model": "787-9",
+    "label": "Boeing 787-9",
+    "category": "airliner"
+  },
+  "B78X": {
+    "manufacturer": "Boeing",
+    "model": "787-10",
+    "label": "Boeing 787-10",
+    "category": "airliner"
+  },
+
+  "E170": {
+    "manufacturer": "Embraer",
+    "model": "E170",
+    "label": "Embraer E170",
+    "category": "regional"
+  },
+  "E175": {
+    "manufacturer": "Embraer",
+    "model": "E175",
+    "label": "Embraer E175",
+    "category": "regional"
+  },
+  "E190": {
+    "manufacturer": "Embraer",
+    "model": "E190",
+    "label": "Embraer E190",
+    "category": "regional"
+  },
+  "E195": {
+    "manufacturer": "Embraer",
+    "model": "E195",
+    "label": "Embraer E195",
+    "category": "regional"
+  },
+  "E290": {
+    "manufacturer": "Embraer",
+    "model": "E190-E2",
+    "label": "Embraer E190-E2",
+    "category": "regional"
+  },
+  "E295": {
+    "manufacturer": "Embraer",
+    "model": "E195-E2",
+    "label": "Embraer E195-E2",
+    "category": "regional"
+  },
+
+  "CRJ7": {
+    "manufacturer": "Bombardier",
+    "model": "CRJ700",
+    "label": "Bombardier CRJ700",
+    "category": "regional"
+  },
+  "CRJ9": {
+    "manufacturer": "Bombardier",
+    "model": "CRJ900",
+    "label": "Bombardier CRJ900",
+    "category": "regional"
+  },
+  "CRJX": {
+    "manufacturer": "Bombardier",
+    "model": "CRJ1000",
+    "label": "Bombardier CRJ1000",
+    "category": "regional"
+  },
+
+  "AT72": { "manufacturer": "ATR", "model": "72", "label": "ATR 72", "category": "turboprop" },
+  "AT43": { "manufacturer": "ATR", "model": "42", "label": "ATR 42", "category": "turboprop" },
+
+  "DH8A": {
+    "manufacturer": "De Havilland Canada",
+    "model": "Dash 8-100",
+    "label": "Dash 8-100",
+    "category": "turboprop"
+  },
+  "DH8B": {
+    "manufacturer": "De Havilland Canada",
+    "model": "Dash 8-200",
+    "label": "Dash 8-200",
+    "category": "turboprop"
+  },
+  "DH8C": {
+    "manufacturer": "De Havilland Canada",
+    "model": "Dash 8-300",
+    "label": "Dash 8-300",
+    "category": "turboprop"
+  },
+  "DH8D": {
+    "manufacturer": "De Havilland Canada",
+    "model": "Dash 8 Q400",
+    "label": "Dash 8 Q400",
+    "category": "turboprop"
+  },
+
+  "C152": { "manufacturer": "Cessna", "model": "152", "label": "Cessna 152", "category": "ga" },
+  "C172": {
+    "manufacturer": "Cessna",
+    "model": "172 Skyhawk",
+    "label": "Cessna 172",
+    "category": "ga"
+  },
+  "C182": {
+    "manufacturer": "Cessna",
+    "model": "182 Skylane",
+    "label": "Cessna 182",
+    "category": "ga"
+  },
+  "C206": {
+    "manufacturer": "Cessna",
+    "model": "206 Stationair",
+    "label": "Cessna 206",
+    "category": "ga"
+  },
+  "C208": {
+    "manufacturer": "Cessna",
+    "model": "208 Caravan",
+    "label": "Cessna Caravan",
+    "category": "ga"
+  },
+
+  "PA28": {
+    "manufacturer": "Piper",
+    "model": "PA-28 Cherokee",
+    "label": "Piper PA-28",
+    "category": "ga"
+  },
+  "PA32": { "manufacturer": "Piper", "model": "PA-32", "label": "Piper PA-32", "category": "ga" },
+  "PA34": {
+    "manufacturer": "Piper",
+    "model": "PA-34 Seneca",
+    "label": "Piper Seneca",
+    "category": "ga"
+  },
+  "PA46": {
+    "manufacturer": "Piper",
+    "model": "PA-46 Malibu",
+    "label": "Piper Malibu",
+    "category": "ga"
+  },
+
+  "SR20": { "manufacturer": "Cirrus", "model": "SR20", "label": "Cirrus SR20", "category": "ga" },
+  "SR22": { "manufacturer": "Cirrus", "model": "SR22", "label": "Cirrus SR22", "category": "ga" },
+
+  "DA20": {
+    "manufacturer": "Diamond",
+    "model": "DA20 Katana",
+    "label": "Diamond DA20 Katana",
+    "category": "ga"
+  },
+  "DA40": {
+    "manufacturer": "Diamond",
+    "model": "DA40 Diamond Star",
+    "label": "Diamond DA40",
+    "category": "ga"
+  },
+  "DA42": {
+    "manufacturer": "Diamond",
+    "model": "DA42 Twin Star",
+    "label": "Diamond DA42",
+    "category": "ga"
+  },
+  "DA50": {
+    "manufacturer": "Diamond",
+    "model": "DA50 RG",
+    "label": "Diamond DA50",
+    "category": "ga"
+  },
+  "DA62": { "manufacturer": "Diamond", "model": "DA62", "label": "Diamond DA62", "category": "ga" },
+  "EC35": {
+    "manufacturer": "Airbus",
+    "model": "H135",
+    "label": "Airbus H135 (EC135)",
+    "category": "helicopter"
+  },
+  "BK17": {
+    "manufacturer": "Airbus",
+    "model": "H145",
+    "label": "Airbus H145",
+    "category": "helicopter"
+  },
+  "AS32": {
+    "manufacturer": "Airbus",
+    "model": "AS332 Super Puma",
+    "label": "Airbus AS332 Super Puma",
+    "category": "helicopter"
+  },
+  "AS50": {
+    "manufacturer": "Airbus",
+    "model": "AS350 / H125",
+    "label": "Airbus H125",
+    "category": "helicopter"
+  },
+  "EC45": {
+    "manufacturer": "Airbus",
+    "model": "H145",
+    "label": "Airbus H145 (EC145)",
+    "category": "helicopter"
+  },
+  "R22": {
+    "manufacturer": "Robinson",
+    "model": "R22",
+    "label": "Robinson R22",
+    "category": "helicopter"
+  },
+  "R44": {
+    "manufacturer": "Robinson",
+    "model": "R44",
+    "label": "Robinson R44",
+    "category": "helicopter"
+  },
+  "R66": {
+    "manufacturer": "Robinson",
+    "model": "R66",
+    "label": "Robinson R66",
+    "category": "helicopter"
+  },
+
+  "B206": {
+    "manufacturer": "Bell",
+    "model": "206 JetRanger",
+    "label": "Bell 206 JetRanger",
+    "category": "helicopter"
+  },
+  "B407": { "manufacturer": "Bell", "model": "407", "label": "Bell 407", "category": "helicopter" },
+  "B429": { "manufacturer": "Bell", "model": "429", "label": "Bell 429", "category": "helicopter" },
+
+  "H125": {
+    "manufacturer": "Airbus",
+    "model": "H125",
+    "label": "Airbus H125",
+    "category": "helicopter"
+  },
+  "H135": {
+    "manufacturer": "Airbus",
+    "model": "H135",
+    "label": "Airbus H135",
+    "category": "helicopter"
+  },
+  "H145": {
+    "manufacturer": "Airbus",
+    "model": "H145",
+    "label": "Airbus H145",
+    "category": "helicopter"
+  },
+  "H225": {
+    "manufacturer": "Airbus",
+    "model": "H225 Super Puma",
+    "label": "Airbus H225 Super Puma",
+    "category": "helicopter"
+  },
+
+  "AW109": {
+    "manufacturer": "Leonardo",
+    "model": "AW109",
+    "label": "Leonardo AW109",
+    "category": "helicopter"
+  },
+  "AW139": {
+    "manufacturer": "Leonardo",
+    "model": "AW139",
+    "label": "Leonardo AW139",
+    "category": "helicopter"
+  },
+
+  "C130": {
+    "manufacturer": "Lockheed",
+    "model": "C-130 Hercules",
+    "label": "Lockheed C-130 Hercules",
+    "category": "military"
+  },
+  "A400": {
+    "manufacturer": "Airbus",
+    "model": "A400M",
+    "label": "Airbus A400M Atlas",
+    "category": "military"
+  },
+  "C160": {
+    "manufacturer": "Transall",
+    "model": "C-160",
+    "label": "Transall C-160",
+    "category": "military"
+  },
+  "C17": {
+    "manufacturer": "Boeing",
+    "model": "C-17 Globemaster",
+    "label": "Boeing C-17 Globemaster",
+    "category": "military"
+  },
+  "IL76": {
+    "manufacturer": "Ilyushin",
+    "model": "Il-76",
+    "label": "Ilyushin Il-76",
+    "category": "military"
+  },
+  "AN124": {
+    "manufacturer": "Antonov",
+    "model": "An-124",
+    "label": "Antonov An-124",
+    "category": "military"
+  },
+
+  "UH60": {
+    "manufacturer": "Sikorsky",
+    "model": "UH-60 Black Hawk",
+    "label": "Black Hawk",
+    "category": "military"
+  },
+  "CH47": {
+    "manufacturer": "Boeing",
+    "model": "CH-47 Chinook",
+    "label": "Chinook",
+    "category": "military"
+  },
+  "NH90": {
+    "manufacturer": "NHIndustries",
+    "model": "NH90",
+    "label": "NH90",
+    "category": "military"
+  },
+  "BCS1": {
+    "manufacturer": "Airbus",
+    "model": "A220-100",
+    "label": "Airbus A220-100",
+    "category": "airliner"
+  },
+  "BCS3": {
+    "manufacturer": "Airbus",
+    "model": "A220-300",
+    "label": "Airbus A220-300",
+    "category": "airliner"
+  },
+  "SF34": { "manufacturer": "Saab", "model": "340", "label": "Saab 340", "category": "turboprop" },
+  "F50": { "manufacturer": "Fokker", "model": "50", "label": "Fokker 50", "category": "turboprop" },
+  "A124": {
+    "manufacturer": "Antonov",
+    "model": "An-124",
+    "label": "Antonov An-124",
+    "category": "cargo"
+  },
+  "A225": {
+    "manufacturer": "Antonov",
+    "model": "An-225",
+    "label": "Antonov An-225",
+    "category": "cargo"
+  },
+
+  "B350": {
+    "manufacturer": "Beechcraft",
+    "model": "King Air 350",
+    "label": "King Air 350",
+    "category": "ga"
+  },
+
+  "PC12": {
+    "manufacturer": "Pilatus",
+    "model": "PC-12",
+    "label": "Pilatus PC-12",
+    "category": "ga"
+  },
+
+  "LJ45": {
+    "manufacturer": "Learjet",
+    "model": "45",
+    "label": "Learjet 45",
+    "category": "business_jet"
+  },
+  "GLF5": {
+    "manufacturer": "Gulfstream",
+    "model": "G550",
+    "label": "Gulfstream G550",
+    "category": "business_jet"
+  }
+}

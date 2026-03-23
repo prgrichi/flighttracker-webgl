@@ -1,8 +1,15 @@
+import { getAircraftInfo } from '@/server/utils/aircraftData';
+
 export function mapOpenSkyState(s) {
   if (!s || s.length < 17) return null;
 
   const lon = Number(s[5]);
   const lat = Number(s[6]);
+
+  const icao24 = s[0]?.toLowerCase() ?? null;
+  const aircraft = getAircraftInfo(icao24);
+
+  console.log(aircraft);
 
   // harte Validierung (wichtig für Leaflet)
   if (!Number.isFinite(lat) || !Number.isFinite(lon) || Math.abs(lat) > 90 || Math.abs(lon) > 180) {
@@ -28,6 +35,14 @@ export function mapOpenSkyState(s) {
 
     callsign: s[1]?.trim() || null,
     country: s[2] || null,
+
+    rawAircraftType: aircraft?.rawAircraftType ?? null,
+    normalizedAircraftType: aircraft?.normalizedAircraftType ?? null,
+    aircraftType: aircraft?.aircraftType ?? null,
+
+    aircraftLabel: aircraft?.aircraftLabel ?? null,
+    aircraftManufacturer: aircraft?.aircraftManufacturer ?? null,
+    aircraftModel: aircraft?.aircraftModel ?? null,
 
     lat,
     lon,

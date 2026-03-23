@@ -11,11 +11,18 @@
                 <div class="truncate text-base font-semibold text-slate-900">
                   {{ displayTitle }}
                 </div>
+                <div>ICAO: {{ flight.icao24 }}</div>
                 <span :class="statusBadgeClass">
                   {{ onGroundLabel }}
                 </span>
               </div>
             </div>
+          </div>
+
+          <div>
+            <p>{{ flight.aircraftLabel }}</p>
+            <p>{{ flight.aircraftManufacturer }}</p>
+            <p>{{ flight.aircraftModel }}</p>
           </div>
 
           <div class="flex flex-wrap gap-2.5">

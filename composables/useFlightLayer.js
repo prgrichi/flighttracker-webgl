@@ -36,7 +36,7 @@ export function useFlightLayer(geoJson) {
 
     if (!mapInstance.hasImage(PLANE_IMAGE_ID)) {
       try {
-        const image = await mapInstance.loadImage('/plane.png');
+        const image = await mapInstance.loadImage('/plane3.png');
         mapInstance.addImage(PLANE_IMAGE_ID, image.data);
       } catch (error) {
         console.error('Image load failed:', error);
@@ -50,7 +50,8 @@ export function useFlightLayer(geoJson) {
         source: FLIGHTS_SOURCE_ID,
         layout: {
           'icon-image': PLANE_IMAGE_ID,
-          'icon-size': ['interpolate', ['linear'], ['zoom'], 5, 0.15, 8, 0.25, 12, 0.4],
+          // 'icon-size': ['interpolate', ['linear'], ['zoom'], 5, 0.15, 8, 0.25, 12, 0.4],
+          'icon-size': ['interpolate', ['linear'], ['zoom'], 5, 0.5],
           'icon-rotate': ['get', 'heading'],
           'icon-rotation-alignment': 'map',
           'icon-allow-overlap': true,
