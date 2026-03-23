@@ -11,6 +11,32 @@ export default defineNuxtConfig({
     },
   },
 
+  pwa: {
+    registerType: 'autoUpdate',
+
+    manifest: {
+      name: 'Flighttracker',
+      short_name: 'Flights',
+      description: 'Live Flugtracking',
+      theme_color: '#0f172a',
+      background_color: '#0f172a',
+      display: 'standalone',
+
+      icons: [
+        {
+          src: '/pwa/icon-192.png',
+          sizes: '192x192',
+          type: 'image/png',
+        },
+        {
+          src: '/pwa/icon-512.png',
+          sizes: '512x512',
+          type: 'image/png',
+        },
+      ],
+    },
+  },
+
   app: {
     head: {
       htmlAttrs: {
@@ -36,7 +62,7 @@ export default defineNuxtConfig({
 
   ssr: true,
 
-  modules: ['@pinia/nuxt', '@nuxt/ui'],
+  modules: ['@pinia/nuxt', '@nuxt/ui', '@vite-pwa/nuxt'],
 
   css: ['~/assets/css/main.css', 'maplibre-gl/dist/maplibre-gl.css'],
 });
