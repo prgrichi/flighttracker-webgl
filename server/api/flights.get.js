@@ -1,7 +1,7 @@
-import { mapOpenSkyState } from '../utils/mapOpenSky';
+import { mapOpenSkyState } from '../utils/mapOpenSky.js';
 import { BBOX } from '../utils/bbox';
 import mockData from '../data/mockFlights.json';
-import { fetchOpenSkyToken } from '@/server/utils/opensky';
+import { fetchOpenSkyToken } from '@/server/utils/openSky.js';
 
 let regionCache = {};
 let openskyCalls = 0;
