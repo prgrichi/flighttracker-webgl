@@ -2,6 +2,7 @@ export const useFlightsState = (initialRegion = 'bavaria') => {
   const region = useState('flights:region', () => initialRegion);
   const hadFlightError = useState('flights:hadError', () => false);
   const showRecoveryBanner = useState('flights:recovery', () => false);
+  const hasLoadedFlights = useState('flights:hasLoadedFlights', () => false);
 
   // DELETE AFTER TEST
   const forceFlightError = useState('forceFlightError', () => false);
@@ -24,6 +25,10 @@ export const useFlightsState = (initialRegion = 'bavaria') => {
     watch: false,
   });
 
+  const flightsCount = computed(() => {
+    return data.value?.features?.length || 0;
+  });
+
   const hasLiveDataError = computed(() => !!error.value);
 
   return {
@@ -35,6 +40,8 @@ export const useFlightsState = (initialRegion = 'bavaria') => {
     hasLiveDataError,
     showRecoveryBanner,
     hadFlightError,
+    flightsCount,
+    hasLoadedFlights,
 
     // DELETE AFTER TEST
     forceFlightError,

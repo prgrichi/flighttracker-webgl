@@ -5,6 +5,7 @@ export const useFlightsLifecycle = (initialRegion = 'bavaria') => {
     region,
     showRecoveryBanner,
     hadFlightError,
+    hasLoadedFlights,
 
     // DELETE AFTER TEST
     forceFlightError,
@@ -29,6 +30,14 @@ export const useFlightsLifecycle = (initialRegion = 'bavaria') => {
     }, 3000);
   };
 
+  const doRefresh = async () => {
+    await refresh();
+
+    if (!error.value) {
+      hasLoadedFlights.value = true;
+    }
+  };
+
   const startPolling = () => {
     if (pollingStarted.value) return;
 
@@ -36,7 +45,7 @@ export const useFlightsLifecycle = (initialRegion = 'bavaria') => {
 
     interval = setInterval(() => {
       console.log('poll refresh (20s)');
-      refresh();
+      doRefresh();
     }, 20_000);
   };
 
@@ -45,16 +54,16 @@ export const useFlightsLifecycle = (initialRegion = 'bavaria') => {
 
     started.value = true;
 
-    refresh();
+    doRefresh();
     startPolling();
 
     watch(region, () => {
-      refresh();
+      doRefresh();
     });
 
     // DELETE AFTER TEST
     watch(forceFlightError, () => {
-      refresh();
+      doRefresh();
     });
 
     watch(error, value => {

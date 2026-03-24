@@ -73,9 +73,56 @@
           <p class="text-sm font-medium mb-2">Show Airbase Type</p>
 
           <div class="space-y-2">
-            <UCheckbox v-model="filters.large" label="Large Airbases" />
-            <UCheckbox v-model="filters.small" label="Small Airbases" />
-            <UCheckbox v-model="filters.helipad" label="Heliports" />
+            <UCheckbox label="Large Airbases" />
+            <UCheckbox label="Medium Airbases" />
+            <UCheckbox label="Small Airbases" />
+            <UCheckbox label="Heliports" />
+          </div>
+        </div>
+        <div>
+          <div class="space-y-2">
+            <p class="text-sm font-medium mb-2">Flight data region</p>
+
+            <div class="grid grid-cols-3 gap-2">
+              <button
+                type="button"
+                class="rounded-lg border px-3 py-2 text-sm"
+                :class="
+                  region === 'bavaria'
+                    ? 'border-primary bg-primary/10 text-primary'
+                    : 'border-border bg-surface text-text-primary'
+                "
+                @click="region = 'bavaria'"
+              >
+                Bavaria
+              </button>
+
+              <button
+                type="button"
+                class="rounded-lg border px-3 py-2 text-sm"
+                :class="
+                  region === 'germany'
+                    ? 'border-primary bg-primary/10 text-primary'
+                    : 'border-border bg-surface text-text-primary'
+                "
+                @click="region = 'germany'"
+              >
+                Germany
+              </button>
+
+              <button
+                type="button"
+                class="rounded-lg border px-3 py-2 text-sm"
+                :class="
+                  region === 'europe'
+                    ? 'border-primary bg-primary/10 text-primary'
+                    : 'border-border bg-surface text-text-primary'
+                "
+                @click="region = 'europe'"
+              >
+                Europe
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -94,15 +141,11 @@ const { hasLiveDataError, showRecoveryBanner, pending, refresh } = useFlightsSta
 // DELETE AFTER TEST
 // const forceFlightError = useState('forceFlightError', () => false);
 
+const region = ref('bavaria');
+
 const open = ref(false);
 
 const isFavorites = computed(() => route.path === '/favorites');
-
-const filters = ref({
-  large: true,
-  small: false,
-  helipad: false,
-});
 </script>
 
 <style>
