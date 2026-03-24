@@ -4,7 +4,7 @@
       @click="zoomIn"
       :disabled="!canZoomIn"
       aria-label="Zoom in"
-      class="map-zoom-btn w-12 h-12 flex items-center justify-center rounded-full bg-white/90 backdrop-blur shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition"
+      class="map-zoom-btn w-12 h-12 flex items-center justify-center rounded-lg bg-white/90 backdrop-blur shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition"
     >
       <UIcon name="i-lucide-plus" class="w-5 h-5 text-gray-700" />
     </button>
@@ -13,7 +13,7 @@
       @click="zoomOut"
       :disabled="!canZoomOut"
       aria-label="Zoom out"
-      class="map-zoom-btn w-12 h-12 flex items-center justify-center rounded-full bg-white/90 backdrop-blur shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition"
+      class="map-zoom-btn w-12 h-12 flex items-center justify-center rounded-lg bg-white/90 backdrop-blur shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition"
     >
       <UIcon name="i-lucide-minus" class="w-5 h-5 text-gray-700" />
     </button>

@@ -22,7 +22,7 @@
               color="neutral"
               variant="ghost"
               size="lg"
-              class="rounded-full"
+              class="rounded-lg"
               @click="open = false"
             />
           </div>
