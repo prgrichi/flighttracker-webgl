@@ -8,17 +8,25 @@
           <div class="mb-6 flex items-center gap-2">
             <div class="min-w-0">
               <div class="flex items-center gap-2">
-                <div class="truncate text-base font-semibold text-slate-900">
-                  {{ displayTitle }}
+                <div class="min-w-0 flex-1">
+                  <div class="truncate text-base font-semibold text-slate-900">
+                    {{ displayTitle }}
+                  </div>
+                  <span :class="statusBadgeClass">
+                    {{ onGroundLabel }}
+                  </span>
                 </div>
-                <div>ICAO: {{ flight.icao24 }}</div>
-                <span :class="statusBadgeClass">
-                  {{ onGroundLabel }}
-                </span>
               </div>
             </div>
           </div>
 
+          <div>
+            <img v-if="flight.airlineLogo" :src="flight.airlineLogo" />
+          </div>
+
+          <div>
+            {{ flight.airlineName }}
+          </div>
           <div>
             <p>{{ flight.aircraftLabel }}</p>
             <p>{{ flight.aircraftManufacturer }}</p>
@@ -48,13 +56,14 @@
           </div>
         </div>
 
-        <button
-          class="absolute right-0 top-0 flex h-9 w-9 items-center justify-center rounded-xl border border-slate-300 text-slate-600 transition hover:bg-slate-200 hover:text-slate-950"
-          type="button"
+        <UButton
+          icon="i-lucide-x"
+          color="neutral"
+          variant="ghost"
+          size="lg"
+          class="absolute right-0 top-0 flex h-9 w-9 items-center justify-center rounded-full text-slate-600 transition"
           @click.stop="emit('close')"
-        >
-          <UIcon name="i-lucide-x" class="h-4 w-4" />
-        </button>
+        />
       </div>
     </UCard>
   </div>
@@ -66,6 +75,8 @@ import { computed } from 'vue';
 const props = defineProps({
   flight: Object,
 });
+
+console.log(props.flight);
 
 const emit = defineEmits(['close']);
 
@@ -117,9 +128,11 @@ const formatVerticalRate = rate => {
 
 const formatClimbStatus = flight => {
   if (!flight) return '—';
-  if (flight.onGround) return 'Level';
+
+  if (flight.onGround) return 'On ground';
   if (flight.climbing) return 'Climbing';
   if (flight.descending) return 'Descending';
-  return 'Level';
+
+  return 'Level flight';
 };
 </script>

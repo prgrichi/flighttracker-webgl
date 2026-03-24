@@ -27,7 +27,7 @@
         <MapReset v-if="isLoaded" />
         <MapTypeSwitcher
           :model-value="currentMapType"
-          :mapTypes="MAP_TYPES"
+          :map-types="MAP_TYPES"
           @update:modelValue="setMapType"
         />
 
