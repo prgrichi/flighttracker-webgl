@@ -89,7 +89,7 @@ import { useRoute } from 'vue-router';
 
 const route = useRoute();
 
-const { hasLiveDataError, showRecoveryBanner, pending, refresh } = useFlights('bavaria');
+const { hasLiveDataError, showRecoveryBanner, pending, refresh } = useFlightsState();
 
 // DELETE AFTER TEST
 // const forceFlightError = useState('forceFlightError', () => false);

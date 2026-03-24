@@ -10,4 +10,6 @@
 
 <script setup>
 import TheHeader from './TheHeader.vue';
+
+useFlightsLifecycle('bavaria');
 </script>
