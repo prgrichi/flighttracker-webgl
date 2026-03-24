@@ -1,7 +1,7 @@
 <template>
   <div class="relative w-full h-full overflow-hidden">
     <div class="relative h-full w-full">
-      <div ref="mapContainer" class="h-full w-full"></div>
+      <div ref="mapContainer" class="map-container h-full w-full"></div>
 
       <MapLoader v-if="isLoading" />
       <MapZoomControls v-if="isLoaded && !mapError" />
@@ -69,6 +69,10 @@ const closeFLightCard = () => {
 </script>
 
 <style>
+.map-container {
+  touch-action: pan-x pan-y;
+}
+
 .slide-up-enter-active,
 .slide-up-leave-active {
   transition: all 0.25s ease;

@@ -5,10 +5,19 @@
 @import './ui.css';
 
 @layer base {
+  html,
+  body,
+  #__nuxt {
+    height: 100%;
+    overscroll-behavior: none;
+    overflow: hidden;
+  }
+
   button,
   [role='button'] {
     cursor: pointer;
   }
+
   button:disabled,
   [role='button'][aria-disabled='true'] {
     cursor: not-allowed;
