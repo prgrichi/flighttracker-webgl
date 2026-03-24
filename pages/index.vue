@@ -1,41 +1,47 @@
 <template>
   <div class="relative w-full h-full overflow-hidden">
-    <div v-if="mapError" class="flex h-full w-full items-center justify-center p-6">
-      <div class="max-w-lg rounded-2xl border border-red-200 bg-white/95 p-6 shadow-sm">
-        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-red-600">
-          Kartenansicht nicht verfuegbar
-        </p>
-        <h1 class="mt-2 text-2xl font-semibold text-neutral-900">
-          WebGL konnte nicht gestartet werden
-        </h1>
-        <p class="mt-3 text-sm leading-6 text-neutral-600">
-          Die Karte braucht WebGL. In diesem Browser oder System ist WebGL aktuell deaktiviert oder
-          blockiert.
-        </p>
-        <p class="mt-3 text-sm leading-6 text-neutral-500">
-          {{ mapError }}
-        </p>
+    <div class="relative h-full w-full">
+      <div ref="mapContainer" class="h-full w-full"></div>
+
+      <MapLoader v-if="isLoading" />
+      <MapZoomControls v-if="isLoaded && !mapError" />
+      <MapReset v-if="isLoaded && !mapError" />
+      <MapTypeSwitcher
+        v-if="!mapError"
+        :model-value="currentMapType"
+        :map-types="MAP_TYPES"
+        @update:modelValue="setMapType"
+      />
+
+      <Transition name="slide-up">
+        <FlightCard
+          v-if="selectedFlight && !mapError"
+          :flight="selectedFlight"
+          @close="closeFLightCard"
+        />
+      </Transition>
+
+      <div
+        v-if="mapError"
+        class="absolute inset-0 z-[2000] flex items-center justify-center bg-white/95 p-6"
+      >
+        <div class="max-w-lg rounded-2xl border border-red-200 bg-white/95 p-6 shadow-sm">
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-red-600">
+            Kartenansicht nicht verfuegbar
+          </p>
+          <h1 class="mt-2 text-2xl font-semibold text-neutral-900">
+            WebGL konnte nicht gestartet werden
+          </h1>
+          <p class="mt-3 text-sm leading-6 text-neutral-600">
+            Die Karte braucht WebGL. In diesem Browser oder System ist WebGL aktuell deaktiviert
+            oder blockiert.
+          </p>
+          <p class="mt-3 text-sm leading-6 text-neutral-500">
+            {{ mapError }}
+          </p>
+        </div>
       </div>
     </div>
-
-    <template v-else>
-      <div class="relative w-full h-full">
-        <div ref="mapContainer" class="h-full w-full"></div>
-
-        <MapLoader v-if="isLoading" />
-        <MapZoomControls v-if="isLoaded" />
-        <MapReset v-if="isLoaded" />
-        <MapTypeSwitcher
-          :model-value="currentMapType"
-          :map-types="MAP_TYPES"
-          @update:modelValue="setMapType"
-        />
-
-        <Transition name="slide-up">
-          <FlightCard v-if="selectedFlight" :flight="selectedFlight" @close="closeFLightCard" />
-        </Transition>
-      </div>
-    </template>
   </div>
 </template>
 
@@ -58,7 +64,6 @@ useFlightLayer(geoJson);
 
 const closeFLightCard = () => {
   if (!selectedFlight.value) return;
-
   selectedFlight.value = null;
 };
 </script>

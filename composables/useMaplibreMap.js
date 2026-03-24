@@ -8,6 +8,7 @@ export function useMaplibreMap(containerRef) {
   const { map } = useMapInstance();
   const mapError = ref('');
   const isLoaded = ref(false);
+  const hasInitialMapLoad = ref(false);
   const { MAP_TYPES, currentMapType } = useMapType();
 
   function syncLoadedState() {
@@ -23,6 +24,7 @@ export function useMaplibreMap(containerRef) {
 
     isLoaded.value = false;
     mapError.value = '';
+    hasInitialMapLoad.value = false;
 
     if (!hasWebGLSupport()) {
       mapError.value = 'WebGL wird von dieser Umgebung nicht unterstuetzt.';
@@ -50,11 +52,16 @@ export function useMaplibreMap(containerRef) {
 
       map.value.on('load', () => {
         isLoaded.value = true;
+        hasInitialMapLoad.value = true;
+        mapError.value = '';
       });
 
       map.value.on('error', event => {
         console.error('MapLibre error:', event);
-        mapError.value = getReadableMapError(event.error || event);
+
+        if (!hasInitialMapLoad.value) {
+          mapError.value = getReadableMapError(event.error || event);
+        }
       });
     } catch (error) {
       mapError.value = getReadableMapError(error);
@@ -68,6 +75,7 @@ export function useMaplibreMap(containerRef) {
 
   onUnmounted(() => {
     isLoaded.value = false;
+    hasInitialMapLoad.value = false;
 
     if (!map.value) return;
 
