@@ -27,7 +27,14 @@ async function loadFlights(bbox, useMock) {
     }
   } catch (err) {
     console.error('Flight API error:', err);
-    raw = mockData;
+    // raw = mockData;
+    throw createError({
+      statusCode: 502,
+      statusMessage: 'OpenSky request failed',
+      data: {
+        message: err?.message || 'Unknown OpenSky error',
+      },
+    });
   }
 
   const flights = (raw.states || []).map(mapOpenSkyState).filter(f => f !== null);
@@ -74,6 +81,16 @@ async function loadFlights(bbox, useMock) {
 
 export default defineEventHandler(async event => {
   const query = getQuery(event);
+
+  if (query.fail === 'true') {
+    throw createError({
+      statusCode: 500,
+      statusMessage: 'Test error',
+      data: {
+        message: 'Simulierter Fehler für Toast-Test',
+      },
+    });
+  }
 
   const region = query.region || 'bavaria';
   const useMock = process.env.NUXT_USE_MOCK === 'true';

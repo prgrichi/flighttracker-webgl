@@ -1,5 +1,18 @@
 <template>
-  <header class="w-full h-16 border-b border-border bg-surface">
+  <header class="relative w-full h-16 border-b border-border bg-surface">
+    <LiveStatusBanner
+      :show="hasLiveDataError"
+      :message="'Live-Flugdaten aktuell nicht verfügbar'"
+      :loading="hasLiveDataError && pending"
+      @retry="refresh"
+      color="error"
+    />
+
+    <LiveStatusBanner
+      :show="showRecoveryBanner"
+      message="Live-Flugdaten wieder verfügbar"
+      color="success"
+    />
     <div class="relative flex items-center justify-between h-full px-4">
       <!-- LEFT: Favorites -->
 
@@ -24,6 +37,14 @@
           Flighttracker
         </span>
       </NuxtLink>
+
+      <!-- // DELETE AFTER TEST -->
+      <!-- <button
+        class="absolute top-4 right-4 z-[2000] rounded bg-black px-3 py-2 text-white"
+        @click="forceFlightError = !forceFlightError"
+      >
+        {{ forceFlightError ? 'API Fail: ON' : 'API Fail: OFF' }}
+      </button> -->
 
       <!-- RIGHT: Settings -->
       <button
@@ -67,6 +88,11 @@ import { ref, computed } from 'vue';
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
+
+const { hasLiveDataError, showRecoveryBanner, pending, refresh } = useFlights('bavaria');
+
+// DELETE AFTER TEST
+// const forceFlightError = useState('forceFlightError', () => false);
 
 const open = ref(false);
 
