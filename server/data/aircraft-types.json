@@ -122,7 +122,7 @@
   },
   "B737": {
     "manufacturer": "Boeing",
-    "model": "737 (unspecified)",
+    "model": "737",
     "label": "Boeing 737",
     "category": "airliner"
   },
@@ -159,7 +159,7 @@
   "B744F": {
     "manufacturer": "Boeing",
     "model": "747-400F",
-    "label": "Boeing 747-400 Freighter",
+    "label": "Boeing 747-400F",
     "category": "airliner"
   },
   "B77L": {
@@ -171,7 +171,7 @@
   "B77F": {
     "manufacturer": "Boeing",
     "model": "777F",
-    "label": "Boeing 777 Freighter",
+    "label": "Boeing 777F",
     "category": "airliner"
   },
   "B744": {
@@ -317,45 +317,88 @@
   "C172": {
     "manufacturer": "Cessna",
     "model": "172 Skyhawk",
-    "label": "Cessna 172",
+    "label": "Cessna 172 Skyhawk",
     "category": "ga"
   },
   "C182": {
     "manufacturer": "Cessna",
     "model": "182 Skylane",
-    "label": "Cessna 182",
+    "label": "Cessna 182 Skylane",
     "category": "ga"
   },
   "C206": {
     "manufacturer": "Cessna",
     "model": "206 Stationair",
-    "label": "Cessna 206",
+    "label": "Cessna 206 Stationair",
     "category": "ga"
   },
   "C208": {
     "manufacturer": "Cessna",
     "model": "208 Caravan",
-    "label": "Cessna Caravan",
+    "label": "Cessna 208 Caravan",
     "category": "ga"
+  },
+
+  "P92": {
+    "manufacturer": "Tecnam",
+    "model": "P92 Echo",
+    "label": "Tecnam P92",
+    "category": "ga"
+  },
+  "P96": {
+    "manufacturer": "Tecnam",
+    "model": "P96 Golf",
+    "label": "Tecnam P96",
+    "category": "ga"
+  },
+  "P2002": {
+    "manufacturer": "Tecnam",
+    "model": "P2002 Sierra",
+    "label": "Tecnam P2002",
+    "category": "ga"
+  },
+  "P2006": {
+    "manufacturer": "Tecnam",
+    "model": "P2006T",
+    "label": "Tecnam P2006T",
+    "category": "ga"
+  },
+  "P2008": {
+    "manufacturer": "Tecnam",
+    "model": "P2008 JC",
+    "label": "Tecnam P2008",
+    "category": "ga"
+  },
+  "P2010": {
+    "manufacturer": "Tecnam",
+    "model": "P2010",
+    "label": "Tecnam P2010",
+    "category": "ga"
+  },
+  "P2012": {
+    "manufacturer": "Tecnam",
+    "model": "P2012 Traveller",
+    "label": "Tecnam P2012",
+    "category": "regional"
   },
 
   "PA28": {
     "manufacturer": "Piper",
     "model": "PA-28 Cherokee",
-    "label": "Piper PA-28",
+    "label": "Piper PA-28 Cherokee",
     "category": "ga"
   },
   "PA32": { "manufacturer": "Piper", "model": "PA-32", "label": "Piper PA-32", "category": "ga" },
   "PA34": {
     "manufacturer": "Piper",
     "model": "PA-34 Seneca",
-    "label": "Piper Seneca",
+    "label": "Piper PA-34 Seneca",
     "category": "ga"
   },
   "PA46": {
     "manufacturer": "Piper",
     "model": "PA-46 Malibu",
-    "label": "Piper Malibu",
+    "label": "Piper PA-46 Malibu",
     "category": "ga"
   },
 
@@ -371,32 +414,32 @@
   "DA40": {
     "manufacturer": "Diamond",
     "model": "DA40 Diamond Star",
-    "label": "Diamond DA40",
+    "label": "Diamond DA40 Diamond Star",
     "category": "ga"
   },
   "DA42": {
     "manufacturer": "Diamond",
     "model": "DA42 Twin Star",
-    "label": "Diamond DA42",
+    "label": "Diamond DA42 Twin Star",
     "category": "ga"
   },
   "DA50": {
     "manufacturer": "Diamond",
     "model": "DA50 RG",
-    "label": "Diamond DA50",
+    "label": "Diamond DA50 RG",
     "category": "ga"
   },
   "DA62": { "manufacturer": "Diamond", "model": "DA62", "label": "Diamond DA62", "category": "ga" },
   "EC35": {
     "manufacturer": "Airbus",
-    "model": "H135",
+    "model": "H135 (EC135)",
     "label": "Airbus H135 (EC135)",
     "category": "helicopter"
   },
   "BK17": {
     "manufacturer": "Airbus",
-    "model": "H145",
-    "label": "Airbus H145",
+    "model": "H145 (EC145)",
+    "label": "Airbus H145 (EC145)",
     "category": "helicopter"
   },
   "AS32": {
@@ -407,13 +450,13 @@
   },
   "AS50": {
     "manufacturer": "Airbus",
-    "model": "AS350 / H125",
-    "label": "Airbus H125",
+    "model": "H125 (AS350)",
+    "label": "Airbus H125 (AS350)",
     "category": "helicopter"
   },
   "EC45": {
     "manufacturer": "Airbus",
-    "model": "H145",
+    "model": "H145  (EC145)",
     "label": "Airbus H145 (EC145)",
     "category": "helicopter"
   },
@@ -447,20 +490,20 @@
 
   "H125": {
     "manufacturer": "Airbus",
-    "model": "H125",
-    "label": "Airbus H125",
+    "model": "H125 (AS350)",
+    "label": "Airbus H125 (AS350)",
     "category": "helicopter"
   },
   "H135": {
     "manufacturer": "Airbus",
-    "model": "H135",
-    "label": "Airbus H135",
+    "model": "H135 (EC135)",
+    "label": "Airbus H135 (EC135)",
     "category": "helicopter"
   },
   "H145": {
     "manufacturer": "Airbus",
-    "model": "H145",
-    "label": "Airbus H145",
+    "model": "H145 (EC145)",
+    "label": "Airbus H145 (EC145)",
     "category": "helicopter"
   },
   "H225": {
@@ -489,9 +532,15 @@
     "label": "Lockheed C-130 Hercules",
     "category": "military"
   },
+  "C5M": {
+    "manufacturer": "Lockheed",
+    "model": "C-5 Galaxy",
+    "label": "Lockheed C-5 Galaxy",
+    "category": "military"
+  },
   "A400": {
     "manufacturer": "Airbus",
-    "model": "A400M",
+    "model": "A400M Atlas",
     "label": "Airbus A400M Atlas",
     "category": "military"
   },
@@ -585,10 +634,139 @@
     "label": "Learjet 45",
     "category": "business_jet"
   },
+
+  "GLF2": {
+    "manufacturer": "Gulfstream",
+    "model": "Gulfstream II",
+    "label": "Gulfstream II",
+    "category": "business_jet"
+  },
+  "GLF3": {
+    "manufacturer": "Gulfstream",
+    "model": "Gulfstream III",
+    "label": "Gulfstream III",
+    "category": "business_jet"
+  },
+  "GLF4": {
+    "manufacturer": "Gulfstream",
+    "model": "Gulfstream IV",
+    "label": "Gulfstream IV",
+    "category": "business_jet"
+  },
   "GLF5": {
     "manufacturer": "Gulfstream",
     "model": "G550",
     "label": "Gulfstream G550",
+    "category": "business_jet"
+  },
+  "GLF6": {
+    "manufacturer": "Gulfstream",
+    "model": "Gulfstream G650",
+    "label": "Gulfstream G650",
+    "category": "business_jet"
+  },
+  "GLF7": {
+    "manufacturer": "Gulfstream",
+    "model": "Gulfstream G700",
+    "label": "Gulfstream G700",
+    "category": "business_jet"
+  },
+  "GLEX": {
+    "manufacturer": "Gulfstream",
+    "model": "Gulfstream G500/G600",
+    "label": "Gulfstream G500/G600",
+    "category": "business_jet"
+  },
+
+  "FA20": {
+    "manufacturer": "Dassault",
+    "model": "Falcon 20",
+    "label": "Dassault Falcon 20",
+    "category": "business_jet"
+  },
+  "FA50": {
+    "manufacturer": "Dassault",
+    "model": "Falcon 50",
+    "label": "Dassault Falcon 50",
+    "category": "business_jet"
+  },
+  "FA7X": {
+    "manufacturer": "Dassault",
+    "model": "Falcon 7X",
+    "label": "Dassault Falcon 7X",
+    "category": "business_jet"
+  },
+  "FA8X": {
+    "manufacturer": "Dassault",
+    "model": "Falcon 8X",
+    "label": "Dassault Falcon 8X",
+    "category": "business_jet"
+  },
+  "F900": {
+    "manufacturer": "Dassault",
+    "model": "Falcon 900",
+    "label": "Dassault Falcon 900",
+    "category": "business_jet"
+  },
+  "F2TH": {
+    "manufacturer": "Dassault",
+    "model": "Falcon 2000",
+    "label": "Dassault Falcon 2000",
+    "category": "business_jet"
+  },
+  "F6TH": {
+    "manufacturer": "Dassault",
+    "model": "Falcon 6X",
+    "label": "Dassault Falcon 6X",
+    "category": "business_jet"
+  },
+
+  "CL30": {
+    "manufacturer": "Bombardier",
+    "model": "Challenger 300",
+    "label": "Bombardier Challenger 300",
+    "category": "business_jet"
+  },
+  "CL35": {
+    "manufacturer": "Bombardier",
+    "model": "Challenger 350",
+    "label": "Bombardier Challenger 350",
+    "category": "business_jet"
+  },
+  "CL60": {
+    "manufacturer": "Bombardier",
+    "model": "Challenger 600/601/604",
+    "label": "Bombardier Challenger 600",
+    "category": "business_jet"
+  },
+  "CL65": {
+    "manufacturer": "Bombardier",
+    "model": "Challenger 650",
+    "label": "Bombardier Challenger 650",
+    "category": "business_jet"
+  },
+  "GL5T": {
+    "manufacturer": "Bombardier",
+    "model": "Global 5000",
+    "label": "Bombardier Global 5000",
+    "category": "business_jet"
+  },
+  "GL6T": {
+    "manufacturer": "Bombardier",
+    "model": "Global 6000",
+    "label": "Bombardier Global 6000",
+    "category": "business_jet"
+  },
+  "GL7T": {
+    "manufacturer": "Bombardier",
+    "model": "Global 7500",
+    "label": "Bombardier Global 7500",
+    "category": "business_jet"
+  },
+  "GL8T": {
+    "manufacturer": "Bombardier",
+    "model": "Global 8000",
+    "label": "Bombardier Global 8000",
     "category": "business_jet"
   }
 }
