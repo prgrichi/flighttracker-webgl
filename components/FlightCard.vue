@@ -1,36 +1,50 @@
 <template>
   <div class="absolute bottom-3 left-3 right-3 z-[1000]">
     <UCard
-      class="w-full rounded-3xl border border-slate-300 bg-white text-slate-950 shadow-xl backdrop-blur-sm"
+      class="w-full rounded-3xl border border-slate-300 bg-white text-slate-950 shadow-md backdrop-blur-sm"
     >
       <div class="relative">
         <div class="min-w-0">
           <div class="mb-6 flex items-center gap-2">
             <div class="min-w-0">
               <div class="flex items-center gap-2">
-                <div class="min-w-0 flex-1">
-                  <div class="truncate text-base font-semibold text-slate-900">
-                    {{ displayTitle }}
-                  </div>
-                  <span :class="statusBadgeClass">
-                    {{ onGroundLabel }}
-                  </span>
+                <div class="truncate text-base font-semibold text-slate-900">
+                  {{ displayTitle }}
                 </div>
+                <span :class="statusBadgeClass">
+                  {{ onGroundLabel }}
+                </span>
+                <span>{{ flight.icao24 }}</span>
               </div>
             </div>
           </div>
 
-          <div>
-            <img v-if="flight.airlineLogo" :src="flight.airlineLogo" />
-          </div>
+          <div
+            class="mb-4 flex items-center gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-2"
+          >
+            <div
+              v-if="flight.airlineLogo"
+              class="flex h-14 w-20 shrink-0 items-center justify-center rounded-xl bg-white ring-1 ring-slate-200"
+            >
+              <img
+                class="max-h-9 max-w-[4.5rem] object-contain"
+                :src="flight.airlineLogo"
+                :alt="flight.airlineName || 'Airline logo'"
+              />
+            </div>
 
-          <div>
-            {{ flight.airlineName }}
-          </div>
-          <div>
-            <p>{{ flight.aircraftLabel }}</p>
-            <p>{{ flight.aircraftManufacturer }}</p>
-            <p>{{ flight.aircraftModel }}</p>
+            <div class="min-w-0">
+              <p class="truncate text-sm font-semibold text-slate-900">
+                {{ flight.airlineName || 'Unknown airline' }}
+              </p>
+              <div class="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-slate-600">
+                <span>{{ flight.aircraftManufacturer || 'Unknown manufacturer' }}</span>
+                <span class="text-slate-300">•</span>
+                <span class="font-medium text-slate-700">
+                  {{ flight.aircraftModel || 'Unknown model' }}
+                </span>
+              </div>
+            </div>
           </div>
 
           <div class="flex flex-wrap gap-2.5">
@@ -45,11 +59,6 @@
             </div>
 
             <div :class="infoBoxClass()">
-              <div :class="infoLabelClass()">Climb status</div>
-              <div :class="infoValueClass()">{{ formatClimbStatus(flight) }}</div>
-            </div>
-
-            <div :class="infoBoxClass()">
               <div :class="infoLabelClass()">Vertical rate</div>
               <div :class="infoValueClass()">{{ formatVerticalRate(flight.verticalRate) }}</div>
             </div>
@@ -61,7 +70,7 @@
           color="neutral"
           variant="ghost"
           size="lg"
-          class="absolute right-0 top-0 flex h-9 w-9 items-center justify-center rounded-full text-slate-600 transition"
+          class="absolute right-0 top-0 flex h-9 w-9 items-center justify-center rounded-lg text-slate-600 transition"
           @click.stop="emit('close')"
         />
       </div>
@@ -75,8 +84,6 @@ import { computed } from 'vue';
 const props = defineProps({
   flight: Object,
 });
-
-console.log(props.flight);
 
 const emit = defineEmits(['close']);
 
@@ -98,7 +105,7 @@ const statusBadgeClass = computed(() => {
 });
 
 const infoBoxClass = () => {
-  return 'min-w-0 basis-[calc(50%-0.3125rem)] rounded-2xl border border-slate-200 bg-slate-100 px-3 py-2.5';
+  return 'min-w-0 basis-[calc(50%-0.3125rem)] rounded-2xl border border-slate-200 bg-slate-100 p-2';
 };
 
 const infoLabelClass = () => {
@@ -124,15 +131,5 @@ const formatVerticalRate = rate => {
 
   const rounded = Math.round(rate * 10) / 10;
   return `${rounded > 0 ? '+' : ''}${rounded} m/s`;
-};
-
-const formatClimbStatus = flight => {
-  if (!flight) return '—';
-
-  if (flight.onGround) return 'On ground';
-  if (flight.climbing) return 'Climbing';
-  if (flight.descending) return 'Descending';
-
-  return 'Level flight';
 };
 </script>

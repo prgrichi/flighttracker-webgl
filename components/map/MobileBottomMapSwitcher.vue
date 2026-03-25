@@ -8,7 +8,7 @@
           label="Map"
           size="sm"
           color="neutral"
-          variant="soft"
+          variant="outline"
         />
       </div>
 

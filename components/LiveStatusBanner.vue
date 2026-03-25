@@ -23,8 +23,8 @@
           :disabled="loading"
           @click="$emit('retry')"
         >
-          <UIcon
-            :name="loading ? 'i-lucide-loader-2' : 'i-lucide-rotate-cw'"
+          <component
+            :is="loading ? LoaderIcon : RotateCwIcon"
             :class="['w-3 h-3', loading ? 'animate-spin' : '']"
           />
 
@@ -36,6 +36,9 @@
 </template>
 
 <script setup>
+import LoaderIcon from '@/components/icons/IconLoader.vue';
+import RotateCwIcon from '@/components/icons/IconRotateCw.vue';
+
 defineProps({
   show: Boolean,
   message: String,

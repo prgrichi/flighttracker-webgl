@@ -85,42 +85,18 @@
 
             <div class="grid grid-cols-3 gap-2">
               <button
+                v-for="item in REGIONS"
+                :key="item.id"
                 type="button"
-                class="rounded-lg border px-3 py-2 text-sm"
-                :class="
-                  region === 'bavaria'
+                @click="handleRegionClick(item)"
+                :class="[
+                  'rounded-lg border px-3 py-2 text-sm',
+                  item.id === region
                     ? 'border-primary bg-primary/10 text-primary'
-                    : 'border-border bg-surface text-text-primary'
-                "
-                @click="region = 'bavaria'"
+                    : 'border-border bg-surface text-text-primary',
+                ]"
               >
-                Bavaria
-              </button>
-
-              <button
-                type="button"
-                class="rounded-lg border px-3 py-2 text-sm"
-                :class="
-                  region === 'germany'
-                    ? 'border-primary bg-primary/10 text-primary'
-                    : 'border-border bg-surface text-text-primary'
-                "
-                @click="region = 'germany'"
-              >
-                Germany
-              </button>
-
-              <button
-                type="button"
-                class="rounded-lg border px-3 py-2 text-sm"
-                :class="
-                  region === 'europe'
-                    ? 'border-primary bg-primary/10 text-primary'
-                    : 'border-border bg-surface text-text-primary'
-                "
-                @click="region = 'europe'"
-              >
-                Europe
+                {{ item.label }}
               </button>
             </div>
           </div>
@@ -133,15 +109,20 @@
 <script setup>
 import { ref, computed } from 'vue';
 import { useRoute } from 'vue-router';
+import { REGIONS } from '@/constants/regions';
 
 const route = useRoute();
 
-const { hasLiveDataError, showRecoveryBanner, pending, refresh } = useFlightsState();
+const { hasLiveDataError, showRecoveryBanner, region, pending, refresh } = useFlightsState();
 
 // DELETE AFTER TEST
 // const forceFlightError = useState('forceFlightError', () => false);
 
-const region = ref('bavaria');
+const handleRegionClick = item => {
+  if (region.value === item.id) return;
+  region.value = item.id;
+  // await refresh();
+};
 
 const open = ref(false);
 

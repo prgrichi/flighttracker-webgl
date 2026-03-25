@@ -7,7 +7,7 @@
       <MapZoomControls v-if="isLoaded && !mapError" />
       <MapReset v-if="isLoaded && !mapError" />
       <MapTypeSwitcher
-        v-if="!mapError"
+        v-if="isLoaded && !mapError"
         :model-value="currentMapType"
         :map-types="MAP_TYPES"
         @update:modelValue="setMapType"

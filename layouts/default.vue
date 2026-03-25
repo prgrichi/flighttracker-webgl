@@ -13,5 +13,5 @@
 import TheHeader from './TheHeader.vue';
 import TheFooter from './TheFooter.vue';
 
-useFlightsLifecycle('bavaria');
+useFlightsLifecycle();
 </script>

@@ -18,16 +18,6 @@
 <script setup>
 const { flightsCount, hasLoadedFlights, region } = useFlightsState();
 
-// const hasLoadedFlights = ref(false);
-
-// watch(
-//   () => !pending.value,
-//   done => {
-//     if (done) hasLoadedFlights.value = true;
-//   },
-//   { once: true }
-// );
-
 const formattedRegion = computed(() => {
   const r = region.value;
   if (!r) return '';
