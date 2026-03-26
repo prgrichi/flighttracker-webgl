@@ -49,7 +49,9 @@
 </template>
 
 <script setup>
-import { useMapType } from '../composables/useMapType';
+import { useAirportLayer } from '@/composables/airports/useAirportLayer';
+import { useAirportsData } from '@/composables/airports/useAirportsData';
+import { useAirportsState } from '@/composables/airports/useAirportsState';
 
 definePageMeta({
   keepalive: true,
@@ -57,11 +59,24 @@ definePageMeta({
 
 const mapContainer = ref(null);
 const { isLoaded, mapError } = useMaplibreMap(mapContainer);
-const { geoJson } = useFlightsState();
+const { geoJson, region } = useFlightsState();
 const { selectedFlight } = useSelectedFlight();
 const { currentMapType, MAP_TYPES, setMapType } = useMapType();
 
 const isLoading = computed(() => !isLoaded.value && !mapError.value);
+
+const { airportsGeoJson } = useAirportsData(region);
+
+const { showLargeAirports, showMediumAirports, showSmallAirports, showHeliports } =
+  useAirportsState();
+
+useAirportLayer({
+  geoJson: airportsGeoJson,
+  showLargeAirports,
+  showMediumAirports,
+  showSmallAirports,
+  showHeliports,
+});
 
 useFlightLayer(geoJson);
 

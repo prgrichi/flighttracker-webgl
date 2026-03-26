@@ -70,13 +70,13 @@
     <template #body>
       <div class="space-y-6">
         <div>
-          <p class="text-sm font-medium mb-2">Show Airbase Type</p>
+          <p class="text-sm font-medium mb-2">Show Airport Type</p>
 
           <div class="space-y-2">
-            <UCheckbox label="Large Airbases" />
-            <UCheckbox label="Medium Airbases" />
-            <UCheckbox label="Small Airbases" />
-            <UCheckbox label="Heliports" />
+            <UCheckbox v-model="showLargeAirports" label="Large airports" />
+            <UCheckbox v-model="showMediumAirports" label="Medium airports" />
+            <UCheckbox v-model="showSmallAirports" label="Small airports" />
+            <UCheckbox v-model="showHeliports" label="Heliports" />
           </div>
         </div>
         <div>
@@ -110,10 +110,14 @@
 import { ref, computed } from 'vue';
 import { useRoute } from 'vue-router';
 import { REGIONS } from '@/constants/regions';
+import { useAirportsState } from '@/composables/airports/useAirportsState';
 
 const route = useRoute();
 
 const { hasLiveDataError, showRecoveryBanner, region, pending, refresh } = useFlightsState();
+
+const { showLargeAirports, showMediumAirports, showSmallAirports, showHeliports } =
+  useAirportsState();
 
 // DELETE AFTER TEST
 // const forceFlightError = useState('forceFlightError', () => false);
