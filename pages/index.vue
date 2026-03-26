@@ -49,6 +49,9 @@
 </template>
 
 <script setup>
+import { useMaplibreMap } from '@/composables/map/useMaplibreMap';
+import { useMapType } from '@/composables/map/useMapType';
+
 import { useAirportLayer } from '@/composables/airports/useAirportLayer';
 import { useAirportsData } from '@/composables/airports/useAirportsData';
 import { useAirportsState } from '@/composables/airports/useAirportsState';

@@ -1,8 +1,8 @@
 import { nextTick, onActivated, onMounted, onUnmounted, ref } from 'vue';
 import maplibregl from 'maplibre-gl';
-import { getReadableMapError, hasWebGLSupport } from '../utils/maplibreSupport';
-import { useMapInstance } from './useMapInstance';
-import { useMapType } from './useMapType';
+import { getReadableMapError, hasWebGLSupport } from '../../utils/maplibreSupport';
+import { useMapInstance } from '@/composables/map/useMapInstance';
+import { useMapType } from '@/composables/map/useMapType';
 
 export function useMaplibreMap(containerRef) {
   const { map } = useMapInstance();

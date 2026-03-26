@@ -1,6 +1,6 @@
 // composables/airports/useAirportLayer.js
 import { watch } from 'vue';
-import { useMapInstance } from '../useMapInstance';
+import { useMapInstance } from '@/composables/map/useMapInstance';
 
 const AIRPORTS_SOURCE_ID = 'airports';
 const AIRPORT_MARKER_IMAGE_ID = 'airport-marker';

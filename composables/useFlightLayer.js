@@ -1,8 +1,7 @@
 // composables/useFlightLayer.js
 
 import { watch } from 'vue';
-import { useMapInstance } from './useMapInstance';
-import { useSelectedFlight } from './useSelectedFlight';
+import { useMapInstance } from '@/composables/map/useMapInstance';
 
 const FLIGHTS_SOURCE_ID = 'flights';
 const FLIGHTS_LAYER_ID = 'flights-layer';

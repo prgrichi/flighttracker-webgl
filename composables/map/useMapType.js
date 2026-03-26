@@ -1,4 +1,4 @@
-import { useMapInstance } from './useMapInstance';
+import { useMapInstance } from '@/composables/map/useMapInstance';
 
 export const useMapType = () => {
   const config = useRuntimeConfig();

@@ -1,7 +1,7 @@
 // composables/useMapControls.js
 
 import { computed } from 'vue';
-import { useMapInstance } from './useMapInstance';
+import { useMapInstance } from '@/composables/map/useMapInstance';
 
 export function useMapControls() {
   const { map } = useMapInstance();

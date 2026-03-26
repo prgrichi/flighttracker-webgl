@@ -21,6 +21,8 @@
 </template>
 
 <script setup>
+import { useMapControls } from '@/composables/map/useMapControls';
+
 const { zoomIn, zoomOut, canZoomIn, canZoomOut } = useMapControls();
 </script>
 

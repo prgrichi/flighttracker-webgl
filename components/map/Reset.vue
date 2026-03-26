@@ -9,5 +9,7 @@
 </template>
 
 <script setup>
+import { useMapControls } from '@/composables/map/useMapControls';
+
 const { resetView } = useMapControls();
 </script>
