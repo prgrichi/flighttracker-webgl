@@ -2,6 +2,8 @@ import { mapOpenSkyState } from '../utils/mapOpenSky.js';
 import { BBOX } from '../utils/bbox';
 import mockData from '../data/mockFlights.json';
 import { fetchOpenSkyToken } from '@/server/utils/openSky.js';
+import { scanCallsigns } from '@/server/utils/logger/scanCallsigns.js';
+import { logToFile } from '@/server/utils/logger/logToFile.js';
 
 let regionCache = {};
 let openskyCalls = 0;
@@ -24,6 +26,14 @@ async function loadFlights(bbox, useMock) {
           Authorization: `Bearer ${token}`,
         },
       });
+
+      // logger/scanner for unknown callsigns
+      const hits = scanCallsigns(raw.states);
+      if (hits.length) {
+        console.log('🚁 interesting callsigns found:', hits);
+
+        await logToFile(hits);
+      }
     }
   } catch (err) {
     console.error('Flight API error:', err);
