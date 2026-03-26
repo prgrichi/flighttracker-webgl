@@ -1,4 +1,4 @@
-export function scanCallsigns(states = []) {
+export function scanCallSigns(states = []) {
   return states
     .map(state => {
       const icao24 = state[0] || null;

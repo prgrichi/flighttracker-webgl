@@ -2,7 +2,7 @@ import { mapOpenSkyState } from '../utils/mapOpenSky.js';
 import { BBOX } from '../utils/bbox';
 import mockData from '../data/mockFlights.json';
 import { fetchOpenSkyToken } from '@/server/utils/openSky.js';
-import { scanCallsigns } from '@/server/utils/logger/scanCallsigns.js';
+import { scanCallSigns } from '@/server/utils/logger/scanCallSigns.js';
 import { logToFile } from '@/server/utils/logger/logToFile.js';
 
 let regionCache = {};
@@ -28,7 +28,7 @@ async function loadFlights(bbox, useMock) {
       });
 
       // logger/scanner for unknown callsigns
-      const hits = scanCallsigns(raw.states);
+      const hits = scanCallSigns(raw.states);
       if (hits.length) {
         console.log('🚁 interesting callsigns found:', hits);
 
