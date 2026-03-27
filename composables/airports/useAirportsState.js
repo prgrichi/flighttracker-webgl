@@ -1,7 +1,7 @@
 // composables/useAirportsState.js
 export function useAirportsState() {
   const showLargeAirports = useState('airports:showLarge', () => true);
-  const showMediumAirports = useState('airports:showMedium', () => true);
+  const showMediumAirports = useState('airports:showMedium', () => false);
   const showSmallAirports = useState('airports:showSmall', () => false);
   const showHeliports = useState('airports:showHeliports', () => false);
 
