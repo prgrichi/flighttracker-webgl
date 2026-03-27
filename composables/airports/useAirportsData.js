@@ -1,5 +1,5 @@
 // composables/useAirportsData.js
-import { computed, watch, ref } from 'vue';
+import { computed, watch, ref, onMounted } from 'vue';
 
 const REGION_FILE_MAP = {
   bavaria: '/data/airports-bavaria.geojson',
@@ -22,6 +22,10 @@ export function useAirportsData(region) {
   });
 
   async function loadAirports() {
+    if (import.meta.server) {
+      return;
+    }
+
     if (!currentFile.value) {
       airportsGeoJson.value = EMPTY_COLLECTION;
       return;
@@ -42,7 +46,17 @@ export function useAirportsData(region) {
     }
   }
 
-  watch(currentFile, loadAirports, { immediate: true });
+  watch(
+    currentFile,
+    () => {
+      loadAirports();
+    },
+    { immediate: false }
+  );
+
+  onMounted(() => {
+    loadAirports();
+  });
 
   return {
     airportsGeoJson,

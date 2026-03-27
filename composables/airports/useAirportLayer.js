@@ -87,9 +87,9 @@ export function useAirportLayer(options) {
 
     await ensureAirportImages(mapInstance);
 
-    addAirportLayer(mapInstance, AIRPORT_LAYER_IDS.large, 'large_airport', 0, 0.3);
-    addAirportLayer(mapInstance, AIRPORT_LAYER_IDS.medium, 'medium_airport', 6, 0.32);
-    addAirportLayer(mapInstance, AIRPORT_LAYER_IDS.small, 'small_airport', 8, 0.34);
+    addAirportLayer(mapInstance, AIRPORT_LAYER_IDS.large, 'large_airport', 5, 0.3);
+    addAirportLayer(mapInstance, AIRPORT_LAYER_IDS.medium, 'medium_airport', 7, 0.32);
+    addAirportLayer(mapInstance, AIRPORT_LAYER_IDS.small, 'small_airport', 9, 0.34);
     addAirportLayer(mapInstance, AIRPORT_LAYER_IDS.heliport, 'heliport', 10, 0.28);
 
     updateAirportVisibility(mapInstance);
