@@ -36,8 +36,28 @@ async function loadFlights(bbox, useMock) {
       }
     }
   } catch (err) {
-    console.error('Flight API error:', err);
-    // raw = mockData;
+    const statusCode = err?.response?.status || err?.statusCode || err?.status;
+    const statusMessage = err?.response?.statusText || err?.statusMessage;
+    const responseData = err?.response?._data;
+
+    console.error('Flight API error:', {
+      statusCode,
+      statusMessage,
+      message: err?.message,
+      data: responseData,
+    });
+
+    if (statusCode === 429) {
+      throw createError({
+        statusCode: 429,
+        statusMessage: 'OpenSky rate limit reached',
+        data: {
+          code: 'OPENSKY_RATE_LIMIT',
+          message: 'OpenSky rate limit reached. Try again later.',
+        },
+      });
+    }
+
     throw createError({
       statusCode: 502,
       statusMessage: 'OpenSky request failed',

@@ -2,7 +2,7 @@
   <header class="relative w-full h-16 border-b border-border bg-surface">
     <LiveStatusBanner
       :show="hasLiveDataError"
-      :message="'Live-Flugdaten aktuell nicht verfügbar'"
+      :message="hasLiveDataErrorMsg"
       :loading="hasLiveDataError && pending"
       @retry="refresh"
       color="error"
@@ -33,8 +33,10 @@
       <!-- CENTER -->
       <NuxtLink to="/" class="absolute left-1/2 -translate-x-1/2 flex items-center gap-2">
         <UIcon name="i-lucide-plane" class="w-4 h-4 opacity-70" />
-        <span class="text-sm font-medium tracking-wider uppercase text-muted-foreground">
-          Flighttracker
+        <span
+          class="text-shadow-mauve-50 font-medium tracking-wider uppercase text-muted-foreground"
+        >
+          Flight Tracker
         </span>
       </NuxtLink>
 
@@ -114,7 +116,8 @@ import { useAirportsState } from '@/composables/airports/useAirportsState';
 
 const route = useRoute();
 
-const { hasLiveDataError, showRecoveryBanner, region, pending, refresh } = useFlightsState();
+const { hasLiveDataError, hasLiveDataErrorMsg, showRecoveryBanner, region, pending, refresh } =
+  useFlightsState();
 
 const { showLargeAirports, showMediumAirports, showSmallAirports, showHeliports } =
   useAirportsState();
