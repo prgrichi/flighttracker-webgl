@@ -1,6 +1,7 @@
 <template>
   <button
-    @click="resetView"
+    @click="flyToUserLocation"
+    :disabled="loading"
     aria-label="Reset map view"
     class="absolute top-4 right-4 z-[1100] w-12 h-12 flex items-center justify-center rounded-lg bg-white/90 backdrop-blur shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition"
   >
@@ -11,5 +12,6 @@
 <script setup>
 import { useMapControls } from '@/composables/map/useMapControls';
 
-const { resetView } = useMapControls();
+const { flyToUserLocation } = useMapControls();
+const { loading } = useGeolocation();
 </script>

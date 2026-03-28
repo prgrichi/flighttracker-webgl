@@ -11,14 +11,16 @@
       >
         <div class="flex items-center gap-2">
           <UIcon
-            :name="color === 'success' ? 'i-lucide-check-circle-2' : 'i-lucide-wifi-off'"
+            :name="
+              icon || (color === 'success' ? 'i-lucide-check-circle-2' : 'i-lucide-alert-circle')
+            "
             class="w-4 h-4 opacity-90"
           />
           <span class="font-medium">{{ message }}</span>
         </div>
 
         <button
-          v-if="color === 'error'"
+          v-if="showRetry"
           class="flex items-center gap-1 text-xs underline opacity-80 hover:opacity-100 disabled:opacity-50"
           :disabled="loading"
           @click="$emit('retry')"
@@ -41,8 +43,22 @@ import RotateCwIcon from '@/components/icons/IconRotateCw.vue';
 
 defineProps({
   show: Boolean,
-  message: String,
-  loading: Boolean,
+  message: {
+    type: String,
+    default: 'Error',
+  },
+  loading: {
+    type: Boolean,
+    default: false,
+  },
+  showRetry: {
+    type: Boolean,
+    default: false,
+  },
+  icon: {
+    type: String,
+    default: null,
+  },
   color: {
     type: String,
     default: 'error',

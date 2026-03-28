@@ -1,14 +1,15 @@
 // composables/useMapControls.js
 
-import { computed } from 'vue';
+import { computed, watch } from 'vue';
 import { useMapInstance } from '@/composables/map/useMapInstance';
 
 export function useMapControls() {
   const { map } = useMapInstance();
+  const { position, loading, getLocation } = useGeolocation();
 
   const isReady = computed(() => !!map.value);
 
-  function zoomIn() {
+  const zoomIn = () => {
     if (!map.value) return;
 
     const current = map.value.getZoom();
@@ -18,9 +19,9 @@ export function useMapControls() {
       zoom: Math.min(current + 1, max),
       duration: 300,
     });
-  }
+  };
 
-  function zoomOut() {
+  const zoomOut = () => {
     if (!map.value) return;
 
     const current = map.value.getZoom();
@@ -30,17 +31,13 @@ export function useMapControls() {
       zoom: Math.max(current - 1, min),
       duration: 300,
     });
-  }
+  };
 
-  function resetView() {
-    if (!map.value) return;
+  const flyToUserLocation = () => {
+    if (!map.value || loading.value) return;
 
-    map.value.easeTo({
-      center: [12.4053, 48.0006],
-      zoom: 8,
-      duration: 500,
-    });
-  }
+    getLocation();
+  };
 
   const canZoomIn = computed(() => {
     if (!map.value) return false;
@@ -52,10 +49,22 @@ export function useMapControls() {
     return map.value.getZoom() > map.value.getMinZoom();
   });
 
+  watch(position, value => {
+    if (!map.value || !value) return;
+
+    console.log('Neue Position:', value);
+
+    map.value.easeTo({
+      center: [value.lon, value.lat],
+      zoom: 9,
+      duration: 500,
+    });
+  });
+
   return {
     zoomIn,
     zoomOut,
-    resetView,
+    flyToUserLocation,
     canZoomIn,
     canZoomOut,
     isReady,
