@@ -1,27 +1,9 @@
 <template>
   <header class="relative w-full h-16 border-b border-border bg-surface">
-    <LiveStatusBanner
-      :show="hasLiveDataError"
-      :message="hasLiveDataErrorMsg"
-      :loading="hasLiveDataError && pending"
-      :showRetry="true"
-      icon="i-lucide-wifi-off"
-      color="error"
-      @retry="refresh"
-    />
+    <MapLoader v-if="isMapLoading" />
 
-    <LiveStatusBanner
-      :show="showLocationError"
-      :message="locationErrorMsg"
-      icon="i-lucide-map-pin-off"
-      color="error"
-    />
+    <TheHeaderStatusBanners />
 
-    <LiveStatusBanner
-      :show="showRecoveryBanner"
-      message="Live-Flugdaten wieder verfügbar"
-      color="success"
-    />
     <div class="relative flex items-center justify-between h-full px-4">
       <!-- LEFT: Favorites -->
 
@@ -48,14 +30,6 @@
           Flight Tracker
         </span>
       </NuxtLink>
-
-      <!-- // DELETE AFTER TEST -->
-      <!-- <button
-        class="absolute top-4 right-4 z-[2000] rounded bg-black px-3 py-2 text-white"
-        @click="forceFlightError = !forceFlightError"
-      >
-        {{ forceFlightError ? 'API Fail: ON' : 'API Fail: OFF' }}
-      </button> -->
 
       <!-- RIGHT: Settings -->
       <button
@@ -122,25 +96,22 @@ import { ref, computed } from 'vue';
 import { useRoute } from 'vue-router';
 import { REGIONS } from '@/constants/regions';
 import { useAirportsState } from '@/composables/airports/useAirportsState';
+import { useMapState } from '@/composables/map/useMapState';
+import TheHeaderStatusBanners from '@/layouts/components/TheHeaderStatusBanners.vue';
 
 const route = useRoute();
+const { isMapLoaded } = useMapState();
 
-const { error: locationErrorMsg } = useGeolocation();
-const showLocationError = computed(() => !!locationErrorMsg.value);
+const isMapLoading = computed(() => !isMapLoaded.value);
 
-const { hasLiveDataError, hasLiveDataErrorMsg, showRecoveryBanner, region, pending, refresh } =
-  useFlightsState();
+const { region } = useFlightsState();
 
 const { showLargeAirports, showMediumAirports, showSmallAirports, showHeliports } =
   useAirportsState();
 
-// DELETE AFTER TEST
-// const forceFlightError = useState('forceFlightError', () => false);
-
 const handleRegionClick = item => {
   if (region.value === item.id) return;
   region.value = item.id;
-  // await refresh();
 };
 
 const open = ref(false);

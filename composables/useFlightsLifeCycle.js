@@ -7,9 +7,6 @@ export const useFlightsLifecycle = (initialRegion = 'bavaria') => {
     hasLiveDataError,
     hadFlightError,
     hasLoadedFlights,
-
-    // DELETE AFTER TEST
-    forceFlightError,
   } = useFlightsState(initialRegion);
 
   const started = useState('flights:lifecycleStarted', () => false);
@@ -72,11 +69,6 @@ export const useFlightsLifecycle = (initialRegion = 'bavaria') => {
 
     watch(hasLiveDataError, () => {
       stopPolling();
-    });
-
-    // DELETE AFTER TEST
-    watch(forceFlightError, () => {
-      doRefresh();
     });
 
     watch(error, value => {

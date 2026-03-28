@@ -3,16 +3,17 @@ import maplibregl from 'maplibre-gl';
 import { getReadableMapError, hasWebGLSupport } from '../../utils/maplibreSupport';
 import { useMapInstance } from '@/composables/map/useMapInstance';
 import { useMapType } from '@/composables/map/useMapType';
+import { useMapState } from '@/composables/map/useMapState';
 
 export function useMaplibreMap(containerRef) {
   const { map } = useMapInstance();
-  const mapError = ref('');
-  const isLoaded = ref(false);
+  const { isMapLoaded, mapError } = useMapState();
+
   const hasInitialMapLoad = ref(false);
   const { MAP_TYPES, currentMapType } = useMapType();
 
   function syncLoadedState() {
-    isLoaded.value = !!map.value?.loaded();
+    isMapLoaded.value = !!map.value?.loaded();
   }
 
   onMounted(() => {
@@ -22,7 +23,7 @@ export function useMaplibreMap(containerRef) {
       return;
     }
 
-    isLoaded.value = false;
+    isMapLoaded.value = false;
     mapError.value = '';
     hasInitialMapLoad.value = false;
 
@@ -51,7 +52,7 @@ export function useMaplibreMap(containerRef) {
       });
 
       map.value.on('load', () => {
-        isLoaded.value = true;
+        isMapLoaded.value = true;
         hasInitialMapLoad.value = true;
         mapError.value = '';
       });
@@ -74,7 +75,7 @@ export function useMaplibreMap(containerRef) {
   });
 
   onUnmounted(() => {
-    isLoaded.value = false;
+    isMapLoaded.value = false;
     hasInitialMapLoad.value = false;
 
     if (!map.value) return;
@@ -85,7 +86,7 @@ export function useMaplibreMap(containerRef) {
 
   return {
     map,
+    isLoaded: isMapLoaded,
     mapError,
-    isLoaded,
   };
 }

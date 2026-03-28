@@ -4,13 +4,8 @@ export const useFlightsState = (initialRegion = 'bavaria') => {
   const showRecoveryBanner = useState('flights:recovery', () => false);
   const hasLoadedFlights = useState('flights:hasLoadedFlights', () => false);
 
-  // DELETE AFTER TEST
-  const forceFlightError = useState('forceFlightError', () => false);
-
   const query = computed(() => ({
     region: region.value,
-    // DELETE AFTER TEST
-    fail: forceFlightError.value ? 'true' : undefined,
   }));
 
   const { data, pending, error, refresh } = useFetch('/api/flights', {
@@ -64,8 +59,5 @@ export const useFlightsState = (initialRegion = 'bavaria') => {
     hadFlightError,
     flightsCount,
     hasLoadedFlights,
-
-    // DELETE AFTER TEST
-    forceFlightError,
   };
 };

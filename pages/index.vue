@@ -3,7 +3,7 @@
     <div class="relative h-full w-full">
       <div ref="mapContainer" class="map-container h-full w-full"></div>
 
-      <MapLoader v-if="isLoading" />
+      <MapPlaceholder v-if="isLoading" />
       <MapZoomControls v-if="isLoaded && !mapError" />
       <MapReset v-if="isLoaded && !mapError" />
       <MapTypeSwitcher
@@ -17,7 +17,7 @@
         <FlightCard
           v-if="selectedFlight && !mapError"
           :flight="selectedFlight"
-          @close="closeFLightCard"
+          @close="closeFlightCard"
         />
       </Transition>
       <Transition name="slide-up">
@@ -91,7 +91,7 @@ useAirportLayer({
 
 useFlightLayer(geoJson);
 
-const closeFLightCard = () => {
+const closeFlightCard = () => {
   if (!selectedFlight.value) return;
   selectedFlight.value = null;
 };
