@@ -20,6 +20,13 @@
           @close="closeFLightCard"
         />
       </Transition>
+      <Transition name="slide-up">
+        <LocationCard
+          v-if="selectedLocation && !mapError"
+          :location="selectedLocation"
+          @close="closeLocationCard"
+        />
+      </Transition>
 
       <div
         v-if="mapError"
@@ -64,6 +71,7 @@ const mapContainer = ref(null);
 const { isLoaded, mapError } = useMaplibreMap(mapContainer);
 const { geoJson, region } = useFlightsState();
 const { selectedFlight } = useSelectedFlight();
+const { selectedLocation } = useSelectedLocation();
 const { currentMapType, MAP_TYPES, setMapType } = useMapType();
 
 const isLoading = computed(() => !isLoaded.value && !mapError.value);
@@ -86,6 +94,10 @@ useFlightLayer(geoJson);
 const closeFLightCard = () => {
   if (!selectedFlight.value) return;
   selectedFlight.value = null;
+};
+const closeLocationCard = () => {
+  if (!selectedLocation.value) return;
+  selectedLocation.value = null;
 };
 </script>
 

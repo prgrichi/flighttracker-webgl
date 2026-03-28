@@ -19,9 +19,19 @@ const EMPTY_COLLECTION = {
 
 export function useAirportLayer(options) {
   const { map } = useMapInstance();
+  const { selectedLocation } = useSelectedLocation();
 
   const { geoJson, showLargeAirports, showMediumAirports, showSmallAirports, showHeliports } =
     options;
+
+  function getActiveAirportLayerIds() {
+    return [
+      showLargeAirports.value && AIRPORT_LAYER_IDS.large,
+      showMediumAirports.value && AIRPORT_LAYER_IDS.medium,
+      showSmallAirports.value && AIRPORT_LAYER_IDS.small,
+      showHeliports.value && AIRPORT_LAYER_IDS.heliport,
+    ].filter(Boolean);
+  }
 
   function updateAirportData(mapInstance, data) {
     if (!mapInstance || !data) return;
@@ -106,6 +116,27 @@ export function useAirportLayer(options) {
         updateAirportVisibility(mapInstance);
       };
 
+      const handleMapClick = event => {
+        const activeLayers = getActiveAirportLayerIds();
+
+        if (!activeLayers.length) {
+          selectedLocation.value = null;
+          return;
+        }
+
+        const features = mapInstance.queryRenderedFeatures(event.point, {
+          layers: activeLayers,
+        });
+
+        if (features.length) {
+          selectedLocation.value = features[0];
+          console.log(features[0]);
+          return;
+        }
+
+        selectedLocation.value = null;
+      };
+
       if (mapInstance.loaded()) {
         initializeLayer();
       } else {
@@ -113,9 +144,11 @@ export function useAirportLayer(options) {
       }
 
       mapInstance.on('style.load', initializeLayer);
+      mapInstance.on('click', handleMapClick);
 
       onCleanup(() => {
         mapInstance.off('style.load', initializeLayer);
+        mapInstance.off('click', handleMapClick);
       });
     },
     { immediate: true }

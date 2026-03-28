@@ -74,9 +74,9 @@
     title="Settings"
     :close="{
       color: 'neutral',
-      variant: 'soft',
+      variant: 'ghost',
     }"
-    description="Custom settings ... WIP"
+    description=""
   >
     <template #body>
       <div class="space-y-6">
@@ -84,10 +84,10 @@
           <p class="text-sm font-medium mb-2">Show Airport Type</p>
 
           <div class="space-y-2">
-            <UCheckbox v-model="showLargeAirports" label="Large airports" />
-            <UCheckbox v-model="showMediumAirports" label="Medium airports" />
-            <UCheckbox v-model="showSmallAirports" label="Small airports" />
-            <UCheckbox v-model="showHeliports" label="Heliports" />
+            <UCheckbox v-model="showLargeAirports" size="lg" label="Large airports" />
+            <UCheckbox v-model="showMediumAirports" size="lg" label="Medium airports" />
+            <UCheckbox v-model="showSmallAirports" size="lg" label="Small airports" />
+            <UCheckbox v-model="showHeliports" size="lg" label="Heliports" />
           </div>
         </div>
         <div>
