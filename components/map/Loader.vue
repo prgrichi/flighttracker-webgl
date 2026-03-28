@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute top-0 left-0 h-4 w-full">
+  <div class="absolute bottom-0 left-0 w-full">
     <UProgress animation="swing" size="sm" />
   </div>
 </template>
