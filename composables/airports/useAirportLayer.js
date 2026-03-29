@@ -20,6 +20,7 @@ const EMPTY_COLLECTION = {
 export function useAirportLayer(options) {
   const { map } = useMapInstance();
   const { selectedLocation } = useSelectedLocation();
+  const { selectedFlight } = useSelectedFlight();
 
   const { geoJson, showLargeAirports, showMediumAirports, showSmallAirports, showHeliports } =
     options;
@@ -97,10 +98,10 @@ export function useAirportLayer(options) {
 
     await ensureAirportImages(mapInstance);
 
-    addAirportLayer(mapInstance, AIRPORT_LAYER_IDS.large, 'large_airport', 5, 0.3);
-    addAirportLayer(mapInstance, AIRPORT_LAYER_IDS.medium, 'medium_airport', 7, 0.32);
-    addAirportLayer(mapInstance, AIRPORT_LAYER_IDS.small, 'small_airport', 9, 0.34);
-    addAirportLayer(mapInstance, AIRPORT_LAYER_IDS.heliport, 'heliport', 10, 0.28);
+    addAirportLayer(mapInstance, AIRPORT_LAYER_IDS.large, 'large_airport', 5, 0.2);
+    addAirportLayer(mapInstance, AIRPORT_LAYER_IDS.medium, 'medium_airport', 7, 0.2);
+    addAirportLayer(mapInstance, AIRPORT_LAYER_IDS.small, 'small_airport', 9, 0.2);
+    addAirportLayer(mapInstance, AIRPORT_LAYER_IDS.heliport, 'heliport', 10, 0.2);
 
     updateAirportVisibility(mapInstance);
   }
@@ -119,6 +120,14 @@ export function useAirportLayer(options) {
       const handleMapClick = event => {
         const activeLayers = getActiveAirportLayerIds();
 
+        const flightFeatures = mapInstance.queryRenderedFeatures(event.point, {
+          layers: ['flights-layer'],
+        });
+
+        if (flightFeatures.length) {
+          return;
+        }
+
         if (!activeLayers.length) {
           selectedLocation.value = null;
           return;
@@ -129,8 +138,8 @@ export function useAirportLayer(options) {
         });
 
         if (features.length) {
+          selectedFlight.value = null;
           selectedLocation.value = features[0];
-          console.log(features[0]);
           return;
         }
 

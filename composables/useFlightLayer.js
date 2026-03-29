@@ -2,6 +2,7 @@
 
 import { watch } from 'vue';
 import { useMapInstance } from '@/composables/map/useMapInstance';
+import { useSelectedLocation } from './useSelectedLocation';
 
 const FLIGHTS_SOURCE_ID = 'flights';
 const FLIGHTS_LAYER_ID = 'flights-layer';
@@ -15,6 +16,7 @@ const EMPTY_COLLECTION = {
 export function useFlightLayer(geoJson) {
   const { map } = useMapInstance();
   const { selectedFlight } = useSelectedFlight();
+  const { selectedLocation } = useSelectedLocation();
 
   function updateFlightData(mapInstance, data) {
     if (!data || !mapInstance) return;
@@ -35,7 +37,7 @@ export function useFlightLayer(geoJson) {
 
     if (!mapInstance.hasImage(PLANE_IMAGE_ID)) {
       try {
-        const image = await mapInstance.loadImage('/plane-v2.png');
+        const image = await mapInstance.loadImage('/plane-v6.png');
         mapInstance.addImage(PLANE_IMAGE_ID, image.data);
       } catch (error) {
         console.error('Image load failed:', error);
@@ -70,13 +72,15 @@ export function useFlightLayer(geoJson) {
           layers: [FLIGHTS_LAYER_ID],
         });
 
-        if (features.length) {
-          selectedFlight.value = features[0].properties;
+        if (!features.length) {
+          selectedFlight.value = null;
           return;
         }
 
-        if (!features.length) {
-          selectedFlight.value = null;
+        if (features.length) {
+          selectedLocation.value = null;
+          selectedFlight.value = features[0].properties;
+          return;
         }
       };
 
