@@ -56,6 +56,16 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon/favicon-16x16.png?v=2' },
         { rel: 'apple-touch-icon', href: '/favicon/apple-touch-icon.png?v=2' },
         { rel: 'manifest', href: '/favicon/site.webmanifest?v=2' },
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        {
+          rel: 'preconnect',
+          href: 'https://fonts.gstatic.com',
+          crossorigin: '',
+        },
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap',
+        },
       ],
     },
   },
@@ -64,5 +74,10 @@ export default defineNuxtConfig({
 
   modules: ['@pinia/nuxt', '@nuxt/ui', '@vite-pwa/nuxt'],
 
-  css: ['~/assets/css/main.css', 'maplibre-gl/dist/maplibre-gl.css'],
+  css: [
+    '~/assets/css/main.css',
+    'maplibre-gl/dist/maplibre-gl.css',
+    '@fontsource/open-sans/300.css',
+    '@fontsource/open-sans/600.css',
+  ],
 });

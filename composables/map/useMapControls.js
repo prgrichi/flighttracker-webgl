@@ -56,7 +56,7 @@ export function useMapControls() {
 
     map.value.easeTo({
       center: [value.lon, value.lat],
-      zoom: 9,
+      zoom: 8,
       duration: 500,
     });
   });

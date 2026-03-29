@@ -23,7 +23,7 @@
 
       <!-- CENTER -->
       <NuxtLink to="/" class="absolute left-1/2 -translate-x-1/2 flex items-center gap-2">
-        <UIcon name="i-lucide-plane" class="w-4 h-4 opacity-70" />
+        <!-- <UIcon name="i-lucide-plane" class="w-4 h-4 opacity-70" /> -->
         <span
           class="text-shadow-mauve-50 font-medium tracking-wider uppercase text-muted-foreground"
         >

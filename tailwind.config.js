@@ -38,6 +38,9 @@ export default {
         app: '1200px',
         content: '800px',
       },
+      fontFamily: {
+        sans: ['"Open Sans"', 'sans-serif'],
+      },
     },
   },
   plugins: [],

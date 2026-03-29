@@ -14,6 +14,7 @@
     "format": "prettier --write \"{app,pages,components,layouts,plugins,assets,composables}/**/*.{js,ts,vue,css,json,md}\""
   },
   "dependencies": {
+    "@fontsource/open-sans": "^5.2.7",
     "@iconify-json/lucide": "^1.2.98",
     "@nuxt/ui": "^4.5.1",
     "@pinia/nuxt": "^0.11.3",

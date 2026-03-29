@@ -4,7 +4,7 @@
       <div ref="mapContainer" class="map-container h-full w-full"></div>
 
       <MapPlaceholder v-if="isLoading" />
-      <MapZoomControls v-if="isLoaded && !mapError" />
+      <!-- <MapZoomControls v-if="isLoaded && !mapError" /> -->
       <MapReset v-if="isLoaded && !mapError" />
       <MapTypeSwitcher
         v-if="isLoaded && !mapError"
