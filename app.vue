@@ -21,7 +21,8 @@
             <img
               width="150"
               height="150"
-              src="/logo-inverted-transparent.png"
+              fetchpriority="high"
+              src="/logo-inverted-transparent-256.png"
               alt="Flighttracker Logo"
               class="mb-[10px] w-[150px] h-auto object-contain"
             />

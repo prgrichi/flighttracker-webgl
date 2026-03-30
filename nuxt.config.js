@@ -71,6 +71,12 @@ export default defineNuxtConfig({
           type: 'font/woff2',
           crossorigin: '',
         },
+
+        {
+          rel: 'preload',
+          href: '/logo-inverted-transparent.png',
+          as: 'image',
+        },
       ],
     },
   },
