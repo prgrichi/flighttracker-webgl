@@ -74,7 +74,7 @@ export default defineNuxtConfig({
 
         {
           rel: 'preload',
-          href: '/logo-inverted-transparent.png',
+          href: '/logo-inverted-transparent-256.png',
           as: 'image',
         },
       ],
