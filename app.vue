@@ -19,6 +19,8 @@
 
           <div class="relative z-10 flex flex-col items-center justify-center text-center">
             <img
+              width="150"
+              height="150"
               src="/logo-inverted-transparent.png"
               alt="Flighttracker Logo"
               class="mb-[10px] w-[150px] h-auto object-contain"
