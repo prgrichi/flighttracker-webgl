@@ -9,7 +9,8 @@
           <!-- Map -->
           <div class="absolute inset-0 flex items-center justify-center overflow-hidden">
             <img
-              src="/europe-map.svg"
+              fetchpriority="high"
+              src="/europe-map.webp"
               class="w-full h-full object-cover max-w-none opacity-50 blur-[2px]"
             />
           </div>

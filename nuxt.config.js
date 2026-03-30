@@ -77,6 +77,7 @@ export default defineNuxtConfig({
           href: '/logo-inverted-transparent-256.png',
           as: 'image',
         },
+        { rel: 'preload', href: '/europe-map.webp', as: 'image' },
       ],
     },
   },
