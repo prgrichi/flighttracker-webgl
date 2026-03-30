@@ -1,5 +1,5 @@
 <template>
-  <header class="relative w-full h-16 border-b border-border bg-surface">
+  <header class="relative w-full h-16 border-b border-border bg-surface shrink-0">
     <MapLoader v-if="isMapLoading" />
 
     <TheHeaderStatusBanners />

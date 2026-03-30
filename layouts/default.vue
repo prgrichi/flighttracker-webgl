@@ -1,10 +1,11 @@
 <template>
-  <div class="app-shell flex flex-col h-screen">
+  <div class="app-shell flex h-dvh flex-col">
     <TheHeader />
 
-    <main class="flex-1 relative" id="main-content" tabindex="-1">
+    <main id="main-content" tabindex="-1" class="relative min-h-0 flex-1">
       <slot></slot>
     </main>
+
     <TheFooter />
   </div>
 </template>

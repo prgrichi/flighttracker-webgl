@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="relative w-full h-16 border-t border-border bg-surface backdrop-blur supports-[backdrop-filter]:bg-surface/80"
+    class="relative w-full h-16 border-t border-border shrink-0 bg-surface backdrop-blur supports-[backdrop-filter]:bg-surface/80"
   >
     <div class="flex h-full items-center justify-between px-4 text-sm">
       <div class="flex items-center gap-2">
