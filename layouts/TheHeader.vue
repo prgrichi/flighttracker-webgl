@@ -1,7 +1,5 @@
 <template>
-  <header
-    class="relative w-full min-h-16 shrink-0 border-b border-border bg-surface pt-[env(safe-area-inset-top)]"
-  >
+  <header class="relative w-full h-16 border-b border-border bg-surface">
     <MapLoader v-if="isMapLoading" />
 
     <TheHeaderStatusBanners />
@@ -27,7 +25,7 @@
       <NuxtLink to="/" class="absolute left-1/2 -translate-x-1/2 flex items-center gap-2">
         <!-- <UIcon name="i-lucide-plane" class="w-4 h-4 opacity-70" /> -->
         <span
-          class="text-shadow-mauve-50 font-sans font-semibold tracking-wider uppercase text-muted-foreground"
+          class="text-shadow-mauve-50 font-sans font-semiboldtracking-wider uppercase text-muted-foreground"
         >
           Flight Tracker
         </span>
