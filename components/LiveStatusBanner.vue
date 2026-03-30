@@ -10,12 +10,7 @@
         ]"
       >
         <div class="flex items-center gap-2">
-          <UIcon
-            :name="
-              icon || (color === 'success' ? 'i-lucide-check-circle-2' : 'i-lucide-alert-circle')
-            "
-            class="w-4 h-4 opacity-90"
-          />
+          <component :is="resolvedIcon" class="w-4 h-4 opacity-90" />
           <span class="font-medium">{{ message }}</span>
         </div>
 
@@ -40,8 +35,10 @@
 <script setup>
 import LoaderIcon from '@/components/icons/IconLoader.vue';
 import RotateCwIcon from '@/components/icons/IconRotateCw.vue';
+import CircleSuccessCheckIcon from '@/components/icons/IconCircleSuccessCheck.vue';
+import CircleAlertCheckIcon from '@/components/icons/IconCircleAlertCheck.vue';
 
-defineProps({
+const props = defineProps({
   show: Boolean,
   message: {
     type: String,
@@ -56,13 +53,23 @@ defineProps({
     default: false,
   },
   icon: {
-    type: String,
+    type: [String, Object],
     default: null,
   },
   color: {
     type: String,
     default: 'error',
   },
+});
+
+const resolvedIcon = computed(() => {
+  if (props.icon) return props.icon;
+
+  if (props.color === 'success') {
+    return CircleSuccessCheckIcon;
+  }
+
+  return CircleAlertCheckIcon;
 });
 
 defineEmits(['retry']);

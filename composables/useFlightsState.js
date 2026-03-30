@@ -24,6 +24,14 @@ export const useFlightsState = (initialRegion = 'bavaria') => {
     return data.value?.features?.length || 0;
   });
 
+  const refreshFlights = async () => {
+    if (import.meta.client && !navigator.onLine) {
+      return;
+    }
+
+    await refresh();
+  };
+
   const hasLiveDataError = computed(() => !!error.value);
   const hasLiveDataErrorMsg = computed(() => {
     const err = error.value;
@@ -52,7 +60,7 @@ export const useFlightsState = (initialRegion = 'bavaria') => {
     pending,
     error,
     region,
-    refresh,
+    refresh: refreshFlights,
     hasLiveDataError,
     hasLiveDataErrorMsg,
     showRecoveryBanner,

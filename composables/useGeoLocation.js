@@ -3,10 +3,12 @@ export function useGeolocation() {
   const position = useState('geo:position', () => null);
   const error = useState('geo:error', () => null);
   const loading = useState('geo:loading', () => false);
+  const showErrorBanner = useState('geo:showErrorBanner', () => false);
 
   const getLocation = () => {
     loading.value = true;
     error.value = null;
+    showErrorBanner.value = false;
 
     if (!navigator.geolocation) {
       error.value = 'Geolocation wird vom Browser nicht unterstützt.';
@@ -34,7 +36,12 @@ export function useGeolocation() {
           error.value = 'Unbekannter Fehler bei der Standortabfrage.';
         }
 
+        showErrorBanner.value = true;
         loading.value = false;
+
+        setTimeout(() => {
+          showErrorBanner.value = false;
+        }, 4000);
       },
       {
         enableHighAccuracy: true,
@@ -47,6 +54,7 @@ export function useGeolocation() {
   return {
     position,
     error,
+    showErrorBanner,
     loading,
     getLocation,
   };
