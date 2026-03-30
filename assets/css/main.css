@@ -4,6 +4,30 @@
 
 @import './ui.css';
 
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/fonts/open-sans/open-sans-v44-latin-300.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/fonts/open-sans/open-sans-v44-latin-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/fonts/open-sans/open-sans-v44-latin-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: block;
+}
+
 @layer base {
   html,
   body,

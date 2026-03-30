@@ -39,7 +39,7 @@ export default {
         content: '800px',
       },
       fontFamily: {
-        sans: ['"Open Sans"', 'sans-serif'],
+        sans: ['"Open Sans"', 'ui-sans-serif', 'system-ui'],
       },
     },
   },

@@ -27,8 +27,8 @@
             <h1
               class="m-0 flex flex-col uppercase text-black text-[2rem] font-bold tracking-[0.15rem] leading-[2.3rem] animate-[splash-text-in_150ms_ease-out]"
             >
-              <span class="font-sans font-semibold tracking-[0.5rem]"> Flight </span>
-              <span class="font-sans font-light tracking-[0.18rem] ml-[-0.2rem]"> Tracker </span>
+              <span class="font-semibold tracking-[0.5rem]"> Flight </span>
+              <span class="font-light tracking-[0.18rem] ml-[-0.2rem]"> Tracker </span>
             </h1>
           </div>
         </div>
@@ -42,24 +42,10 @@
 </template>
 
 <script setup>
-import { computed, ref, onMounted } from 'vue';
-
-// const splashCookie = useCookie('ft_splash_seen', {
-//   default: () => null,
-//   maxAge: 60 * 60 * 6, // 6 Stunden
-//   sameSite: 'lax',
-// });
-
-// const shouldShowSplash = computed(() => splashCookie.value !== '1');
-// const visibleSplash = ref(shouldShowSplash.value);
-
-// if (shouldShowSplash.value) {
-//   splashCookie.value = '1';
-// }
+import { ref, onMounted } from 'vue';
 
 const visibleSplash = ref(true);
 onMounted(() => {
-  // if (!shouldShowSplash.value) return;
   setTimeout(() => {
     visibleSplash.value = false;
   }, 800);

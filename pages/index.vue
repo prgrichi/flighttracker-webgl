@@ -3,7 +3,6 @@
     <div class="relative h-full w-full">
       <div ref="mapContainer" class="map-container h-full w-full"></div>
 
-      <MapPlaceholder v-if="isLoading" />
       <!-- <MapZoomControls v-if="isLoaded && !mapError" /> -->
       <MapReset v-if="isLoaded && !mapError" />
       <MapTypeSwitcher
@@ -48,9 +47,6 @@
           </p>
         </div>
       </div>
-
-      <!-- Gesture Guard -->
-      <!-- <div class="gesture-guard-bottom"></div> -->
     </div>
   </div>
 </template>
@@ -105,15 +101,6 @@ const closeLocationCard = () => {
 .map-container {
   touch-action: pan-x pan-y;
 }
-
-/* .gesture-guard-bottom {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 50px;
-  z-index: 10;
-} */
 
 .slide-up-enter-active,
 .slide-up-leave-active {

@@ -17,7 +17,7 @@
 
         <!-- Real Content -->
         <template v-else>
-          <span class="font-semibold text-text-primary">{{ formattedRegion }}</span>
+          <span class="text-text-primary">{{ formattedRegion }}</span>
           <span class="text-text-secondary">•</span>
           <span class="text-text-secondary">{{ flightsCount }} flights</span>
         </template>
