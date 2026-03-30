@@ -15,7 +15,7 @@
           </div>
 
           <!-- Overlay -->
-          <div class="absolute inset-0 bg-white/78"></div>
+          <div class="absolute inset-0 bg-white/75"></div>
 
           <div class="relative z-10 flex flex-col items-center justify-center text-center">
             <img
@@ -25,7 +25,7 @@
             />
 
             <h1
-              class="m-0 flex flex-col uppercase text-black text-[2rem] font-bold tracking-[0.15rem] leading-[2.3rem]"
+              class="m-0 flex flex-col uppercase text-black text-[2rem] font-bold tracking-[0.15rem] leading-[2.3rem] animate-[splash-text-in_150ms_ease-out]"
             >
               <span class="font-sans font-semibold tracking-[0.5rem]"> Flight </span>
               <span class="font-sans font-light tracking-[0.18rem] ml-[-0.2rem]"> Tracker </span>
@@ -75,5 +75,13 @@ onMounted(() => {
 .splash-fade-enter-from,
 .splash-fade-leave-to {
   opacity: 0;
+}
+@keyframes splash-text-in {
+  from {
+    opacity: 0.96;
+  }
+  to {
+    opacity: 1;
+  }
 }
 </style>
