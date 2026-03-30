@@ -3,9 +3,7 @@
     <div class="relative h-full w-full">
       <div ref="mapContainer" class="map-container h-full w-full"></div>
 
-      <!-- <MapZoomControls v-if="isLoaded && !mapError" /> -->
-      <MapReset v-if="isLoaded && !mapError" />
-      <MapTypeSwitcher
+      <MapNavBar
         v-if="isLoaded && !mapError"
         :model-value="currentMapType"
         :map-types="MAP_TYPES"

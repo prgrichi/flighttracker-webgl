@@ -44,7 +44,7 @@ export default defineNuxtConfig({
       },
       title: 'Flighttracker',
       meta: [
-        { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1.0, viewport-fit=cover' },
         {
           name: 'description',
           content: 'Visualisierung von Flugdaten mit Nuxt, Vue, MapLibre und WebGL.',
