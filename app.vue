@@ -39,7 +39,7 @@
       </transition>
 
       <NuxtLayout>
-        <NuxtPage />
+        <NuxtPage :keepalive="{ include: ['index'] }" />
       </NuxtLayout>
     </div>
   </UApp>

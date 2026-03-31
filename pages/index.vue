@@ -57,10 +57,6 @@ import { useAirportLayer } from '@/composables/airports/useAirportLayer';
 import { useAirportsData } from '@/composables/airports/useAirportsData';
 import { useAirportsState } from '@/composables/airports/useAirportsState';
 
-definePageMeta({
-  keepalive: true,
-});
-
 const mapContainer = ref(null);
 const { isLoaded, mapError } = useMaplibreMap(mapContainer);
 const { decoratedGeoJson, region } = useFlightsState();

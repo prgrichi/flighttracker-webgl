@@ -1,13 +1,13 @@
-import { nextTick, onActivated, onMounted, onUnmounted, ref } from 'vue';
+import { nextTick, onActivated, onDeactivated, onMounted, onUnmounted, ref } from 'vue';
 import maplibregl from 'maplibre-gl';
-import { getReadableMapError, hasWebGLSupport } from '../../utils/maplibreSupport';
+import { getReadableMapError, hasWebGLSupport } from '@/utils/maplibreSupport';
 import { useMapInstance } from '@/composables/map/useMapInstance';
 import { useMapType } from '@/composables/map/useMapType';
 import { useMapState } from '@/composables/map/useMapState';
 
 export function useMaplibreMap(containerRef) {
   const { map } = useMapInstance();
-  const { isMapLoaded, mapError } = useMapState();
+  const { isMapMounted, isMapLoaded, mapError } = useMapState();
 
   const hasInitialMapLoad = ref(false);
   const { MAP_TYPES, currentMapType } = useMapType();
@@ -17,6 +17,8 @@ export function useMaplibreMap(containerRef) {
   }
 
   onMounted(() => {
+    isMapMounted.value = true;
+
     if (map.value) {
       syncLoadedState();
       nextTick(() => map.value?.resize());
@@ -70,11 +72,17 @@ export function useMaplibreMap(containerRef) {
   });
 
   onActivated(() => {
+    isMapMounted.value = true;
     syncLoadedState();
     nextTick(() => map.value?.resize());
   });
 
+  onDeactivated(() => {
+    isMapMounted.value = false;
+  });
+
   onUnmounted(() => {
+    isMapMounted.value = false;
     isMapLoaded.value = false;
     hasInitialMapLoad.value = false;
 
