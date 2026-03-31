@@ -63,12 +63,10 @@ definePageMeta({
 
 const mapContainer = ref(null);
 const { isLoaded, mapError } = useMaplibreMap(mapContainer);
-const { geoJson, region } = useFlightsState();
+const { decoratedGeoJson, region } = useFlightsState();
 const { selectedFlight } = useSelectedFlight();
 const { selectedLocation } = useSelectedLocation();
 const { currentMapType, MAP_TYPES, setMapType } = useMapType();
-
-const isLoading = computed(() => !isLoaded.value && !mapError.value);
 
 const { airportsGeoJson } = useAirportsData(region);
 
@@ -83,7 +81,7 @@ useAirportLayer({
   showHeliports,
 });
 
-useFlightLayer(geoJson);
+useFlightLayer(decoratedGeoJson);
 
 const closeFlightCard = () => {
   if (!selectedFlight.value) return;

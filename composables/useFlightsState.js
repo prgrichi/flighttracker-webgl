@@ -3,6 +3,7 @@ export const useFlightsState = (initialRegion = 'bavaria') => {
   const hadFlightError = useState('flights:hadError', () => false);
   const showRecoveryBanner = useState('flights:recovery', () => false);
   const hasLoadedFlights = useState('flights:hasLoadedFlights', () => false);
+  const { selectedFlight } = useSelectedFlight();
 
   const query = computed(() => ({
     region: region.value,
@@ -18,6 +19,28 @@ export const useFlightsState = (initialRegion = 'bavaria') => {
     server: false,
     immediate: false,
     watch: false,
+  });
+
+  const decoratedGeoJson = computed(() => {
+    const sourceData = data.value;
+
+    if (!sourceData) {
+      return {
+        type: 'FeatureCollection',
+        features: [],
+      };
+    }
+
+    return {
+      ...sourceData,
+      features: sourceData.features.map(feature => ({
+        ...feature,
+        properties: {
+          ...feature.properties,
+          isSelected: feature.properties.icao24 === selectedFlight.value?.icao24,
+        },
+      })),
+    };
   });
 
   const flightsCount = computed(() => {
@@ -57,6 +80,7 @@ export const useFlightsState = (initialRegion = 'bavaria') => {
 
   return {
     geoJson: data,
+    decoratedGeoJson,
     pending,
     error,
     region,

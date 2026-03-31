@@ -73,6 +73,7 @@ async function loadFlights(bbox, useMock) {
     type: 'FeatureCollection',
     features: flights.map(f => ({
       type: 'Feature',
+      id: f.icao24,
       geometry: {
         type: 'Point',
         coordinates: [f.lon, f.lat],

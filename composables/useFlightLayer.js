@@ -2,11 +2,13 @@
 
 import { watch } from 'vue';
 import { useMapInstance } from '@/composables/map/useMapInstance';
+import { useSelectedFlight } from './useSelectedFlight';
 import { useSelectedLocation } from './useSelectedLocation';
 
 const FLIGHTS_SOURCE_ID = 'flights';
 const FLIGHTS_LAYER_ID = 'flights-layer';
 const PLANE_IMAGE_ID = 'plane';
+const PLANE_IMAGE_ACTIVE_ID = 'plane-active';
 
 const EMPTY_COLLECTION = {
   type: 'FeatureCollection',
@@ -37,10 +39,19 @@ export function useFlightLayer(geoJson) {
 
     if (!mapInstance.hasImage(PLANE_IMAGE_ID)) {
       try {
-        const image = await mapInstance.loadImage('/plane-v6.png');
+        const image = await mapInstance.loadImage('/plane.png');
         mapInstance.addImage(PLANE_IMAGE_ID, image.data);
       } catch (error) {
         console.error('Image load failed:', error);
+      }
+    }
+
+    if (!mapInstance.hasImage(PLANE_IMAGE_ACTIVE_ID)) {
+      try {
+        const image = await mapInstance.loadImage('/plane-active.png');
+        mapInstance.addImage(PLANE_IMAGE_ACTIVE_ID, image.data);
+      } catch (error) {
+        console.error('Active image load failed:', error);
       }
     }
 
@@ -50,9 +61,13 @@ export function useFlightLayer(geoJson) {
         type: 'symbol',
         source: FLIGHTS_SOURCE_ID,
         layout: {
-          'icon-image': PLANE_IMAGE_ID,
-          // 'icon-size': ['interpolate', ['linear'], ['zoom'], 5, 0.15, 8, 0.25, 12, 0.4],
-          'icon-size': ['interpolate', ['linear'], ['zoom'], 5, 0.5],
+          'icon-image': [
+            'case',
+            ['boolean', ['get', 'isSelected'], false],
+            PLANE_IMAGE_ACTIVE_ID,
+            PLANE_IMAGE_ID,
+          ],
+          'icon-size': ['case', ['boolean', ['get', 'isSelected'], false], 0.65, 0.5],
           'icon-rotate': ['get', 'heading'],
           'icon-rotation-alignment': 'map',
           'icon-allow-overlap': true,
@@ -77,11 +92,8 @@ export function useFlightLayer(geoJson) {
           return;
         }
 
-        if (features.length) {
-          selectedLocation.value = null;
-          selectedFlight.value = features[0].properties;
-          return;
-        }
+        selectedLocation.value = null;
+        selectedFlight.value = features[0].properties;
       };
 
       const initializeLayer = async () => {
