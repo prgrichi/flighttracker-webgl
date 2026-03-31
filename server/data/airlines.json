@@ -129,7 +129,7 @@
   "CMN": "Air China Cargo",
 
   "DHK": "DHL International Aviation",
-  "DLA": "Delta Connection",
+  "DLA": "Air Dolomiti",
   "DWI": "AeroMéxico Connect",
 
   "EAL": "Eastern Air Lines",
@@ -170,6 +170,7 @@
   "RLU": "RusLine",
   "ROT": "Tarom",
 
+  "SXS": "SunExpress",
   "SVA": "Saudia",
   "SCX": "SunExpress",
   "SDM": "Rossiya Airlines",
@@ -210,5 +211,60 @@
   "PAL": "Philippine Airlines",
   "SAA": "South African Airways",
   "TAM": "TAM Linhas Aéreas",
-  "WJA": "WestJet"
+  "WJA": "WestJet",
+
+  "EZS": "easyJet Switzerland",
+  "LXJ": "Flexjet",
+  "GLJ": "Global Jet Luxembourg",
+
+  "BAH": "Gulf Air",
+
+  "CSH": "Shanghai Airlines",
+  "DKH": "Juneyao Air",
+
+  "JAI": "Jet Airways",
+  "VTI": "Vistara",
+
+  "AKK": "AirAsia",
+  "AXM": "AirAsia Malaysia",
+
+  "CRK": "Hong Kong Airlines",
+  "HKE": "Hong Kong Express",
+
+  "QJE": "QantasLink",
+
+  "SKW": "SkyWest Airlines",
+  "MXY": "Breeze Airways",
+
+  "PLAY": "PLAY Airlines",
+
+  "DAT": "DAT Danish Air Transport",
+  "RCK": "Faroe Atlantic Airways",
+
+  "ENT": "Enter Air",
+  "TVP": "Thai VietJet Air",
+
+  "VJT": "VistaJet",
+  "FJO": "Flexjet Europe",
+
+  "VOI": "Volaris",
+  "VIV": "Viva Aerobus",
+
+  "DLR": "Air Dolomiti Regional",
+  "OAW": "Helvetic Airways",
+  "MXP": "Malta Air",
+
+  "RPA": "Republic Airways",
+  "ASH": "Mesa Airlines",
+  "JIA": "PSA Airlines",
+
+  "QXE": "Horizon Air",
+
+  "ENI": "Air Nostrum",
+
+  "IBK": "Norra (Nordic Regional Airlines)",
+
+  "POW": "Portugalia (TAP Express)",
+
+  "SWU": "SkyWest Europe"
 }

@@ -768,5 +768,953 @@
     "model": "Global 8000",
     "label": "Bombardier Global 8000",
     "category": "business_jet"
+  },
+  "N262": {
+    "manufacturer": "Aerospatiale",
+    "model": "Nord 262",
+    "label": "Aerospatiale Nord 262",
+    "category": "regional"
+  },
+  "S210": {
+    "manufacturer": "Aerospatiale",
+    "model": "Se.210 Caravelle",
+    "label": "Aerospatiale Caravelle",
+    "category": "airliner"
+  },
+  "S601": {
+    "manufacturer": "Aerospatiale",
+    "model": "SN.601 Corvette",
+    "label": "Aerospatiale SN.601 Corvette",
+    "category": "business_jet"
+  },
+  "AT45": {
+    "manufacturer": "ATR",
+    "model": "42-500",
+    "label": "ATR 42-500",
+    "category": "turboprop"
+  },
+  "AT46": {
+    "manufacturer": "ATR",
+    "model": "42-600",
+    "label": "ATR 42-600",
+    "category": "turboprop"
+  },
+  "A30B": {
+    "manufacturer": "Airbus",
+    "model": "A300",
+    "label": "Airbus A300",
+    "category": "airliner"
+  },
+  "A3ST": {
+    "manufacturer": "Airbus",
+    "model": "A300-600ST Super Transporter / Beluga",
+    "label": "Airbus A300-600ST Super Transporter / Beluga",
+    "category": "airliner"
+  },
+  "A19N": {
+    "manufacturer": "Airbus",
+    "model": "A319neo",
+    "label": "Airbus A319neo",
+    "category": "airliner"
+  },
+  "A337": {
+    "manufacturer": "Airbus",
+    "model": "A330-700 Beluga XL",
+    "label": "Airbus A330-700 Beluga XL",
+    "category": "airliner"
+  },
+  "A338": {
+    "manufacturer": "Airbus",
+    "model": "A330-800neo",
+    "label": "Airbus A330-800neo",
+    "category": "airliner"
+  },
+  "A342": {
+    "manufacturer": "Airbus",
+    "model": "A340-200",
+    "label": "Airbus A340-200",
+    "category": "airliner"
+  },
+  "A345": {
+    "manufacturer": "Airbus",
+    "model": "A340-500",
+    "label": "Airbus A340-500",
+    "category": "airliner"
+  },
+  "AN12": {
+    "manufacturer": "Antonov",
+    "model": "AN-12",
+    "label": "Antonov AN-12",
+    "category": "cargo"
+  },
+  "A140": {
+    "manufacturer": "Antonov",
+    "model": "AN-140",
+    "label": "Antonov AN-140",
+    "category": "regional"
+  },
+  "A148": {
+    "manufacturer": "Antonov",
+    "model": "An-148",
+    "label": "Antonov An-148",
+    "category": "regional"
+  },
+  "A158": {
+    "manufacturer": "Antonov",
+    "model": "An-158",
+    "label": "Antonov An-158",
+    "category": "regional"
+  },
+  "AN24": {
+    "manufacturer": "Antonov",
+    "model": "AN-24",
+    "label": "Antonov AN-24",
+    "category": "turboprop"
+  },
+  "AN26": {
+    "manufacturer": "Antonov",
+    "model": "AN-26",
+    "label": "Antonov AN-26",
+    "category": "cargo"
+  },
+  "AN28": {
+    "manufacturer": "Antonov",
+    "model": "AN-28",
+    "label": "Antonov AN-28",
+    "category": "turboprop"
+  },
+  "AN30": {
+    "manufacturer": "Antonov",
+    "model": "AN-30",
+    "label": "Antonov AN-30",
+    "category": "ga"
+  },
+  "AN32": {
+    "manufacturer": "Antonov",
+    "model": "AN-32",
+    "label": "Antonov AN-32",
+    "category": "cargo"
+  },
+  "AN72": {
+    "manufacturer": "Antonov",
+    "model": "AN-72",
+    "label": "Antonov AN-72",
+    "category": "cargo"
+  },
+  "RJ1H": {
+    "manufacturer": "Avro",
+    "model": "Avro RJ100",
+    "label": "Avro RJ100",
+    "category": "regional"
+  },
+  "RJ70": {
+    "manufacturer": "Avro",
+    "model": "Avro RJ70",
+    "label": "Avro RJ70",
+    "category": "regional"
+  },
+  "RJ85": {
+    "manufacturer": "Avro",
+    "model": "Avro RJ85",
+    "label": "Avro RJ85",
+    "category": "regional"
+  },
+  "B461": {
+    "manufacturer": "BAe",
+    "model": "BAe 146-100",
+    "label": "BAe 146-100",
+    "category": "regional"
+  },
+  "B462": {
+    "manufacturer": "BAe",
+    "model": "BAe 146-200",
+    "label": "BAe 146-200",
+    "category": "regional"
+  },
+  "B463": {
+    "manufacturer": "BAe",
+    "model": "BAe 146-300",
+    "label": "BAe 146-300",
+    "category": "regional"
+  },
+  "B190": {
+    "manufacturer": "Beechcraft",
+    "model": "1900",
+    "label": "Beechcraft 1900",
+    "category": "turboprop"
+  },
+  "BE58": {
+    "manufacturer": "Beechcraft",
+    "model": "Baron",
+    "label": "Beechcraft Baron",
+    "category": "ga"
+  },
+  "BE55": {
+    "manufacturer": "Beechcraft",
+    "model": "Baron / 55 Baron",
+    "label": "Beechcraft Baron / 55 Baron",
+    "category": "ga"
+  },
+  "B212": {
+    "manufacturer": "Bell",
+    "model": "212",
+    "label": "Bell 212",
+    "category": "helicopter"
+  },
+  "B703": {
+    "manufacturer": "Boeing",
+    "model": "Boeing 707",
+    "label": "Boeing 707",
+    "category": "airliner"
+  },
+  "B712": {
+    "manufacturer": "Boeing",
+    "model": "Boeing 717",
+    "label": "Boeing 717",
+    "category": "airliner"
+  },
+  "B720": {
+    "manufacturer": "Boeing",
+    "model": "Boeing 720B",
+    "label": "Boeing 720B",
+    "category": "airliner"
+  },
+  "B721": {
+    "manufacturer": "Boeing",
+    "model": "Boeing 727-100",
+    "label": "Boeing 727-100",
+    "category": "airliner"
+  },
+  "B722": {
+    "manufacturer": "Boeing",
+    "model": "Boeing 727-200",
+    "label": "Boeing 727-200",
+    "category": "airliner"
+  },
+  "B37M": {
+    "manufacturer": "Boeing",
+    "model": "Boeing 737 MAX 7",
+    "label": "Boeing 737 MAX 7",
+    "category": "airliner"
+  },
+  "B732": {
+    "manufacturer": "Boeing",
+    "model": "Boeing 737-200",
+    "label": "Boeing 737-200",
+    "category": "airliner"
+  },
+  "BLCF": {
+    "manufacturer": "Boeing",
+    "model": "Boeing 747 LCF Dreamlifter",
+    "label": "Boeing 747 LCF Dreamlifter",
+    "category": "cargo"
+  },
+  "B741": {
+    "manufacturer": "Boeing",
+    "model": "Boeing 747-100",
+    "label": "Boeing 747-100",
+    "category": "airliner"
+  },
+  "B742": {
+    "manufacturer": "Boeing",
+    "model": "Boeing 747-200",
+    "label": "Boeing 747-200",
+    "category": "airliner"
+  },
+  "B743": {
+    "manufacturer": "Boeing",
+    "model": "Boeing 747-300",
+    "label": "Boeing 747-300",
+    "category": "airliner"
+  },
+  "B74D": {
+    "manufacturer": "Boeing",
+    "model": "Boeing 747-400D",
+    "label": "Boeing 747-400D",
+    "category": "airliner"
+  },
+  "B74S": {
+    "manufacturer": "Boeing",
+    "model": "Boeing 747SP",
+    "label": "Boeing 747SP",
+    "category": "airliner"
+  },
+  "B74R": {
+    "manufacturer": "Boeing",
+    "model": "Boeing 747SR",
+    "label": "Boeing 747SR",
+    "category": "airliner"
+  },
+  "B753": {
+    "manufacturer": "Boeing",
+    "model": "Boeing 757-300",
+    "label": "Boeing 757-300",
+    "category": "airliner"
+  },
+  "B762": {
+    "manufacturer": "Boeing",
+    "model": "Boeing 767-200",
+    "label": "Boeing 767-200",
+    "category": "airliner"
+  },
+  "B764": {
+    "manufacturer": "Boeing",
+    "model": "Boeing 767-400",
+    "label": "Boeing 767-400",
+    "category": "airliner"
+  },
+  "B773": {
+    "manufacturer": "Boeing",
+    "model": "Boeing 777-300",
+    "label": "Boeing 777-300",
+    "category": "airliner"
+  },
+  "B778": {
+    "manufacturer": "Boeing",
+    "model": "Boeing 777-8",
+    "label": "Boeing 777-8",
+    "category": "airliner"
+  },
+  "B779": {
+    "manufacturer": "Boeing",
+    "model": "Boeing 777-9",
+    "label": "Boeing 777-9",
+    "category": "airliner"
+  },
+  "CL2T": {
+    "manufacturer": "Bombardier",
+    "model": "415",
+    "label": "Bombardier 415",
+    "category": "military"
+  },
+  "BA11": {
+    "manufacturer": "British Aerospace",
+    "model": "One Eleven",
+    "label": "British Aerospace (BAC) One Eleven",
+    "category": "airliner"
+  },
+  "H25B": {
+    "manufacturer": "Hawker",
+    "model": "700/800/800XP/850/900",
+    "label": "Hawker 700/800/800XP/850/900",
+    "category": "business_jet"
+  },
+  "H25C": {
+    "manufacturer": "Hawker",
+    "model": "1000",
+    "label": "Hawker 1000",
+    "category": "business_jet"
+  },
+  "ATP": {
+    "manufacturer": "British Aerospace",
+    "model": "ATP",
+    "label": "British Aerospace ATP",
+    "category": "turboprop"
+  },
+  "JS31": {
+    "manufacturer": "British Aerospace",
+    "model": "Jetstream 31",
+    "label": "British Aerospace Jetstream 31",
+    "category": "turboprop"
+  },
+  "JS32": {
+    "manufacturer": "British Aerospace",
+    "model": "Jetstream 32",
+    "label": "British Aerospace Jetstream 32",
+    "category": "turboprop"
+  },
+  "JS41": {
+    "manufacturer": "British Aerospace",
+    "model": "Jetstream 41",
+    "label": "British Aerospace Jetstream 41",
+    "category": "turboprop"
+  },
+  "CL44": {
+    "manufacturer": "Bombardier",
+    "model": "CL-44",
+    "label": "Canadair CL-44",
+    "category": "cargo"
+  },
+  "CRJ1": {
+    "manufacturer": "Bombardier",
+    "model": "Regional Jet 100",
+    "label": "Canadair Regional Jet 100",
+    "category": "regional"
+  },
+  "CRJ2": {
+    "manufacturer": "Bombardier",
+    "model": "Regional Jet 200",
+    "label": "Canadair Regional Jet 200",
+    "category": "regional"
+  },
+  "C210": {
+    "manufacturer": "Cessna",
+    "model": "210 Centurion",
+    "label": "Cessna 210 Centurion",
+    "category": "ga"
+  },
+  "C25B": {
+    "manufacturer": "Cessna",
+    "model": "Citation CJ3",
+    "label": "Cessna Citation CJ3",
+    "category": "business_jet"
+  },
+  "C25C": {
+    "manufacturer": "Cessna",
+    "model": "Citation CJ4",
+    "label": "Cessna Citation CJ4",
+    "category": "business_jet"
+  },
+  "C56X": {
+    "manufacturer": "Cessna",
+    "model": "Citation Excel",
+    "label": "Cessna Citation Excel",
+    "category": "business_jet"
+  },
+  "C500": {
+    "manufacturer": "Cessna",
+    "model": "Citation I",
+    "label": "Cessna Citation I",
+    "category": "business_jet"
+  },
+  "C550": {
+    "manufacturer": "Cessna",
+    "model": "Citation II",
+    "label": "Cessna Citation II",
+    "category": "business_jet"
+  },
+  "C510": {
+    "manufacturer": "Cessna",
+    "model": "Citation Mustang",
+    "label": "Cessna Citation Mustang",
+    "category": "business_jet"
+  },
+  "C680": {
+    "manufacturer": "Cessna",
+    "model": "Citation Sovereign",
+    "label": "Cessna Citation Sovereign",
+    "category": "business_jet"
+  },
+  "C750": {
+    "manufacturer": "Cessna",
+    "model": "Citation X",
+    "label": "Cessna Citation X",
+    "category": "business_jet"
+  },
+  "C919": {
+    "manufacturer": "COMAC",
+    "model": "C-919",
+    "label": "COMAC C-919",
+    "category": "airliner"
+  },
+  "CONC": {
+    "manufacturer": "Concorde",
+    "model": "Concorde",
+    "label": "Concorde",
+    "category": "airliner"
+  },
+  "DHC2": {
+    "manufacturer": "De Havilland Canada",
+    "model": "DHC-2 Beaver",
+    "label": "De Havilland Canada DHC-2 Beaver",
+    "category": "turboprop"
+  },
+  "DH2T": {
+    "manufacturer": "De Havilland Canada",
+    "model": "DHC-2 Turbo-Beaver",
+    "label": "De Havilland Canada DHC-2 Turbo-Beaver",
+    "category": "turboprop"
+  },
+  "DHC3": {
+    "manufacturer": "De Havilland Canada",
+    "model": "DHC-3 Otter",
+    "label": "De Havilland Canada DHC-3 Otter",
+    "category": "turboprop"
+  },
+  "DHC4": {
+    "manufacturer": "De Havilland Canada",
+    "model": "DHC-4 Caribou",
+    "label": "De Havilland Canada DHC-4 Caribou",
+    "category": "military"
+  },
+  "DHC6": {
+    "manufacturer": "De Havilland Canada",
+    "model": "DHC-6 Twin Otter",
+    "label": "De Havilland Canada DHC-6 Twin Otter",
+    "category": "turboprop"
+  },
+  "DHC7": {
+    "manufacturer": "De Havilland Canada",
+    "model": "DHC-7 Dash 7",
+    "label": "De Havilland Canada DHC-7 Dash 7",
+    "category": "turboprop"
+  },
+  "DOVE": {
+    "manufacturer": "De",
+    "model": "De Havilland DH.104 Dove",
+    "label": "De Havilland DH.104 Dove",
+    "category": "ga"
+  },
+  "HERN": {
+    "manufacturer": "De",
+    "model": "De Havilland DH.114 Heron",
+    "label": "De Havilland DH.114 Heron",
+    "category": "ga"
+  },
+  "DC10": {
+    "manufacturer": "Douglas",
+    "model": "DC-10",
+    "label": "Douglas DC-10",
+    "category": "airliner"
+  },
+  "DC3": {
+    "manufacturer": "Douglas",
+    "model": "DC-3",
+    "label": "Douglas DC-3",
+    "category": "turboprop"
+  },
+  "DC6": {
+    "manufacturer": "Douglas",
+    "model": "DC-6",
+    "label": "Douglas DC-6",
+    "category": "airliner"
+  },
+  "DC85": {
+    "manufacturer": "Douglas",
+    "model": "DC-8-50",
+    "label": "Douglas DC-8-50",
+    "category": "airliner"
+  },
+  "DC86": {
+    "manufacturer": "Douglas",
+    "model": "DC-8-62",
+    "label": "Douglas DC-8-62",
+    "category": "airliner"
+  },
+  "DC87": {
+    "manufacturer": "Douglas",
+    "model": "DC-8-72",
+    "label": "Douglas DC-8-72",
+    "category": "airliner"
+  },
+  "DC91": {
+    "manufacturer": "Douglas",
+    "model": "DC-9-10",
+    "label": "Douglas DC-9-10",
+    "category": "airliner"
+  },
+  "DC92": {
+    "manufacturer": "Douglas",
+    "model": "DC-9-20",
+    "label": "Douglas DC-9-20",
+    "category": "airliner"
+  },
+  "DC93": {
+    "manufacturer": "Douglas",
+    "model": "DC-9-30",
+    "label": "Douglas DC-9-30",
+    "category": "airliner"
+  },
+  "DC94": {
+    "manufacturer": "Douglas",
+    "model": "DC-9-40",
+    "label": "Douglas DC-9-40",
+    "category": "airliner"
+  },
+  "DC95": {
+    "manufacturer": "Douglas",
+    "model": "DC-9-50",
+    "label": "Douglas DC-9-50",
+    "category": "airliner"
+  },
+  "E75L": {
+    "manufacturer": "Embraer",
+    "model": "175 (long wing)",
+    "label": "Embraer 175 (long wing)",
+    "category": "regional"
+  },
+  "E75S": {
+    "manufacturer": "Embraer",
+    "model": "175 (short wing)",
+    "label": "Embraer 175 (short wing)",
+    "category": "regional"
+  },
+  "E110": {
+    "manufacturer": "Embraer",
+    "model": "EMB 110 Bandeirante",
+    "label": "Embraer EMB 110 Bandeirante",
+    "category": "turboprop"
+  },
+  "E120": {
+    "manufacturer": "Embraer",
+    "model": "EMB 120 Brasilia",
+    "label": "Embraer EMB 120 Brasilia",
+    "category": "turboprop"
+  },
+  "E545": {
+    "manufacturer": "Embraer",
+    "model": "Legacy 450",
+    "label": "Embraer Legacy 450",
+    "category": "business_jet"
+  },
+  "E35L": {
+    "manufacturer": "Embraer",
+    "model": "Legacy 600",
+    "label": "Embraer Legacy 600",
+    "category": "business_jet"
+  },
+  "E50P": {
+    "manufacturer": "Embraer",
+    "model": "Phenom 100",
+    "label": "Embraer Phenom 100",
+    "category": "business_jet"
+  },
+  "E55P": {
+    "manufacturer": "Embraer",
+    "model": "Phenom 300",
+    "label": "Embraer Phenom 300",
+    "category": "business_jet"
+  },
+  "E135": {
+    "manufacturer": "Embraer",
+    "model": "RJ140",
+    "label": "Embraer RJ140",
+    "category": "regional"
+  },
+  "E145": {
+    "manufacturer": "Embraer",
+    "model": "RJ145",
+    "label": "Embraer RJ145",
+    "category": "regional"
+  },
+  "J328": {
+    "manufacturer": "Dornier",
+    "model": "328JET",
+    "label": "Fairchild Dornier 328JET",
+    "category": "regional"
+  },
+  "D228": {
+    "manufacturer": "Dornier",
+    "model": "Do.228",
+    "label": "Fairchild Dornier Do.228",
+    "category": "turboprop"
+  },
+  "D328": {
+    "manufacturer": "Dornier",
+    "model": "Do.328",
+    "label": "Fairchild Dornier Do.328",
+    "category": "turboprop"
+  },
+  "F100": {
+    "manufacturer": "Fokker",
+    "model": "100",
+    "label": "Fokker 100",
+    "category": "regional"
+  },
+  "F70": {
+    "manufacturer": "Fokker",
+    "model": "70",
+    "label": "Fokker 70",
+    "category": "regional"
+  },
+  "F27": {
+    "manufacturer": "Fokker",
+    "model": "F27 Friendship",
+    "label": "Fokker F27 Friendship",
+    "category": "turboprop"
+  },
+  "F28": {
+    "manufacturer": "Fokker",
+    "model": "F28 Fellowship",
+    "label": "Fokker F28 Fellowship",
+    "category": "regional"
+  },
+  "G159": {
+    "manufacturer": "Gulfstream",
+    "model": "G-159 Gulfstream I",
+    "label": "Gulfstream Aerospace G-159 Gulfstream I",
+    "category": "turboprop"
+  },
+  "G280": {
+    "manufacturer": "Gulfstream",
+    "model": "G280",
+    "label": "Gulfstream G280",
+    "category": "business_jet"
+  },
+  "AC68": {
+    "manufacturer": "Rockwell",
+    "model": "Commander",
+    "label": "Gulfstream/Rockwell (Aero) Commander",
+    "category": "ga"
+  },
+  "AC90": {
+    "manufacturer": "Rockwell",
+    "model": "Turbo Commander",
+    "label": "Gulfstream/Rockwell (Aero) Turbo Commander",
+    "category": "ga"
+  },
+  "Y12": {
+    "manufacturer": "Harbin",
+    "model": "Yunshuji Y12",
+    "label": "Harbin Yunshuji Y12",
+    "category": "turboprop"
+  },
+  "A748": {
+    "manufacturer": "Hawker Siddeley",
+    "model": "HS 748",
+    "label": "Hawker Siddeley HS 748",
+    "category": "turboprop"
+  },
+  "I114": {
+    "manufacturer": "Ilyushin",
+    "model": "IL114",
+    "label": "Ilyushin IL114",
+    "category": "turboprop"
+  },
+  "IL18": {
+    "manufacturer": "Ilyushin",
+    "model": "IL18",
+    "label": "Ilyushin IL18",
+    "category": "turboprop"
+  },
+  "IL62": {
+    "manufacturer": "Ilyushin",
+    "model": "IL62",
+    "label": "Ilyushin IL62",
+    "category": "airliner"
+  },
+  "IL86": {
+    "manufacturer": "Ilyushin",
+    "model": "IL86",
+    "label": "Ilyushin IL86",
+    "category": "airliner"
+  },
+  "IL96": {
+    "manufacturer": "Ilyushin",
+    "model": "IL96",
+    "label": "Ilyushin IL96",
+    "category": "airliner"
+  },
+  "LJ35": {
+    "manufacturer": "Learjet",
+    "model": "35",
+    "label": "Learjet 35",
+    "category": "business_jet"
+  },
+  "LJ60": {
+    "manufacturer": "Learjet",
+    "model": "60",
+    "label": "Learjet 60",
+    "category": "business_jet"
+  },
+  "L101": {
+    "manufacturer": "Lockheed",
+    "model": "L-1011 Tristar",
+    "label": "Lockheed L-1011 Tristar",
+    "category": "airliner"
+  },
+  "CONI": {
+    "manufacturer": "Lockheed",
+    "model": "L-1049 Super Constellation",
+    "label": "Lockheed L-1049 Super Constellation",
+    "category": "airliner"
+  },
+  "L188": {
+    "manufacturer": "Lockheed",
+    "model": "L-188 Electra",
+    "label": "Lockheed L-188 Electra",
+    "category": "turboprop"
+  },
+  "MD11": {
+    "manufacturer": "McDonnell Douglas",
+    "model": "MD-11",
+    "label": "McDonnell Douglas MD-11",
+    "category": "airliner"
+  },
+  "MD81": {
+    "manufacturer": "McDonnell Douglas",
+    "model": "MD-81",
+    "label": "McDonnell Douglas MD-81",
+    "category": "airliner"
+  },
+  "MD82": {
+    "manufacturer": "McDonnell Douglas",
+    "model": "MD-82",
+    "label": "McDonnell Douglas MD-82",
+    "category": "airliner"
+  },
+  "MD83": {
+    "manufacturer": "McDonnell Douglas",
+    "model": "MD-83",
+    "label": "McDonnell Douglas MD-83",
+    "category": "airliner"
+  },
+  "MD87": {
+    "manufacturer": "McDonnell Douglas",
+    "model": "MD-87",
+    "label": "McDonnell Douglas MD-87",
+    "category": "airliner"
+  },
+  "MD88": {
+    "manufacturer": "McDonnell Douglas",
+    "model": "MD-88",
+    "label": "McDonnell Douglas MD-88",
+    "category": "airliner"
+  },
+  "MD90": {
+    "manufacturer": "McDonnell Douglas",
+    "model": "MD-90",
+    "label": "McDonnell Douglas MD-90",
+    "category": "airliner"
+  },
+  "YS11": {
+    "manufacturer": "NAMC",
+    "model": "YS-11",
+    "label": "NAMC YS-11",
+    "category": "turboprop"
+  },
+  "P68": {
+    "manufacturer": "Partenavia",
+    "model": "P.68",
+    "label": "Partenavia P.68",
+    "category": "ga"
+  },
+  "TRIS": {
+    "manufacturer": "Britten-Norman",
+    "model": "BN-2A Mk III Trislander",
+    "label": "Pilatus Britten-Norman BN-2A Mk III Trislander",
+    "category": "turboprop"
+  },
+  "BN2P": {
+    "manufacturer": "Britten-Norman",
+    "model": "BN-2A/B Islander",
+    "label": "Pilatus Britten-Norman BN-2A/B Islander",
+    "category": "turboprop"
+  },
+  "PC6T": {
+    "manufacturer": "Pilatus",
+    "model": "PC-6 Turbo Porter",
+    "label": "Pilatus PC-6 Turbo Porter",
+    "category": "turboprop"
+  },
+  "P28B": {
+    "manufacturer": "Piper",
+    "model": "PA-28 (above 200 hp)",
+    "label": "Piper PA-28 (above 200 hp)",
+    "category": "ga"
+  },
+  "P28A": {
+    "manufacturer": "Piper",
+    "model": "PA-28 (up to 180 hp)",
+    "label": "Piper PA-28 (up to 180 hp)",
+    "category": "ga"
+  },
+  "PA31": {
+    "manufacturer": "Piper",
+    "model": "PA-31 Navajo",
+    "label": "Piper PA-31 Navajo",
+    "category": "ga"
+  },
+  "PA44": {
+    "manufacturer": "Piper",
+    "model": "PA-44 Seminole",
+    "label": "Piper PA-44 Seminole",
+    "category": "ga"
+  },
+  "SB20": {
+    "manufacturer": "Saab",
+    "model": "2000",
+    "label": "Saab 2000",
+    "category": "turboprop"
+  },
+  "BELF": {
+    "manufacturer": "Shorts",
+    "model": "SC-5 Belfast",
+    "label": "Shorts SC-5 Belfast",
+    "category": "cargo"
+  },
+  "SC7": {
+    "manufacturer": "Shorts",
+    "model": "SC-7 Skyvan",
+    "label": "Shorts SC-7 Skyvan",
+    "category": "cargo"
+  },
+  "SH33": {
+    "manufacturer": "Shorts",
+    "model": "SD.330",
+    "label": "Shorts SD.330",
+    "category": "turboprop"
+  },
+  "SH36": {
+    "manufacturer": "Shorts",
+    "model": "SD.360",
+    "label": "Shorts SD.360",
+    "category": "turboprop"
+  },
+  "S58T": {
+    "manufacturer": "Sikorsky",
+    "model": "S-58T",
+    "label": "Sikorsky S-58T",
+    "category": "helicopter"
+  },
+  "S61": {
+    "manufacturer": "Sikorsky",
+    "model": "S-61",
+    "label": "Sikorsky S-61",
+    "category": "helicopter"
+  },
+  "S76": {
+    "manufacturer": "Sikorsky",
+    "model": "S-76",
+    "label": "Sikorsky S-76",
+    "category": "helicopter"
+  },
+  "S92": {
+    "manufacturer": "Sikorsky",
+    "model": "S-92",
+    "label": "Sikorsky S-92",
+    "category": "helicopter"
+  },
+  "SU95": {
+    "manufacturer": "Sukhoi",
+    "model": "Superjet 100-95",
+    "label": "Sukhoi Superjet 100-95",
+    "category": "regional"
+  },
+  "T134": {
+    "manufacturer": "Tupolev",
+    "model": "Tu-134",
+    "label": "Tupolev Tu-134",
+    "category": "airliner"
+  },
+  "T144": {
+    "manufacturer": "Tupolev",
+    "model": "Tu-144",
+    "label": "Tupolev Tu-144",
+    "category": "airliner"
+  },
+  "T154": {
+    "manufacturer": "Tupolev",
+    "model": "Tu-154",
+    "label": "Tupolev Tu-154",
+    "category": "airliner"
+  },
+  "T204": {
+    "manufacturer": "Tupolev",
+    "model": "Tu-204",
+    "label": "Tupolev Tu-204",
+    "category": "airliner"
+  },
+  "YK40": {
+    "manufacturer": "Yakovlev",
+    "model": "Yak-40",
+    "label": "Yakovlev Yak-40",
+    "category": "regional"
+  },
+  "YK42": {
+    "manufacturer": "Yakovlev",
+    "model": "Yak-42",
+    "label": "Yakovlev Yak-42",
+    "category": "regional"
   }
 }
