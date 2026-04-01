@@ -51,6 +51,10 @@ export function useMaplibreMap(containerRef, initialMapStyleUrl) {
         ],
       });
 
+      map.dragRotate.disable();
+      map.touchZoomRotate.disableRotation();
+      map.value.setBearing(0);
+
       map.value.on('load', () => {
         isMapLoaded.value = true;
         hasInitialMapLoad.value = true;
