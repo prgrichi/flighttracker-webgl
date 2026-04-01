@@ -1,5 +1,8 @@
+import { useLocalStorage } from '@vueuse/core';
+
 export const useFlightsState = (initialRegion = 'bavaria') => {
-  const region = useState('flights:region', () => initialRegion);
+  const region = useLocalStorage('flights:region', initialRegion);
+
   const hadFlightError = useState('flights:hadError', () => false);
   const showRecoveryBanner = useState('flights:recovery', () => false);
   const hasLoadedFlights = useState('flights:hasLoadedFlights', () => false);

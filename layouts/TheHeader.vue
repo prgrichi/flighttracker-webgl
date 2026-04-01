@@ -100,9 +100,7 @@ import { useMapState } from '@/composables/map/useMapState';
 import TheHeaderStatusBanners from '@/layouts/components/TheHeaderStatusBanners.vue';
 
 const route = useRoute();
-const { isMapLoaded, isMapLoading } = useMapState();
-
-// const isMapLoading = computed(() => !isMapLoaded.value);
+const { isMapLoading } = useMapState();
 
 const { region } = useFlightsState();
 

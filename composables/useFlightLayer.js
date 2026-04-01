@@ -40,7 +40,9 @@ export function useFlightLayer(geoJson) {
     if (!mapInstance.hasImage(PLANE_IMAGE_ID)) {
       try {
         const image = await mapInstance.loadImage('/plane.png');
-        mapInstance.addImage(PLANE_IMAGE_ID, image.data);
+        if (!mapInstance.hasImage(PLANE_IMAGE_ID)) {
+          mapInstance.addImage(PLANE_IMAGE_ID, image.data);
+        }
       } catch (error) {
         console.error('Image load failed:', error);
       }
@@ -49,7 +51,9 @@ export function useFlightLayer(geoJson) {
     if (!mapInstance.hasImage(PLANE_IMAGE_ACTIVE_ID)) {
       try {
         const image = await mapInstance.loadImage('/plane-active.png');
-        mapInstance.addImage(PLANE_IMAGE_ACTIVE_ID, image.data);
+        if (!mapInstance.hasImage(PLANE_IMAGE_ID)) {
+          mapInstance.addImage(PLANE_IMAGE_ACTIVE_ID, image.data);
+        }
       } catch (error) {
         console.error('Active image load failed:', error);
       }

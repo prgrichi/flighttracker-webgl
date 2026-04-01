@@ -52,17 +52,40 @@
 <script setup>
 import { useMaplibreMap } from '@/composables/map/useMaplibreMap';
 import { useMapType } from '@/composables/map/useMapType';
+import { useMapInstance } from '@/composables/map/useMapInstance';
 
 import { useAirportLayer } from '@/composables/airports/useAirportLayer';
 import { useAirportsData } from '@/composables/airports/useAirportsData';
 import { useAirportsState } from '@/composables/airports/useAirportsState';
 
 const mapContainer = ref(null);
-const { isLoaded, mapError } = useMaplibreMap(mapContainer);
+
 const { decoratedGeoJson, region } = useFlightsState();
 const { selectedFlight } = useSelectedFlight();
 const { selectedLocation } = useSelectedLocation();
 const { currentMapType, MAP_TYPES, setMapType } = useMapType();
+const { map } = useMapInstance();
+
+const currentMapStyleUrl = computed(() => {
+  return MAP_TYPES[currentMapType.value]?.url ?? MAP_TYPES.Default.url;
+});
+
+const { isLoaded, mapError } = useMaplibreMap(mapContainer, currentMapStyleUrl);
+
+const appliedMapType = ref(currentMapType.value);
+
+watch(
+  [map, currentMapType],
+  ([mapInstance, type]) => {
+    if (!mapInstance) return;
+    if (!MAP_TYPES[type]) return;
+    if (appliedMapType.value === type) return;
+
+    appliedMapType.value = type;
+    mapInstance.setStyle(MAP_TYPES[type].url);
+  },
+  { immediate: true }
+);
 
 const { airportsGeoJson } = useAirportsData(region);
 

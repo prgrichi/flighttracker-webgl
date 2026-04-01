@@ -2,15 +2,13 @@ import { nextTick, onActivated, onDeactivated, onMounted, onUnmounted, ref } fro
 import maplibregl from 'maplibre-gl';
 import { getReadableMapError, hasWebGLSupport } from '@/utils/maplibreSupport';
 import { useMapInstance } from '@/composables/map/useMapInstance';
-import { useMapType } from '@/composables/map/useMapType';
 import { useMapState } from '@/composables/map/useMapState';
 
-export function useMaplibreMap(containerRef) {
+export function useMaplibreMap(containerRef, initialMapStyleUrl) {
   const { map } = useMapInstance();
   const { isMapMounted, isMapLoaded, mapError } = useMapState();
 
   const hasInitialMapLoad = ref(false);
-  const { MAP_TYPES, currentMapType } = useMapType();
 
   function syncLoadedState() {
     isMapLoaded.value = !!map.value?.loaded();
@@ -42,7 +40,7 @@ export function useMaplibreMap(containerRef) {
     try {
       map.value = new maplibregl.Map({
         container: containerRef.value,
-        style: MAP_TYPES[currentMapType.value].style || MAP_TYPES[currentMapType.value].url,
+        style: initialMapStyleUrl.value,
         center: [12.4053, 48.0006],
         zoom: 8,
         minZoom: 3,

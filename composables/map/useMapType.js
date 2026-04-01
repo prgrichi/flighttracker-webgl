@@ -1,9 +1,8 @@
-import { useMapInstance } from '@/composables/map/useMapInstance';
+import { useLocalStorage } from '@vueuse/core';
 
 export const useMapType = () => {
   const config = useRuntimeConfig();
-  const { map } = useMapInstance();
-  const currentMapType = useState('current-map-type', () => 'Default');
+  const currentMapType = useLocalStorage('current-map-type', 'Default');
 
   const MAP_TYPES = {
     Default: {
@@ -33,10 +32,6 @@ export const useMapType = () => {
     if (currentMapType.value === mapTypeKey) return;
 
     currentMapType.value = mapTypeKey;
-
-    if (!map.value) return;
-
-    map.value.setStyle(MAP_TYPES[mapTypeKey].style ?? MAP_TYPES[mapTypeKey].url);
   };
 
   return {

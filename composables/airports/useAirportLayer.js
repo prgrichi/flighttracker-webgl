@@ -63,7 +63,9 @@ export function useAirportLayer(options) {
 
     try {
       const image = await mapInstance.loadImage('/airport.png');
-      mapInstance.addImage(AIRPORT_MARKER_IMAGE_ID, image.data);
+      if (!mapInstance.hasImage(AIRPORT_MARKER_IMAGE_ID)) {
+        mapInstance.addImage(AIRPORT_MARKER_IMAGE_ID, image.data);
+      }
     } catch (error) {
       console.error('Airport image load failed:', error);
     }
@@ -156,6 +158,7 @@ export function useAirportLayer(options) {
       mapInstance.on('click', handleMapClick);
 
       onCleanup(() => {
+        mapInstance.off('load', initializeLayer);
         mapInstance.off('style.load', initializeLayer);
         mapInstance.off('click', handleMapClick);
       });
