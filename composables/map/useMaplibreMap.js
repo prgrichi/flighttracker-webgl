@@ -51,8 +51,8 @@ export function useMaplibreMap(containerRef, initialMapStyleUrl) {
         ],
       });
 
-      map.dragRotate.disable();
-      map.touchZoomRotate.disableRotation();
+      map.value.dragRotate.disable();
+      map.value.touchZoomRotate.disableRotation();
       map.value.setBearing(0);
 
       map.value.on('load', () => {
