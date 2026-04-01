@@ -51,7 +51,7 @@ export function useFlightLayer(geoJson) {
     if (!mapInstance.hasImage(PLANE_IMAGE_ACTIVE_ID)) {
       try {
         const image = await mapInstance.loadImage('/plane-active.png');
-        if (!mapInstance.hasImage(PLANE_IMAGE_ID)) {
+        if (!mapInstance.hasImage(PLANE_IMAGE_ACTIVE_ID)) {
           mapInstance.addImage(PLANE_IMAGE_ACTIVE_ID, image.data);
         }
       } catch (error) {
