@@ -92,6 +92,7 @@
   "VLG": "Vueling",
 
   "WZZ": "Wizz Air",
+  "WUK": "Wizz Air UK",
 
   "BOX": "DHL Air Germany",
   "BIX": "Braathens International Airways",
@@ -121,6 +122,8 @@
   "BMS": "BMI Regional",
   "BRU": "Belavia",
   "BTV": "Bulgaria Air",
+  "LZB": "Bulgaria Air",
+  "GFA": "Gulf Air",
 
   "CAI": "Corendon Airlines",
   "CBJ": "Beijing Capital Airlines",
@@ -169,13 +172,17 @@
   "RBA": "Royal Brunei Airlines",
   "RLU": "RusLine",
   "ROT": "Tarom",
+  "RJA": "Royal Jordanian",
+  "OCN": "Discover Airlines",
 
+  "NJE": "NetJets Europe",
   "SXS": "SunExpress",
   "SVA": "Saudia",
   "SCX": "SunExpress",
   "SDM": "Rossiya Airlines",
   "SEH": "Sky Express",
   "SJY": "Somon Air",
+  "UZB": "Uzbekistan Airways",
 
   "TFL": "TUI fly Netherlands",
   "THA": "Thai Airways",
@@ -198,6 +205,7 @@
   "ITY": "ITA Airways",
   "CEB": "Cebu Pacific",
   "CLH": "Lufthansa CityLine",
+  "LHX": "Lufthansa City",
   "CMP": "Copa Airlines",
   "CSA": "Czech Airlines",
   "CTN": "Croatia Airlines",
@@ -212,6 +220,7 @@
   "SAA": "South African Airways",
   "TAM": "TAM Linhas Aéreas",
   "WJA": "WestJet",
+  "RMX": "AirMaster",
 
   "EZS": "easyJet Switzerland",
   "LXJ": "Flexjet",
