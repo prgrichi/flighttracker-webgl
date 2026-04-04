@@ -45,7 +45,7 @@
 import PinOffIcon from '@/components/icons/IconPinOff.vue';
 import WifiOffIcon from '@/components/icons/IconWifiOff.vue';
 import CloudOffIcon from '@/components/icons/IconCloudOff.vue';
-import { useFavoritesState } from '@/composables/favorites/useFavoritesState';
+import { useFavoriteState } from '@/composables/favorites/useFavoriteState';
 
 const { isOffline, showOnlineRecovery } = useNetworkStatus();
 
@@ -65,7 +65,7 @@ const {
   hasLiveDataErrorMsg: favoritesErrorMsg,
   showRecoveryBanner: favoritesRecoveryBanner,
   refresh: refreshFavorites,
-} = useFavoritesState();
+} = useFavoriteState();
 
 const showAnyRecoveryBanner = computed(() => {
   return flightsRecoveryBanner.value || favoritesRecoveryBanner.value;

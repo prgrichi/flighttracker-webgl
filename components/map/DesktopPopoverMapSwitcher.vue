@@ -7,7 +7,7 @@
     </button>
 
     <template #content="{ close }">
-      <div class="grid grid-cols-3 gap-2 p-2">
+      <div class="grid grid-cols-2 gap-2 p-2">
         <div
           v-for="(map, key) in mapTypes"
           :key="key"

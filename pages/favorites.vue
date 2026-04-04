@@ -31,14 +31,14 @@
 import { computed, watch } from 'vue';
 
 import { useFavorites } from '@/composables/favorites/useFavorites';
-import { useFavoritesState } from '@/composables/favorites/useFavoritesState';
-import { useFavoritesLifecycle } from '@/composables/favorites/useFavoritesLifecycle';
+import { useFavoriteState } from '@/composables/favorites/useFavoriteState';
+import { useFavoriteLifeCycle } from '@/composables/favorites/useFavoriteLifeCycle';
 import FavoriteCard from '@/components/FavoriteCard.vue';
 
 const { favorites, removeFavorite } = useFavorites();
-const { favoriteStates } = useFavoritesState();
+const { favoriteStates } = useFavoriteState();
 
-useFavoritesLifecycle();
+useFavoriteLifeCycle();
 
 const showFavorites = computed(() => favorites.value.length > 0);
 
