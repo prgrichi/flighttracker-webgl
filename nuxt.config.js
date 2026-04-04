@@ -27,11 +27,25 @@ export default defineNuxtConfig({
           src: '/pwa/icon-192.png',
           sizes: '192x192',
           type: 'image/png',
+          purpose: 'any',
         },
         {
           src: '/pwa/icon-512.png',
           sizes: '512x512',
           type: 'image/png',
+          purpose: 'any',
+        },
+        {
+          src: '/pwa/icon-192-maskable.png',
+          sizes: '192x192',
+          type: 'image/png',
+          purpose: 'any maskable',
+        },
+        {
+          src: '/pwa/icon-512-maskable.png',
+          sizes: '512x512',
+          type: 'image/png',
+          purpose: 'any maskable',
         },
       ],
     },
@@ -55,7 +69,9 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon/favicon-32x32.png?v=2' },
         { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon/favicon-16x16.png?v=2' },
         { rel: 'apple-touch-icon', href: '/favicon/apple-touch-icon.png?v=2' },
-        { rel: 'manifest', href: '/favicon/site.webmanifest?v=2' },
+
+        // WICHTIG: diese Zeile entfernen
+        // { rel: 'manifest', href: '/favicon/site.webmanifest?v=2' },
 
         {
           rel: 'preload',
@@ -71,7 +87,6 @@ export default defineNuxtConfig({
           type: 'font/woff2',
           crossorigin: '',
         },
-
         {
           rel: 'preload',
           href: '/logo-inverted-transparent-256.png',
