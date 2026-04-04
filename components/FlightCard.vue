@@ -15,6 +15,15 @@
                   {{ onGroundLabel }}
                 </span>
                 <span>{{ flight.icao24 }}</span>
+                <UButton
+                  icon="i-lucide-bookmark"
+                  color="primary"
+                  :variant="isCurrentFlightFavorite ? 'solid' : 'ghost'"
+                  class="transition-transform"
+                  :class="isCurrentFlightFavorite ? 'scale-110' : ''"
+                  square
+                  @click.stop="toggleCurrentFlightFavorite"
+                />
               </div>
             </div>
           </div>
@@ -80,12 +89,23 @@
 
 <script setup>
 import { computed } from 'vue';
+import { useFavorites } from '@/composables/favorites/useFavorites';
 
 const props = defineProps({
   flight: Object,
 });
 
 const emit = defineEmits(['close']);
+
+const { isFavorite, toggleFavorite } = useFavorites();
+
+const isCurrentFlightFavorite = computed(() => {
+  return isFavorite(props.flight?.icao24);
+});
+
+const toggleCurrentFlightFavorite = () => {
+  toggleFavorite(props.flight);
+};
 
 const displayTitle = computed(() => props.flight?.callsign || props.flight?.icao24 || 'Flight');
 
