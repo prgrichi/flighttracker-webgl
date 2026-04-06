@@ -20,7 +20,21 @@ export const useFavoriteState = () => {
     default: () => [],
     server: false,
     immediate: true,
-    watch: [icao24List],
+    // watch: [icao24List],
+  });
+
+  let interval;
+  onMounted(() => {
+    interval = setInterval(() => {
+      if (!pending.value) {
+        console.log('refresh', data.value);
+        refresh();
+      }
+    }, 10000);
+  });
+
+  onUnmounted(() => {
+    clearInterval(interval);
   });
 
   const statesByIcao24 = computed(() => {

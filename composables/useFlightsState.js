@@ -6,7 +6,7 @@ export const useFlightsState = (initialRegion = 'bavaria') => {
   const hadFlightError = useState('flights:hadError', () => false);
   const showRecoveryBanner = useState('flights:recovery', () => false);
   const hasLoadedFlights = useState('flights:hasLoadedFlights', () => false);
-  const { selectedFlight } = useSelectedFlight();
+  const { highlightedFlight } = useSelectedFlight();
 
   const query = computed(() => ({
     region: region.value,
@@ -40,7 +40,7 @@ export const useFlightsState = (initialRegion = 'bavaria') => {
         ...feature,
         properties: {
           ...feature.properties,
-          isSelected: feature.properties.icao24 === selectedFlight.value?.icao24,
+          isSelected: feature.properties.icao24 === highlightedFlight.value?.icao24,
         },
       })),
     };

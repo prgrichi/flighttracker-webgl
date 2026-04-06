@@ -53,6 +53,7 @@
 import { useMaplibreMap } from '@/composables/map/useMaplibreMap';
 import { useMapType } from '@/composables/map/useMapType';
 import { useMapInstance } from '@/composables/map/useMapInstance';
+import { useMapNavigation } from '@/composables/map/useMapNavigation';
 
 import { useAirportLayer } from '@/composables/airports/useAirportLayer';
 import { useAirportsData } from '@/composables/airports/useAirportsData';
@@ -61,10 +62,11 @@ import { useAirportsState } from '@/composables/airports/useAirportsState';
 const mapContainer = ref(null);
 
 const { decoratedGeoJson, region } = useFlightsState();
-const { selectedFlight } = useSelectedFlight();
+const { selectedFlight, closeSelectedFlightCard } = useSelectedFlight();
 const { selectedLocation } = useSelectedLocation();
 const { currentMapType, MAP_TYPES, setMapType } = useMapType();
 const { map } = useMapInstance();
+const { applyPendingNavigation, pendingNavigation } = useMapNavigation();
 
 const currentMapStyleUrl = computed(() => {
   return MAP_TYPES[currentMapType.value]?.url ?? MAP_TYPES.Default.url;
@@ -102,9 +104,19 @@ useAirportLayer({
 
 useFlightLayer(decoratedGeoJson);
 
+watch(
+  [map, isLoaded, decoratedGeoJson, pendingNavigation],
+  ([mapInstance, mapLoaded, geoJson, pendingTarget]) => {
+    if (!mapInstance || !mapLoaded || !pendingTarget) return;
+
+    applyPendingNavigation(geoJson);
+  },
+  { immediate: true }
+);
+
 const closeFlightCard = () => {
   if (!selectedFlight.value) return;
-  selectedFlight.value = null;
+  closeSelectedFlightCard();
 };
 const closeLocationCard = () => {
   if (!selectedLocation.value) return;

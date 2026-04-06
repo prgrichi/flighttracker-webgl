@@ -56,15 +56,37 @@
         />
       </div>
     </div>
+
+    <div class="mt-3">
+      <UButton
+        icon="i-lucide-map"
+        color="primary"
+        variant="soft"
+        block
+        class="justify-center transition-transform hover:scale-[1.02] active:scale-[0.98]"
+        @click="jumpToFavorite"
+      >
+        Auf Karte anzeigen
+      </UButton>
+    </div>
   </UCard>
 </template>
+
 <script setup>
-defineProps({
+import { useMapNavigation } from '@/composables/map/useMapNavigation';
+
+const props = defineProps({
   fav: {
     type: Object,
     required: true,
   },
 });
+
+const { navigateToFlight } = useMapNavigation();
+
+const jumpToFavorite = async () => {
+  await navigateToFlight(props.fav, 9);
+};
 
 defineEmits(['remove']);
 
@@ -80,4 +102,5 @@ const getStatusDotClass = status => {
   return 'bg-amber-500';
 };
 </script>
+
 <style></style>
