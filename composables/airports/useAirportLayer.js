@@ -20,7 +20,7 @@ const EMPTY_COLLECTION = {
 export function useAirportLayer(options) {
   const { map } = useMapInstance();
   const { selectedLocation } = useSelectedLocation();
-  const { selectedFlight } = useSelectedFlight();
+  const { clearSelectedFlight } = useSelectedFlight();
 
   const { geoJson, showLargeAirports, showMediumAirports, showSmallAirports, showHeliports } =
     options;
@@ -140,7 +140,7 @@ export function useAirportLayer(options) {
         });
 
         if (features.length) {
-          selectedFlight.value = null;
+          clearSelectedFlight();
           selectedLocation.value = features[0];
           return;
         }

@@ -10,8 +10,25 @@ export function useMaplibreMap(containerRef, initialMapStyleUrl) {
 
   const hasInitialMapLoad = ref(false);
 
+  function markMapAsLoaded() {
+    isMapLoaded.value = true;
+    hasInitialMapLoad.value = true;
+    mapError.value = '';
+  }
+
   function syncLoadedState() {
-    isMapLoaded.value = !!map.value?.loaded();
+    if (!map.value) {
+      isMapLoaded.value = false;
+      return;
+    }
+
+    if (map.value.loaded()) {
+      markMapAsLoaded();
+      return;
+    }
+
+    isMapLoaded.value = false;
+    map.value.once('idle', markMapAsLoaded);
   }
 
   onMounted(() => {
@@ -55,11 +72,7 @@ export function useMaplibreMap(containerRef, initialMapStyleUrl) {
       map.value.touchZoomRotate.disableRotation();
       map.value.setBearing(0);
 
-      map.value.on('load', () => {
-        isMapLoaded.value = true;
-        hasInitialMapLoad.value = true;
-        mapError.value = '';
-      });
+      map.value.on('load', markMapAsLoaded);
 
       map.value.on('error', event => {
         console.error('MapLibre error:', event);
