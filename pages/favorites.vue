@@ -1,13 +1,58 @@
 <template>
   <div class="h-full overflow-y-auto px-4 py-4 max-w-3xl mx-auto w-full">
+    <div v-if="showFavorites" class="mb-4 flex items-center justify-between gap-3">
+      <div class="text-sm text-muted-foreground">
+        <span class="font-medium text-toned">{{ favorites.length }}</span>
+        Favoriten gespeichert
+      </div>
+
+      <div
+        class="inline-flex items-center rounded-xl border border-border bg-muted/30 p-1"
+        role="group"
+        aria-label="Sortierung der Favoriten"
+      >
+        <!-- Neueste -->
+        <button
+          type="button"
+          @click="sortNewestFirst = true"
+          class="inline-flex items-center gap-2 rounded-lg px-3 py-1.5 text-sm font-medium transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+          :class="
+            sortNewestFirst
+              ? 'bg-primary text-white shadow'
+              : 'text-muted-foreground hover:text-toned hover:bg-muted'
+          "
+          :aria-pressed="sortNewestFirst"
+        >
+          <UIcon name="i-lucide-arrow-down-wide-narrow" class="w-4 h-4" aria-hidden="true" />
+          <span>Neueste</span>
+        </button>
+
+        <!-- Älteste -->
+        <button
+          type="button"
+          @click="sortNewestFirst = false"
+          class="inline-flex items-center gap-2 rounded-lg px-3 py-1.5 text-sm font-medium transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+          :class="
+            !sortNewestFirst
+              ? 'bg-primary text-white shadow'
+              : 'text-muted-foreground hover:text-toned hover:bg-muted'
+          "
+          :aria-pressed="!sortNewestFirst"
+        >
+          <UIcon name="i-lucide-arrow-up-wide-narrow" class="w-4 h-4" aria-hidden="true" />
+          <span>Älteste</span>
+        </button>
+      </div>
+    </div>
+
     <template v-if="showFavorites">
       <TransitionGroup name="favorites-soft" tag="div">
         <FavoriteCard
-          v-for="fav in favoriteStates"
+          v-for="fav in sortedFavoriteStates"
           :key="fav.icao24"
           :fav="fav"
           @remove="removeFavorite"
-        ></FavoriteCard>
+        />
       </TransitionGroup>
     </template>
 
@@ -57,6 +102,17 @@ watch(
   },
   { immediate: true }
 );
+
+const sortNewestFirst = ref(true);
+
+const sortedFavoriteStates = computed(() => {
+  return [...favoriteStates.value].sort((a, b) => {
+    const aTime = a.savedAt || 0;
+    const bTime = b.savedAt || 0;
+
+    return sortNewestFirst.value ? bTime - aTime : aTime - bTime;
+  });
+});
 </script>
 
 <style scoped>

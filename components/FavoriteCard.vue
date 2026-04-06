@@ -42,6 +42,11 @@
             </div>
           </div>
         </div>
+
+        <div class="flex items-center mt-3 gap-1 text-[11px] text-muted-foreground/80">
+          <UIcon name="i-lucide-clock" class="w-3 h-3" />
+          <span>{{ formattedDate }}</span>
+        </div>
       </div>
 
       <!-- Right -->
@@ -106,6 +111,18 @@ const getStatusDotClass = status => {
   if (status === 'ground') return 'bg-slate-400';
   return 'bg-amber-500';
 };
+
+const formatter = new Intl.DateTimeFormat('de-DE', {
+  day: '2-digit',
+  month: '2-digit',
+  year: 'numeric',
+  hour: '2-digit',
+  minute: '2-digit',
+});
+
+const formattedDate = computed(() => {
+  return props.fav.savedAt ? formatter.format(new Date(props.fav.savedAt)) : '';
+});
 </script>
 
 <style></style>
