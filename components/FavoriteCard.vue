@@ -57,7 +57,7 @@
       </div>
     </div>
 
-    <div class="mt-3">
+    <div class="mt-3" v-if="showMapButton">
       <UButton
         icon="i-lucide-map"
         color="primary"
@@ -85,10 +85,15 @@ const props = defineProps({
 const { navigateToFlight } = useMapNavigation();
 
 const jumpToFavorite = async () => {
+  console.log(props.fav);
   await navigateToFlight(props.fav, 9);
 };
 
 defineEmits(['remove']);
+
+const showMapButton = computed(() => {
+  return props.fav?.found && props.fav?.liveStatus === 'air';
+});
 
 const getStatusLabel = status => {
   if (status === 'air') return 'In air';
