@@ -1,0 +1,506 @@
+[
+  {
+    "callsign": "CHX89",
+    "icao24": "3e0fef",
+    "first_detectedAt": "2026-03-26T21:46:27.272Z",
+    "raw_callsign": "CHX89",
+    "source_line": 1
+  },
+  {
+    "callsign": "EDL4",
+    "icao24": "3dfa59",
+    "first_detectedAt": "2026-03-26T21:46:27.272Z",
+    "raw_callsign": "EDL4",
+    "source_line": 2
+  },
+  {
+    "callsign": "CHX18",
+    "icao24": "3e0f94",
+    "first_detectedAt": "2026-03-27T09:13:03.099Z",
+    "raw_callsign": "CHX18",
+    "source_line": 9
+  },
+  {
+    "callsign": "CHX1",
+    "icao24": "3e1214",
+    "first_detectedAt": "2026-03-27T10:18:56.707Z",
+    "raw_callsign": "CHX1",
+    "source_line": 11
+  },
+  {
+    "callsign": "CHX62",
+    "icao24": "3ddc77",
+    "first_detectedAt": "2026-03-27T13:43:47.237Z",
+    "raw_callsign": "CHX62",
+    "source_line": 20
+  },
+  {
+    "callsign": "CHX40",
+    "icao24": "3e0f90",
+    "first_detectedAt": "2026-03-27T18:06:52.020Z",
+    "raw_callsign": "CHX40",
+    "source_line": 24
+  },
+  {
+    "callsign": "CHX87",
+    "icao24": "3e0fe7",
+    "first_detectedAt": "2026-03-27T22:55:29.959Z",
+    "raw_callsign": "CHX87",
+    "source_line": 45
+  },
+  {
+    "callsign": "CHX17",
+    "icao24": "3e1689",
+    "first_detectedAt": "2026-03-28T10:33:16.111Z",
+    "raw_callsign": "CHX17",
+    "source_line": 49
+  },
+  {
+    "callsign": "CHX80",
+    "icao24": "3ddc79",
+    "first_detectedAt": "2026-03-28T14:05:26.255Z",
+    "raw_callsign": "CHX80",
+    "source_line": 54
+  },
+  {
+    "callsign": "DEDLG",
+    "icao24": "3d0db8",
+    "first_detectedAt": "2026-03-28T14:45:49.611Z",
+    "raw_callsign": "DEDLG",
+    "source_line": 60
+  },
+  {
+    "callsign": "EDL7",
+    "icao24": "3dfa5c",
+    "first_detectedAt": "2026-03-28T14:45:49.611Z",
+    "raw_callsign": "EDL7",
+    "source_line": 61
+  },
+  {
+    "callsign": "CHX74",
+    "icao24": "3e1204",
+    "first_detectedAt": "2026-03-28T17:24:53.236Z",
+    "raw_callsign": "CHX74",
+    "source_line": 64
+  },
+  {
+    "callsign": "EDL5",
+    "icao24": "3dfa5a",
+    "first_detectedAt": "2026-03-28T19:54:03.942Z",
+    "raw_callsign": "EDL5",
+    "source_line": 69
+  },
+  {
+    "callsign": "CHX22",
+    "icao24": "3e120d",
+    "first_detectedAt": "2026-03-29T09:12:59.564Z",
+    "raw_callsign": "CHX22",
+    "source_line": 71
+  },
+  {
+    "callsign": "CHX66",
+    "icao24": "3e1210",
+    "first_detectedAt": "2026-03-29T09:35:55.209Z",
+    "raw_callsign": "CHX66",
+    "source_line": 86
+  },
+  {
+    "callsign": "CHX45",
+    "icao24": "3e0fee",
+    "first_detectedAt": "2026-03-29T12:38:27.830Z",
+    "raw_callsign": "CHX45",
+    "source_line": 89
+  },
+  {
+    "callsign": "CHX41",
+    "icao24": "3e0fe1",
+    "first_detectedAt": "2026-03-29T14:48:18.710Z",
+    "raw_callsign": "CHX41",
+    "source_line": 105
+  },
+  {
+    "callsign": "CHX32",
+    "icao24": "3e0f91",
+    "first_detectedAt": "2026-03-29T14:48:18.710Z",
+    "raw_callsign": "CHX32",
+    "source_line": 107
+  },
+  {
+    "callsign": "CHX51",
+    "icao24": "3ddc76",
+    "first_detectedAt": "2026-03-29T16:26:22.985Z",
+    "raw_callsign": "CHX51",
+    "source_line": 116
+  },
+  {
+    "callsign": "CHX11",
+    "icao24": "3e0fe0",
+    "first_detectedAt": "2026-03-29T18:14:19.734Z",
+    "raw_callsign": "CHX11",
+    "source_line": 120
+  },
+  {
+    "callsign": "CHX90",
+    "icao24": "3deb83",
+    "first_detectedAt": "2026-03-29T18:14:19.734Z",
+    "raw_callsign": "CHX90",
+    "source_line": 121
+  },
+  {
+    "callsign": "CHX42",
+    "icao24": "3e0fe9",
+    "first_detectedAt": "2026-03-29T22:15:32.535Z",
+    "raw_callsign": "CHX42",
+    "source_line": 135
+  },
+  {
+    "callsign": "CHX82",
+    "icao24": "3e0fe8",
+    "first_detectedAt": "2026-03-29T22:15:32.535Z",
+    "raw_callsign": "CHX82",
+    "source_line": 136
+  },
+  {
+    "callsign": "CHX2",
+    "icao24": "3e1684",
+    "first_detectedAt": "2026-03-30T11:22:35.532Z",
+    "raw_callsign": "CHX2",
+    "source_line": 167
+  },
+  {
+    "callsign": "CHX81",
+    "icao24": "3ddc4b",
+    "first_detectedAt": "2026-03-30T14:00:10.950Z",
+    "raw_callsign": "CHX81",
+    "source_line": 188
+  },
+  {
+    "callsign": "CHX46",
+    "icao24": "3e0f92",
+    "first_detectedAt": "2026-03-30T14:00:10.950Z",
+    "raw_callsign": "CHX46",
+    "source_line": 189
+  },
+  {
+    "callsign": "CHX49",
+    "icao24": "3e0176",
+    "first_detectedAt": "2026-03-30T14:00:10.950Z",
+    "raw_callsign": "CHX49",
+    "source_line": 190
+  },
+  {
+    "callsign": "CHX3",
+    "icao24": "3e1685",
+    "first_detectedAt": "2026-03-30T14:00:10.950Z",
+    "raw_callsign": "CHX3",
+    "source_line": 192
+  },
+  {
+    "callsign": "CHX25",
+    "icao24": "3dff86",
+    "first_detectedAt": "2026-03-30T14:00:10.950Z",
+    "raw_callsign": "CHX25",
+    "source_line": 193
+  },
+  {
+    "callsign": "CHX77",
+    "icao24": "3e1209",
+    "first_detectedAt": "2026-03-30T14:06:46.801Z",
+    "raw_callsign": "CHX77",
+    "source_line": 202
+  },
+  {
+    "callsign": "CHX29",
+    "icao24": "3e1682",
+    "first_detectedAt": "2026-03-30T14:06:46.801Z",
+    "raw_callsign": "CHX29",
+    "source_line": 203
+  },
+  {
+    "callsign": "CHX85",
+    "icao24": "3e0fe6",
+    "first_detectedAt": "2026-03-30T16:13:12.642Z",
+    "raw_callsign": "CHX85",
+    "source_line": 251
+  },
+  {
+    "callsign": "CHX26",
+    "icao24": "3e1213",
+    "first_detectedAt": "2026-03-30T16:13:12.642Z",
+    "raw_callsign": "CHX26",
+    "source_line": 253
+  },
+  {
+    "callsign": "CHX76",
+    "icao24": "3e1212",
+    "first_detectedAt": "2026-03-30T16:13:12.642Z",
+    "raw_callsign": "CHX76",
+    "source_line": 254
+  },
+  {
+    "callsign": "VEDLYS1",
+    "icao24": "503eee",
+    "first_detectedAt": "2026-03-30T16:13:12.642Z",
+    "raw_callsign": "VEDLYS 1",
+    "source_line": 255
+  },
+  {
+    "callsign": "POL5450",
+    "icao24": "4aaa16",
+    "first_detectedAt": "2026-03-30T16:13:12.642Z",
+    "raw_callsign": "POL5450",
+    "source_line": 256
+  },
+  {
+    "callsign": "CHX7",
+    "icao24": "3e1683",
+    "first_detectedAt": "2026-03-30T16:13:12.642Z",
+    "raw_callsign": "CHX7",
+    "source_line": 257
+  },
+  {
+    "callsign": "SAR1921",
+    "icao24": "48c5e6",
+    "first_detectedAt": "2026-03-30T21:16:21.185Z",
+    "raw_callsign": "SAR1921",
+    "source_line": 286
+  },
+  {
+    "callsign": "SAR1975",
+    "icao24": "48c5f9",
+    "first_detectedAt": "2026-03-30T21:30:59.524Z",
+    "raw_callsign": "SAR1975",
+    "source_line": 289
+  },
+  {
+    "callsign": "CHX65",
+    "icao24": "3e0f97",
+    "first_detectedAt": "2026-03-31T16:42:57.790Z",
+    "raw_callsign": "CHX65",
+    "source_line": 308
+  },
+  {
+    "callsign": "CHX83",
+    "icao24": "3e0fec",
+    "first_detectedAt": "2026-03-31T16:43:21.814Z",
+    "raw_callsign": "CHX83",
+    "source_line": 320
+  },
+  {
+    "callsign": "CHXE5",
+    "icao24": "3e0ff1",
+    "first_detectedAt": "2026-03-31T16:43:21.814Z",
+    "raw_callsign": "CHXE5",
+    "source_line": 321
+  },
+  {
+    "callsign": "CHX53",
+    "icao24": "3ddc73",
+    "first_detectedAt": "2026-03-31T16:43:21.814Z",
+    "raw_callsign": "CHX53",
+    "source_line": 323
+  },
+  {
+    "callsign": "CHX38",
+    "icao24": "3e0178",
+    "first_detectedAt": "2026-03-31T16:43:21.814Z",
+    "raw_callsign": "CHX38",
+    "source_line": 327
+  },
+  {
+    "callsign": "CHX36",
+    "icao24": "3e017a",
+    "first_detectedAt": "2026-03-31T16:43:21.814Z",
+    "raw_callsign": "CHX36",
+    "source_line": 328
+  },
+  {
+    "callsign": "CHX08",
+    "icao24": "3e0235",
+    "first_detectedAt": "2026-03-31T16:50:19.388Z",
+    "raw_callsign": "CHX08",
+    "source_line": 349
+  },
+  {
+    "callsign": "CHX88",
+    "icao24": "3e0ff0",
+    "first_detectedAt": "2026-04-01T10:39:42.750Z",
+    "raw_callsign": "CHX88",
+    "source_line": 449
+  },
+  {
+    "callsign": "CHX54",
+    "icao24": "3e0fe5",
+    "first_detectedAt": "2026-04-01T14:00:26.463Z",
+    "raw_callsign": "CHX54",
+    "source_line": 465
+  },
+  {
+    "callsign": "CHX84",
+    "icao24": "3ddc74",
+    "first_detectedAt": "2026-04-01T14:26:34.460Z",
+    "raw_callsign": "CHX84",
+    "source_line": 479
+  },
+  {
+    "callsign": "CHX31",
+    "icao24": "3e0175",
+    "first_detectedAt": "2026-04-01T14:26:34.460Z",
+    "raw_callsign": "CHX31",
+    "source_line": 480
+  },
+  {
+    "callsign": "CHX63",
+    "icao24": "3de4b7",
+    "first_detectedAt": "2026-04-01T14:26:34.460Z",
+    "raw_callsign": "CHX63",
+    "source_line": 481
+  },
+  {
+    "callsign": "CHX35",
+    "icao24": "3e1681",
+    "first_detectedAt": "2026-04-01T14:26:34.460Z",
+    "raw_callsign": "CHX35",
+    "source_line": 483
+  },
+  {
+    "callsign": "CHX04",
+    "icao24": "3e1687",
+    "first_detectedAt": "2026-04-01T14:34:57.826Z",
+    "raw_callsign": "CHX04",
+    "source_line": 493
+  },
+  {
+    "callsign": "CHX86",
+    "icao24": "3e0ff2",
+    "first_detectedAt": "2026-04-01T18:55:22.415Z",
+    "raw_callsign": "CHX86",
+    "source_line": 525
+  },
+  {
+    "callsign": "CHX75",
+    "icao24": "3ddc04",
+    "first_detectedAt": "2026-04-01T18:55:22.415Z",
+    "raw_callsign": "CHX75",
+    "source_line": 526
+  },
+  {
+    "callsign": "CHX56",
+    "icao24": "3e0feb",
+    "first_detectedAt": "2026-04-03T14:34:43.114Z",
+    "raw_callsign": "CHX56",
+    "source_line": 655
+  },
+  {
+    "callsign": "CHX60",
+    "icao24": "3e0179",
+    "first_detectedAt": "2026-04-03T14:34:43.114Z",
+    "raw_callsign": "CHX60",
+    "source_line": 658
+  },
+  {
+    "callsign": "CHX12",
+    "icao24": "3e167b",
+    "first_detectedAt": "2026-04-03T14:35:00.466Z",
+    "raw_callsign": "CHX12",
+    "source_line": 676
+  },
+  {
+    "callsign": "POLICER",
+    "icao24": "4404af",
+    "first_detectedAt": "2026-04-04T12:29:58.207Z",
+    "raw_callsign": "POLICER",
+    "source_line": 751
+  },
+  {
+    "callsign": "CHX43",
+    "icao24": "3ddc6a",
+    "first_detectedAt": "2026-04-04T13:12:11.989Z",
+    "raw_callsign": "CHX43",
+    "source_line": 803
+  },
+  {
+    "callsign": "CHX61",
+    "icao24": "3df80c",
+    "first_detectedAt": "2026-04-04T13:28:51.931Z",
+    "raw_callsign": "CHX61",
+    "source_line": 900
+  },
+  {
+    "callsign": "CHX44",
+    "icao24": "3e017b",
+    "first_detectedAt": "2026-04-04T16:19:34.566Z",
+    "raw_callsign": "CHX44",
+    "source_line": 1024
+  },
+  {
+    "callsign": "CHX13",
+    "icao24": "3e167d",
+    "first_detectedAt": "2026-04-04T16:19:34.566Z",
+    "raw_callsign": "CHX13",
+    "source_line": 1025
+  },
+  {
+    "callsign": "CHX50",
+    "icao24": "3e120e",
+    "first_detectedAt": "2026-04-04T16:24:06.803Z",
+    "raw_callsign": "CHX50",
+    "source_line": 1140
+  },
+  {
+    "callsign": "CHX55",
+    "icao24": "3ddc70",
+    "first_detectedAt": "2026-04-05T13:07:48.964Z",
+    "raw_callsign": "CHX55",
+    "source_line": 1244
+  },
+  {
+    "callsign": "OKPOL",
+    "icao24": "49d4b0",
+    "first_detectedAt": "2026-04-05T13:07:48.968Z",
+    "raw_callsign": "OKPOL",
+    "source_line": 1253
+  },
+  {
+    "callsign": "CHX71",
+    "icao24": "3e120a",
+    "first_detectedAt": "2026-04-05T15:58:32.426Z",
+    "raw_callsign": "CHX71",
+    "source_line": 1352
+  },
+  {
+    "callsign": "OEDLC",
+    "icao24": "440c2d",
+    "first_detectedAt": "2026-04-05T15:58:32.426Z",
+    "raw_callsign": "OEDLC",
+    "source_line": 1355
+  },
+  {
+    "callsign": "CHX34",
+    "icao24": "3e1680",
+    "first_detectedAt": "2026-04-05T15:58:32.428Z",
+    "raw_callsign": "CHX34",
+    "source_line": 1356
+  },
+  {
+    "callsign": "CHX100",
+    "icao24": "3e0fed",
+    "first_detectedAt": "2026-04-06T13:19:11.718Z",
+    "raw_callsign": "CHX100",
+    "source_line": 1484
+  },
+  {
+    "callsign": "CHX33",
+    "icao24": "3e0965",
+    "first_detectedAt": "2026-04-06T14:15:07.956Z",
+    "raw_callsign": "CHX33",
+    "source_line": 1497
+  },
+  {
+    "callsign": "CHX14",
+    "icao24": "3e1688",
+    "first_detectedAt": "2026-04-06T14:35:39.459Z",
+    "raw_callsign": "CHX14",
+    "source_line": 1610
+  }
+]
