@@ -41,7 +41,14 @@ const { favoriteStates } = favoriteState;
 
 useFavoriteLifeCycle(favoriteState);
 
-const showFavorites = computed(() => favorites.value.length > 0);
+const isHydrated = ref(false);
+onMounted(() => {
+  isHydrated.value = true;
+});
+
+const showFavorites = computed(() => {
+  return isHydrated.value && favorites.value.length > 0;
+});
 
 watch(
   favoriteStates,
