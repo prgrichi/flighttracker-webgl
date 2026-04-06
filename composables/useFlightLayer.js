@@ -19,8 +19,7 @@ const EMPTY_COLLECTION = {
 
 export function useFlightLayer(geoJson) {
   const { map } = useMapInstance();
-  const { selectedFlight, highlightedFlight, setSelectedFlight, clearSelectedFlight } =
-    useSelectedFlight();
+  const { selectedFlight, highlightedFlight, setSelectedFlight, clearSelectedFlight } = useSelectedFlight();
   const { selectedLocation } = useSelectedLocation();
 
   function isSameFlightSnapshot(currentFlight, nextFlight) {
@@ -42,7 +41,7 @@ export function useFlightLayer(geoJson) {
     );
   }
 
-  function createSelectedFlightCollection(flight) {
+  function createSelectedFlightCollection(flight, isHighlighted = false) {
     const lon = flight?.longitude ?? flight?.lon;
     const lat = flight?.latitude ?? flight?.lat;
 
@@ -63,13 +62,14 @@ export function useFlightLayer(geoJson) {
           properties: {
             ...flight,
             heading: flight.heading ?? 0,
+            isHighlighted,
           },
         },
       ],
     };
   }
 
-  function updateSelectedFlightData(mapInstance, flight, data) {
+  function updateSelectedFlightData(mapInstance, flight, highlighted, data) {
     if (!mapInstance) return;
 
     const source = mapInstance.getSource(SELECTED_FLIGHT_SOURCE_ID);
@@ -79,7 +79,11 @@ export function useFlightLayer(geoJson) {
       return feature?.properties?.icao24 === flight?.icao24;
     });
 
-    source.setData(isFlightAlreadyInMainLayer ? EMPTY_COLLECTION : createSelectedFlightCollection(flight));
+    source.setData(
+      isFlightAlreadyInMainLayer
+        ? EMPTY_COLLECTION
+        : createSelectedFlightCollection(flight, highlighted?.icao24 === flight?.icao24)
+    );
   }
 
   function updateFlightData(mapInstance, data) {
@@ -155,8 +159,13 @@ export function useFlightLayer(geoJson) {
         type: 'symbol',
         source: SELECTED_FLIGHT_SOURCE_ID,
         layout: {
-          'icon-image': PLANE_IMAGE_ACTIVE_ID,
-          'icon-size': 0.65,
+          'icon-image': [
+            'case',
+            ['boolean', ['get', 'isHighlighted'], false],
+            PLANE_IMAGE_ACTIVE_ID,
+            PLANE_IMAGE_ID,
+          ],
+          'icon-size': ['case', ['boolean', ['get', 'isHighlighted'], false], 0.65, 0.5],
           'icon-rotate': ['get', 'heading'],
           'icon-rotation-alignment': 'map',
           'icon-allow-overlap': true,
@@ -188,7 +197,7 @@ export function useFlightLayer(geoJson) {
       const initializeLayer = async () => {
         await ensureFlightLayer(mapInstance);
         updateFlightData(mapInstance, geoJson.value);
-        updateSelectedFlightData(mapInstance, highlightedFlight.value, geoJson.value);
+        updateSelectedFlightData(mapInstance, highlightedFlight.value, highlightedFlight.value, geoJson.value);
       };
 
       if (mapInstance.loaded()) {
@@ -213,7 +222,7 @@ export function useFlightLayer(geoJson) {
     [geoJson, map],
     ([data, mapInstance]) => {
       updateFlightData(mapInstance, data);
-      updateSelectedFlightData(mapInstance, highlightedFlight.value, data);
+      updateSelectedFlightData(mapInstance, highlightedFlight.value, highlightedFlight.value, data);
     },
     { immediate: true }
   );
@@ -221,7 +230,7 @@ export function useFlightLayer(geoJson) {
   watch(
     [highlightedFlight, geoJson, map],
     ([flight, data, mapInstance]) => {
-      updateSelectedFlightData(mapInstance, flight, data);
+      updateSelectedFlightData(mapInstance, flight, flight, data);
     },
     { immediate: true }
   );
