@@ -1,8 +1,4 @@
-import { useFavorites } from '@/composables/favorites/useFavorites';
-
-export const useFavoriteState = () => {
-  const { favorites } = useFavorites();
-
+export const useFavoriteState = favorites => {
   const hadFavoriteError = useState('favorites:hadError', () => false);
   const showRecoveryBanner = useState('favorites:recovery', () => false);
 

@@ -1,7 +1,5 @@
-import { useFavoriteState } from '@/composables/favorites/useFavoriteState';
-
-export const useFavoriteLifeCycle = () => {
-  const { refresh, error, showRecoveryBanner, hadFavoriteError } = useFavoriteState();
+export const useFavoriteLifeCycle = favoriteState => {
+  const { refresh, error, showRecoveryBanner, hadFavoriteError } = favoriteState;
 
   let recoveryBannerTimeout = null;
 

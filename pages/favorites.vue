@@ -36,9 +36,10 @@ import { useFavoriteLifeCycle } from '@/composables/favorites/useFavoriteLifeCyc
 import FavoriteCard from '@/components/FavoriteCard.vue';
 
 const { favorites, removeFavorite } = useFavorites();
-const { favoriteStates } = useFavoriteState();
+const favoriteState = useFavoriteState(favorites);
+const { favoriteStates } = favoriteState;
 
-useFavoriteLifeCycle();
+useFavoriteLifeCycle(favoriteState);
 
 const showFavorites = computed(() => favorites.value.length > 0);
 
