@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute bottom-4 inset-x-0 mx-auto w-[95%] z-20 pointer-events-none">
+  <div class="absolute bottom-3 inset-x-0 mx-auto w-[95%] z-20 pointer-events-none">
     <footer class="h-10 rounded-lg border border-border bg-surface/70 backdrop-blur-md shadow-md">
       <div class="flex h-full items-center justify-between px-4 text-sm">
         <div class="flex items-center gap-2">
