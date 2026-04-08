@@ -48,7 +48,14 @@
         </div>
       </div>
 
-      <template v-if="showFavorites">
+      <!-- Skeleton -->
+      <template v-if="isLoading">
+        <div>
+          <FavoriteCardSkeleton v-for="n in 3" :key="n" />
+        </div>
+      </template>
+
+      <template v-else-if="showFavorites">
         <TransitionGroup name="favorites-soft" tag="div">
           <FavoriteCard
             v-for="fav in sortedFavoriteStates"
@@ -87,7 +94,8 @@
 <script setup>
 import { computed, ref, onMounted } from 'vue';
 
-import FavoriteHeader from '@/components/FavoriteHeader';
+import FavoriteHeader from '@/components/favorites/FavoriteHeader';
+import FavoriteCardSkeleton from '@/components/favorites/FavoriteCardSkeleton.vue';
 
 import { useFavorites } from '@/composables/favorites/useFavorites';
 import { useFavoriteState } from '@/composables/favorites/useFavoriteState';
@@ -95,12 +103,12 @@ import { useFavoriteLifeCycle } from '@/composables/favorites/useFavoriteLifeCyc
 import { useFavoriteUndo } from '@/composables/favorites/useFavoriteUndo';
 import { useMapNavigation } from '@/composables/map/useMapNavigation';
 
-import FavoriteCard from '@/components/FavoriteCard.vue';
-import FavoriteUndoToast from '@/components/FavoriteUndoToast.vue';
+import FavoriteCard from '@/components/favorites/FavoriteCard.vue';
+import FavoriteUndoToast from '@/components/favorites/FavoriteUndoToast.vue';
 
 const { favorites, removeFavorite } = useFavorites();
 const favoriteState = useFavoriteState(favorites);
-const { favoriteStates, fetchFreshFavorite } = favoriteState;
+const { favoriteStates, fetchFreshFavorite, pending } = favoriteState;
 const { navigateToFlight } = useMapNavigation();
 
 useFavoriteLifeCycle(favoriteState);
@@ -138,8 +146,12 @@ const visibleFavoriteStates = computed(() => {
   return favoriteStates.value.filter(fav => !hiddenIcao24Set.value.has(fav.icao24));
 });
 
+const isLoading = computed(() => {
+  return pending.value && isHydrated.value;
+});
+
 const showFavorites = computed(() => {
-  return isHydrated.value && visibleFavoriteStates.value.length > 0;
+  return visibleFavoriteStates.value.length > 0;
 });
 
 const sortedFavoriteStates = computed(() => {
