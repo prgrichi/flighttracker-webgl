@@ -42,7 +42,7 @@ export const useFlightsLifecycle = (initialRegion = 'bavaria') => {
     pollingStarted.value = true;
 
     interval = setInterval(() => {
-      console.log('poll refresh (20s)');
+      console.log('startPolling flights refresh (20s)');
       doRefresh();
     }, 20_000);
   };

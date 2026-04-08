@@ -15,27 +15,32 @@ export const useFavoriteState = favorites => {
     query,
     default: () => [],
     server: false,
-    immediate: true,
-    // watch: [icao24List],
+    immediate: false,
   });
 
-  let interval;
   onMounted(() => {
-    interval = setInterval(() => {
-      if (!pending.value) {
-        console.log('refresh', data.value);
-        refresh();
-      }
-    }, 10000);
-  });
-
-  onUnmounted(() => {
-    clearInterval(interval);
+    if (icao24List.value.length > 0) {
+      refresh();
+    }
   });
 
   const statesByIcao24 = computed(() => {
     return Object.fromEntries((data.value || []).map(item => [item.icao24, item]));
   });
+
+  const fetchFreshFavorite = async icao24 => {
+    console.log('fetchFreshFavorite');
+    if (!icao24) return null;
+
+    const response = await $fetch('/api/favorites', {
+      query: {
+        icao24,
+        fresh: true,
+      },
+    });
+
+    return response?.[0] || null;
+  };
 
   const favoriteStates = computed(() => {
     return favorites.value.map(fav => {
@@ -82,6 +87,7 @@ export const useFavoriteState = favorites => {
 
   return {
     favoriteStates,
+    fetchFreshFavorite,
     pending,
     error,
     refresh,

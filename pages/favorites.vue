@@ -54,7 +54,9 @@
             v-for="fav in sortedFavoriteStates"
             :key="fav.icao24"
             :fav="fav"
+            :is-navigating="navigatingIcao24 === fav.icao24"
             @remove="requestRemove(fav)"
+            @show-on-map="showFavoriteOnMap"
           />
         </TransitionGroup>
       </template>
@@ -91,13 +93,15 @@ import { useFavorites } from '@/composables/favorites/useFavorites';
 import { useFavoriteState } from '@/composables/favorites/useFavoriteState';
 import { useFavoriteLifeCycle } from '@/composables/favorites/useFavoriteLifeCycle';
 import { useFavoriteUndo } from '@/composables/favorites/useFavoriteUndo';
+import { useMapNavigation } from '@/composables/map/useMapNavigation';
 
 import FavoriteCard from '@/components/FavoriteCard.vue';
 import FavoriteUndoToast from '@/components/FavoriteUndoToast.vue';
 
 const { favorites, removeFavorite } = useFavorites();
 const favoriteState = useFavoriteState(favorites);
-const { favoriteStates } = favoriteState;
+const { favoriteStates, fetchFreshFavorite } = favoriteState;
+const { navigateToFlight } = useMapNavigation();
 
 useFavoriteLifeCycle(favoriteState);
 
@@ -110,6 +114,25 @@ onMounted(() => {
 });
 
 const sortNewestFirst = ref(true);
+const navigatingIcao24 = ref(null);
+
+const showFavoriteOnMap = async fav => {
+  if (!fav?.icao24 || navigatingIcao24.value) return;
+
+  navigatingIcao24.value = fav.icao24;
+
+  try {
+    const freshFavorite = await fetchFreshFavorite(fav.icao24);
+    const flightForNavigation = freshFavorite?.found ? { ...fav, ...freshFavorite } : fav;
+
+    await navigateToFlight(flightForNavigation, 9);
+  } catch (err) {
+    console.error('Failed to refresh favorite before map navigation:', err);
+    await navigateToFlight(fav, 9);
+  } finally {
+    navigatingIcao24.value = null;
+  }
+};
 
 const visibleFavoriteStates = computed(() => {
   return favoriteStates.value.filter(fav => !hiddenIcao24Set.value.has(fav.icao24));

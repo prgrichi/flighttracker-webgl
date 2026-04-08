@@ -1,6 +1,8 @@
 import { mapOpenSkyState } from '../utils/mapOpenSky.js';
 import { fetchOpenSkyToken } from '@/server/utils/openSky.js';
 
+const FAVORITES_CACHE_TTL_MS = 30_000;
+
 let favoritesCache = {};
 
 let openskyFavoriteCalls = 0;
@@ -34,6 +36,8 @@ async function loadFavoriteStates(icao24List, useMock) {
     const statusCode = err?.response?.status || err?.statusCode || err?.status;
     const statusMessage = err?.response?.statusText || err?.statusMessage;
     const responseData = err?.response?._data;
+
+    console.log('retry-after', err?.response?.headers?.get?.('X-Rate-Limit-Retry-After-Seconds'));
 
     console.error('Favorite states API error:', {
       statusCode,
@@ -110,6 +114,7 @@ async function loadFavoriteStates(icao24List, useMock) {
 export default defineEventHandler(async event => {
   const query = getQuery(event);
   const useMock = process.env.NUXT_USE_MOCK === 'true';
+  const forceFresh = query.fresh === 'true' || query.fresh === '1';
 
   let icao24 = query.icao24 || [];
 
@@ -135,7 +140,7 @@ export default defineEventHandler(async event => {
 
   console.log('➡️ Incoming favorites request');
 
-  if (!useMock && cachedEntry && now < cachedEntry.expiresAt) {
+  if (!useMock && !forceFresh && cachedEntry && now < cachedEntry.expiresAt) {
     console.log('🟢 FAVORITES SERVED FROM CACHE');
     return cachedEntry.data;
   }
@@ -145,7 +150,7 @@ export default defineEventHandler(async event => {
   if (!useMock) {
     favoritesCache[cacheKey] = {
       data: response,
-      expiresAt: Date.now() + 15_000,
+      expiresAt: Date.now() + FAVORITES_CACHE_TTL_MS,
     };
   }
   console.log(response);

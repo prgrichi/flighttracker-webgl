@@ -4,7 +4,7 @@
   >
     <MapLoader v-if="isMapLoading" />
 
-    <TheHeaderStatusBanners />
+    <TheGlobalStatusBanners />
 
     <div class="relative flex items-center justify-between h-full px-1">
       <!-- LEFT: Favorites -->
@@ -99,7 +99,7 @@ import { useRoute } from 'vue-router';
 import { REGIONS } from '@/constants/regions';
 import { useAirportsState } from '@/composables/airports/useAirportsState';
 import { useMapState } from '@/composables/map/useMapState';
-import TheHeaderStatusBanners from '@/layouts/components/TheHeaderStatusBanners.vue';
+import TheGlobalStatusBanners from '@/layouts/components/TheGlobalStatusBanners.vue';
 
 const route = useRoute();
 const { isMapLoading } = useMapState();

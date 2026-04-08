@@ -69,6 +69,8 @@
         variant="soft"
         block
         class="justify-center transition-transform hover:scale-[1.02] active:scale-[0.98]"
+        :loading="isNavigating"
+        :disabled="isNavigating"
         @click="jumpToFavorite"
       >
         Auf Karte anzeigen
@@ -78,22 +80,22 @@
 </template>
 
 <script setup>
-import { useMapNavigation } from '@/composables/map/useMapNavigation';
-
 const props = defineProps({
   fav: {
     type: Object,
     required: true,
   },
+  isNavigating: {
+    type: Boolean,
+    default: false,
+  },
 });
 
-const { navigateToFlight } = useMapNavigation();
+const emit = defineEmits(['remove', 'show-on-map']);
 
-const jumpToFavorite = async () => {
-  await navigateToFlight(props.fav, 9);
+const jumpToFavorite = () => {
+  emit('show-on-map', props.fav);
 };
-
-defineEmits(['remove']);
 
 const showMapButton = computed(() => {
   return props.fav?.found && props.fav?.liveStatus === 'air';

@@ -35,7 +35,7 @@ import { useRoute } from 'vue-router';
 import { REGIONS } from '@/constants/regions';
 import { useAirportsState } from '@/composables/airports/useAirportsState';
 import { useMapState } from '@/composables/map/useMapState';
-import TheHeaderStatusBanners from '@/layouts/components/TheHeaderStatusBanners.vue';
+import TheFavoriteStatusBanners from '@/layouts/components/TheFavoriteStatusBanners.vue';
 
 const route = useRoute();
 const { isMapLoading } = useMapState();
