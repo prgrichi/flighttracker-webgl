@@ -90,7 +90,6 @@ const props = defineProps({
 const { navigateToFlight } = useMapNavigation();
 
 const jumpToFavorite = async () => {
-  console.log(props.fav);
   await navigateToFlight(props.fav, 9);
 };
 

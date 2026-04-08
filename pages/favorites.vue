@@ -2,7 +2,7 @@
   <div class="h-full overflow-y-auto px-4 py-4 max-w-3xl mx-auto w-full">
     <div v-if="showFavorites" class="mb-4 flex items-center justify-between gap-3">
       <div class="text-sm text-muted-foreground">
-        <span class="font-medium text-toned">{{ favorites.length }}</span>
+        <span class="font-medium text-toned">{{ visibleFavoritesCount }}</span>
         Favoriten gespeichert
       </div>
 
@@ -51,7 +51,7 @@
           v-for="fav in sortedFavoriteStates"
           :key="fav.icao24"
           :fav="fav"
-          @remove="removeFavorite"
+          @remove="requestRemove(fav)"
         />
       </TransitionGroup>
     </template>
@@ -69,16 +69,25 @@
         <p class="text-sm text-muted-foreground">No favorites yet.</p>
       </div>
     </template>
+
+    <FavoriteUndoToast
+      :item="pendingRemoval"
+      :progress-percent="progressPercent"
+      @undo="undoRemove"
+    />
   </div>
 </template>
 
 <script setup>
-import { computed, watch } from 'vue';
+import { computed, ref, onMounted } from 'vue';
 
 import { useFavorites } from '@/composables/favorites/useFavorites';
 import { useFavoriteState } from '@/composables/favorites/useFavoriteState';
 import { useFavoriteLifeCycle } from '@/composables/favorites/useFavoriteLifeCycle';
+import { useFavoriteUndo } from '@/composables/favorites/useFavoriteUndo';
+
 import FavoriteCard from '@/components/FavoriteCard.vue';
+import FavoriteUndoToast from '@/components/FavoriteUndoToast.vue';
 
 const { favorites, removeFavorite } = useFavorites();
 const favoriteState = useFavoriteState(favorites);
@@ -86,33 +95,42 @@ const { favoriteStates } = favoriteState;
 
 useFavoriteLifeCycle(favoriteState);
 
+const { pendingRemoval, progressPercent, hiddenIcao24Set, requestRemove, undoRemove } =
+  useFavoriteUndo(removeFavorite);
+
 const isHydrated = ref(false);
 onMounted(() => {
   isHydrated.value = true;
 });
 
-const showFavorites = computed(() => {
-  return isHydrated.value && favorites.value.length > 0;
-});
-
-watch(
-  favoriteStates,
-  val => {
-    console.log('🔥 favoriteStates:', val);
-  },
-  { immediate: true }
-);
-
 const sortNewestFirst = ref(true);
 
+const visibleFavoriteStates = computed(() => {
+  return favoriteStates.value.filter(fav => !hiddenIcao24Set.value.has(fav.icao24));
+});
+
+const showFavorites = computed(() => {
+  return isHydrated.value && visibleFavoriteStates.value.length > 0;
+});
+
 const sortedFavoriteStates = computed(() => {
-  return [...favoriteStates.value].sort((a, b) => {
+  return [...visibleFavoriteStates.value].sort((a, b) => {
     const aTime = a.savedAt || 0;
     const bTime = b.savedAt || 0;
 
     return sortNewestFirst.value ? bTime - aTime : aTime - bTime;
   });
 });
+
+const visibleFavoritesCount = computed(() => visibleFavoriteStates.value.length);
+
+// watch(
+//   favoriteStates,
+//   val => {
+//     console.log('🔥 favoriteStates:', val);
+//   },
+//   { immediate: true }
+// );
 </script>
 
 <style scoped>

@@ -33,8 +33,6 @@ export const useFavorites = () => {
   };
 
   const removeFavorite = icao24 => {
-    console.log('remove');
-
     const normalized = normalizeIcao24(icao24);
     if (!normalized) return;
 
