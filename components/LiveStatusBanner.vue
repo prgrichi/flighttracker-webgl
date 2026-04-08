@@ -1,9 +1,9 @@
 <template>
   <transition name="fade">
-    <div v-if="show" class="absolute left-0 top-full z-[1200] w-full">
+    <div v-if="show" class="absolute left-0 top-[calc(100%+6px)] z-1200 w-full">
       <div
         :class="[
-          'flex items-center justify-between px-4 py-2 text-sm text-white backdrop-blur border-b',
+          'flex items-center justify-between px-4 py-2 rounded-md text-sm text-white backdrop-blur border-b',
           color === 'success'
             ? 'bg-green-600/95 border-green-400/30'
             : 'bg-red-500/95 border-red-400/30',

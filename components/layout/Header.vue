@@ -1,10 +1,12 @@
 <template>
-  <header class="relative w-full h-16 border-b border-border bg-surface">
+  <header
+    class="absolute top-2 inset-x-0 mx-auto w-[95%] h-[45px] z-1000 rounded-lg shadow-md border-border bg-surface/90 backdrop-blur-md"
+  >
     <MapLoader v-if="isMapLoading" />
 
     <TheHeaderStatusBanners />
 
-    <div class="relative flex items-center justify-between h-full px-4">
+    <div class="relative flex items-center justify-between h-full px-1">
       <!-- LEFT: Favorites -->
 
       <NuxtLink
@@ -14,8 +16,8 @@
       >
         <transition name="icon-switch" mode="out-in">
           <UIcon
-            :key="isFavorites ? 'back' : 'heart'"
-            :name="isFavorites ? 'i-lucide-arrow-left' : 'i-lucide-heart'"
+            :key="isFavorites ? 'back' : 'bookmark'"
+            :name="isFavorites ? 'i-lucide-arrow-left' : 'i-lucide-bookmark'"
             class="w-5 h-5"
           />
         </transition>

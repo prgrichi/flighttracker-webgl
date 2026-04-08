@@ -1,11 +1,15 @@
 <template>
-  <div class="absolute z-20 flex flex-col gap-3 right-6 top-6">
-    <MapReset />
-    <MapTypeSwitcher
-      :model-value="modelValue"
-      :map-types="mapTypes"
-      @update:modelValue="selectMapType"
-    />
+  <div class="absolute top-16 inset-x-0 mx-auto w-[95%] z-20 pointer-events-none">
+    <div class="flex justify-end">
+      <div class="flex flex-col gap-3 pointer-events-auto">
+        <MapReset />
+        <MapTypeSwitcher
+          :model-value="modelValue"
+          :map-types="mapTypes"
+          @update:modelValue="selectMapType"
+        />
+      </div>
+    </div>
   </div>
 </template>
 

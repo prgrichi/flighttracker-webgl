@@ -1,6 +1,7 @@
 <template>
-  <div class="relative w-full h-full overflow-hidden">
-    <div class="relative h-full w-full">
+  <div class="flex h-full min-h-0 w-full flex-col">
+    <Header></Header>
+    <div class="relative min-h-0 flex-1 overflow-hidden">
       <div ref="mapContainer" class="map-container h-full w-full"></div>
 
       <MapNavBar
@@ -46,10 +47,14 @@
         </div>
       </div>
     </div>
+    <Footer></Footer>
   </div>
 </template>
 
 <script setup>
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
+
 import { useMaplibreMap } from '@/composables/map/useMaplibreMap';
 import { useMapType } from '@/composables/map/useMapType';
 import { useMapInstance } from '@/composables/map/useMapInstance';

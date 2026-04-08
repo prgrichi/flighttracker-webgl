@@ -1,0 +1,4 @@
+.map-container .maplibregl-ctrl-bottom-right,
+.map-container .maplibregl-ctrl-bottom-left {
+  bottom: 55px;
+}

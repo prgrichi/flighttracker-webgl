@@ -1,74 +1,78 @@
 <template>
-  <div class="h-full overflow-y-auto px-4 py-4 max-w-3xl mx-auto w-full">
-    <div v-if="showFavorites" class="mb-4 flex items-center justify-between gap-3">
-      <div class="text-sm text-muted-foreground">
-        <span class="font-medium text-toned">{{ visibleFavoritesCount }}</span>
-        Favoriten gespeichert
+  <div class="h-full overflow-y-auto px-4 pt-4 pb-8 max-w-3xl mx-auto w-full">
+    <FavoriteHeader></FavoriteHeader>
+
+    <div class="relative top-12 mb-10">
+      <div v-if="showFavorites" class="mb-4 flex items-center justify-between gap-3">
+        <div class="text-sm text-muted-foreground">
+          <span class="font-medium text-toned">{{ visibleFavoritesCount }}</span>
+          {{ visibleFavoritesCountLabel }}
+        </div>
+
+        <div
+          class="inline-flex items-center rounded-xl border border-border bg-muted/30 p-1"
+          role="group"
+          aria-label="Sortierung der Favoriten"
+        >
+          <!-- Neueste -->
+          <button
+            type="button"
+            @click="sortNewestFirst = true"
+            class="inline-flex items-center gap-2 rounded-lg px-3 py-1.5 text-sm font-medium transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+            :class="
+              sortNewestFirst
+                ? 'bg-primary text-white shadow'
+                : 'text-muted-foreground hover:text-toned hover:bg-muted'
+            "
+            :aria-pressed="sortNewestFirst"
+          >
+            <UIcon name="i-lucide-arrow-down-wide-narrow" class="w-4 h-4" aria-hidden="true" />
+            <span>Neueste</span>
+          </button>
+
+          <!-- Älteste -->
+          <button
+            type="button"
+            @click="sortNewestFirst = false"
+            class="inline-flex items-center gap-2 rounded-lg px-3 py-1.5 text-sm font-medium transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+            :class="
+              !sortNewestFirst
+                ? 'bg-primary text-white shadow'
+                : 'text-muted-foreground hover:text-toned hover:bg-muted'
+            "
+            :aria-pressed="!sortNewestFirst"
+          >
+            <UIcon name="i-lucide-arrow-up-wide-narrow" class="w-4 h-4" aria-hidden="true" />
+            <span>Älteste</span>
+          </button>
+        </div>
       </div>
 
-      <div
-        class="inline-flex items-center rounded-xl border border-border bg-muted/30 p-1"
-        role="group"
-        aria-label="Sortierung der Favoriten"
-      >
-        <!-- Neueste -->
-        <button
-          type="button"
-          @click="sortNewestFirst = true"
-          class="inline-flex items-center gap-2 rounded-lg px-3 py-1.5 text-sm font-medium transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-          :class="
-            sortNewestFirst
-              ? 'bg-primary text-white shadow'
-              : 'text-muted-foreground hover:text-toned hover:bg-muted'
-          "
-          :aria-pressed="sortNewestFirst"
-        >
-          <UIcon name="i-lucide-arrow-down-wide-narrow" class="w-4 h-4" aria-hidden="true" />
-          <span>Neueste</span>
-        </button>
+      <template v-if="showFavorites">
+        <TransitionGroup name="favorites-soft" tag="div">
+          <FavoriteCard
+            v-for="fav in sortedFavoriteStates"
+            :key="fav.icao24"
+            :fav="fav"
+            @remove="requestRemove(fav)"
+          />
+        </TransitionGroup>
+      </template>
 
-        <!-- Älteste -->
-        <button
-          type="button"
-          @click="sortNewestFirst = false"
-          class="inline-flex items-center gap-2 rounded-lg px-3 py-1.5 text-sm font-medium transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-          :class="
-            !sortNewestFirst
-              ? 'bg-primary text-white shadow'
-              : 'text-muted-foreground hover:text-toned hover:bg-muted'
-          "
-          :aria-pressed="!sortNewestFirst"
+      <template v-else>
+        <header class="mb-6">
+          <h1 class="text-xl font-semibold">Favorites</h1>
+          <p class="text-sm text-muted-foreground mt-1">Your saved aircrafts will appear here.</p>
+        </header>
+
+        <div
+          class="flex flex-col items-center justify-center text-center py-16 border border-dashed border-border rounded-lg"
         >
-          <UIcon name="i-lucide-arrow-up-wide-narrow" class="w-4 h-4" aria-hidden="true" />
-          <span>Älteste</span>
-        </button>
-      </div>
+          <UIcon name="i-lucide-bookmark" class="w-8 h-8 mb-3 opacity-50" />
+          <p class="text-sm text-muted-foreground">No favorites yet.</p>
+        </div>
+      </template>
     </div>
-
-    <template v-if="showFavorites">
-      <TransitionGroup name="favorites-soft" tag="div">
-        <FavoriteCard
-          v-for="fav in sortedFavoriteStates"
-          :key="fav.icao24"
-          :fav="fav"
-          @remove="requestRemove(fav)"
-        />
-      </TransitionGroup>
-    </template>
-
-    <template v-else>
-      <header class="mb-6">
-        <h1 class="text-xl font-semibold">Favorites</h1>
-        <p class="text-sm text-muted-foreground mt-1">Your saved aircrafts will appear here.</p>
-      </header>
-
-      <div
-        class="flex flex-col items-center justify-center text-center py-16 border border-dashed border-border rounded-lg"
-      >
-        <UIcon name="i-lucide-heart" class="w-8 h-8 mb-3 opacity-50" />
-        <p class="text-sm text-muted-foreground">No favorites yet.</p>
-      </div>
-    </template>
 
     <FavoriteUndoToast
       :item="pendingRemoval"
@@ -80,6 +84,8 @@
 
 <script setup>
 import { computed, ref, onMounted } from 'vue';
+
+import FavoriteHeader from '@/components/FavoriteHeader';
 
 import { useFavorites } from '@/composables/favorites/useFavorites';
 import { useFavoriteState } from '@/composables/favorites/useFavoriteState';
@@ -123,6 +129,10 @@ const sortedFavoriteStates = computed(() => {
 });
 
 const visibleFavoritesCount = computed(() => visibleFavoriteStates.value.length);
+
+const visibleFavoritesCountLabel = computed(() => {
+  return visibleFavoritesCount.value > 1 ? 'Favoriten' : 'Favorit';
+});
 
 // watch(
 //   favoriteStates,
