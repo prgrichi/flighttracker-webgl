@@ -94,16 +94,15 @@
 <script setup>
 import { computed, ref, onMounted } from 'vue';
 
-import FavoriteHeader from '@/components/favorites/FavoriteHeader';
-import FavoriteCardSkeleton from '@/components/favorites/FavoriteCardSkeleton.vue';
-
 import { useFavorites } from '@/composables/favorites/useFavorites';
 import { useFavoriteState } from '@/composables/favorites/useFavoriteState';
 import { useFavoriteLifeCycle } from '@/composables/favorites/useFavoriteLifeCycle';
 import { useFavoriteUndo } from '@/composables/favorites/useFavoriteUndo';
 import { useMapNavigation } from '@/composables/map/useMapNavigation';
 
+import FavoriteHeader from '@/components/favorites/FavoriteHeader';
 import FavoriteCard from '@/components/favorites/FavoriteCard.vue';
+import FavoriteCardSkeleton from '@/components/favorites/FavoriteCardSkeleton.vue';
 import FavoriteUndoToast from '@/components/favorites/FavoriteUndoToast.vue';
 
 const { favorites, removeFavorite } = useFavorites();

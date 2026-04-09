@@ -3,6 +3,8 @@
     <div class="relative flex items-center justify-between h-full px-1">
       <!-- LEFT: Favorites -->
 
+      <FavoritesStatusBanner />
+
       <NuxtLink
         :to="isFavorites ? '/' : '/favorites'"
         class="flex items-center justify-center w-10 h-10 rounded-lg hover:bg-muted transition"
@@ -18,7 +20,7 @@
       </NuxtLink>
 
       <!-- CENTER -->
-      <NuxtLink to="/" class="absolute left-1/2 -translate-x-1/2 flex items-center gap-2">
+      <NuxtLink to="/favorites" class="absolute left-1/2 -translate-x-1/2 flex items-center gap-2">
         <span
           class="text-shadow-mauve-50 font-sans font-semiboldtracking-wider uppercase text-muted-foreground"
         >
@@ -30,27 +32,11 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { computed } from 'vue';
 import { useRoute } from 'vue-router';
-import { REGIONS } from '@/constants/regions';
-import { useAirportsState } from '@/composables/airports/useAirportsState';
-import { useMapState } from '@/composables/map/useMapState';
-import TheFavoriteStatusBanners from '@/layouts/components/TheFavoriteStatusBanners.vue';
+import FavoritesStatusBanner from '@/components/banners/FavoritesStatusBanner.vue';
 
 const route = useRoute();
-const { isMapLoading } = useMapState();
-
-const { region } = useFlightsState();
-
-const { showLargeAirports, showMediumAirports, showSmallAirports, showHeliports } =
-  useAirportsState();
-
-const handleRegionClick = item => {
-  if (region.value === item.id) return;
-  region.value = item.id;
-};
-
-const open = ref(false);
 
 const isFavorites = computed(() => route.path === '/favorites');
 </script>

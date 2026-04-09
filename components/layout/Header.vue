@@ -4,7 +4,7 @@
   >
     <MapLoader v-if="isMapLoading" />
 
-    <TheGlobalStatusBanners />
+    <MapStatusBanners />
 
     <div class="relative flex items-center justify-between h-full px-1">
       <!-- LEFT: Favorites -->
@@ -25,7 +25,6 @@
 
       <!-- CENTER -->
       <NuxtLink to="/" class="absolute left-1/2 -translate-x-1/2 flex items-center gap-2">
-        <!-- <UIcon name="i-lucide-plane" class="w-4 h-4 opacity-70" /> -->
         <span
           class="text-shadow-mauve-50 font-sans font-semiboldtracking-wider uppercase text-muted-foreground"
         >
@@ -99,7 +98,7 @@ import { useRoute } from 'vue-router';
 import { REGIONS } from '@/constants/regions';
 import { useAirportsState } from '@/composables/airports/useAirportsState';
 import { useMapState } from '@/composables/map/useMapState';
-import TheGlobalStatusBanners from '@/layouts/components/TheGlobalStatusBanners.vue';
+import MapStatusBanners from '@/components/banners/MapStatusBanners.vue';
 
 const route = useRoute();
 const { isMapLoading } = useMapState();
