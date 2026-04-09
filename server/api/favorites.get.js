@@ -1,14 +1,14 @@
 import { mapOpenSkyState } from '../utils/mapOpenSky.js';
 import { fetchOpenSkyToken } from '@/server/utils/openSky.js';
+import { incrementRequestStat } from '@/server/utils/requestStats.js';
 
 const FAVORITES_CACHE_TTL_MS = 30_000;
 
 let favoritesCache = {};
 
-let openskyFavoriteCalls = 0;
-
 async function loadFavoriteStates(icao24List, useMock) {
-  console.log('🟣 FETCHING FAVORITES FROM OPENSKY', ++openskyFavoriteCalls);
+  incrementRequestStat('favoritesOpenSkyRequests');
+  console.log('🟣 FETCHING FAVORITES FROM OPENSKY');
 
   let raw;
 
@@ -112,6 +112,8 @@ async function loadFavoriteStates(icao24List, useMock) {
 }
 
 export default defineEventHandler(async event => {
+  incrementRequestStat('favoritesApiRequests');
+
   const query = getQuery(event);
   const useMock = process.env.NUXT_USE_MOCK === 'true';
   const forceFresh = query.fresh === 'true' || query.fresh === '1';

@@ -87,13 +87,59 @@
             </div>
           </div>
         </div>
+
+        <div>
+          <p class="text-sm font-medium mb-2">Request Stats</p>
+
+          <div class="rounded-lg border border-border bg-muted/30 p-3 space-y-2 text-sm">
+            <div v-if="requestStatsPending" class="text-muted-foreground">
+              Loading request stats...
+            </div>
+
+            <div v-else-if="requestStatsError" class="text-red-500">
+              Request stats currently unavailable.
+            </div>
+
+            <template v-else>
+              <div class="flex items-center justify-between">
+                <span class="text-muted-foreground">Flights API</span>
+                <span class="font-medium">{{ stats.flightsApiRequests }}</span>
+              </div>
+
+              <div class="flex items-center justify-between">
+                <span class="text-muted-foreground">Favorites API</span>
+                <span class="font-medium">{{ stats.favoritesApiRequests }}</span>
+              </div>
+
+              <div class="flex items-center justify-between">
+                <span class="text-muted-foreground">Flights OpenSky</span>
+                <span class="font-medium">{{ stats.flightsOpenSkyRequests }}</span>
+              </div>
+
+              <div class="flex items-center justify-between">
+                <span class="text-muted-foreground">Favorites OpenSky</span>
+                <span class="font-medium">{{ stats.favoritesOpenSkyRequests }}</span>
+              </div>
+
+              <div class="flex items-center justify-between pt-2 border-t border-border">
+                <span class="text-muted-foreground">Total API</span>
+                <span class="font-semibold">{{ totalApiRequests }}</span>
+              </div>
+
+              <div class="flex items-center justify-between">
+                <span class="text-muted-foreground">Total OpenSky</span>
+                <span class="font-semibold">{{ totalOpenSkyRequests }}</span>
+              </div>
+            </template>
+          </div>
+        </div>
       </div>
     </template>
   </USlideover>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import { REGIONS } from '@/constants/regions';
 import { useAirportsState } from '@/composables/airports/useAirportsState';
@@ -108,6 +154,15 @@ const { region } = useFlightsState();
 const { showLargeAirports, showMediumAirports, showSmallAirports, showHeliports } =
   useAirportsState();
 
+const {
+  stats,
+  pending: requestStatsPending,
+  error: requestStatsError,
+  refresh: refreshRequestStats,
+  totalApiRequests,
+  totalOpenSkyRequests,
+} = useRequestStats();
+
 const handleRegionClick = item => {
   if (region.value === item.id) return;
   region.value = item.id;
@@ -116,6 +171,12 @@ const handleRegionClick = item => {
 const open = ref(false);
 
 const isFavorites = computed(() => route.path === '/favorites');
+
+watch(open, isOpen => {
+  if (!isOpen) return;
+
+  refreshRequestStats();
+});
 </script>
 
 <style>

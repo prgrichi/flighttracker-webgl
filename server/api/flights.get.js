@@ -4,12 +4,13 @@ import mockData from '../data/mockFlights.json';
 import { fetchOpenSkyToken } from '@/server/utils/openSky.js';
 import { scanCallSigns } from '@/server/utils/logger/scanCallSigns.js';
 import { logToFile } from '@/server/utils/logger/logToFile.js';
+import { incrementRequestStat } from '@/server/utils/requestStats.js';
 
 let regionCache = {};
-let openskyCalls = 0;
 
 async function loadFlights(bbox, useMock) {
-  console.log('🔴 FETCHING FROM OPENSKY', ++openskyCalls);
+  incrementRequestStat('flightsOpenSkyRequests');
+  console.log('🔴 FETCHING FROM OPENSKY');
 
   let raw;
 
@@ -111,6 +112,8 @@ async function loadFlights(bbox, useMock) {
 }
 
 export default defineEventHandler(async event => {
+  incrementRequestStat('flightsApiRequests');
+
   const query = getQuery(event);
 
   if (query.fail === 'true') {
