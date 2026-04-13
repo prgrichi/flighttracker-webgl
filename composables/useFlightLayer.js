@@ -22,6 +22,16 @@ export function useFlightLayer(geoJson) {
   const { selectedFlight, highlightedFlight, setSelectedFlight, clearSelectedFlight } = useSelectedFlight();
   const { selectedLocation } = useSelectedLocation();
 
+  function getFlightFromGeoJsonByIcao24(icao24, data) {
+    if (!icao24 || !data?.features?.length) return null;
+
+    const match = data.features.find(feature => {
+      return feature?.properties?.icao24 === icao24;
+    });
+
+    return match?.properties ?? null;
+  }
+
   function isSameFlightSnapshot(currentFlight, nextFlight) {
     if (!currentFlight && !nextFlight) return true;
     if (!currentFlight || !nextFlight) return false;
@@ -191,7 +201,13 @@ export function useFlightLayer(geoJson) {
         }
 
         selectedLocation.value = null;
-        setSelectedFlight(features[0].properties);
+
+        const clickedProperties = features[0]?.properties ?? null;
+        const clickedIcao24 = clickedProperties?.icao24 ?? features[0]?.id ?? null;
+        const fullFlight = getFlightFromGeoJsonByIcao24(clickedIcao24, geoJson.value);
+
+        // MapLibre queryRenderedFeatures serializes nested properties, so prefer source data.
+        setSelectedFlight(fullFlight ?? clickedProperties);
       };
 
       const initializeLayer = async () => {

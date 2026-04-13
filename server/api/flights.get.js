@@ -93,6 +93,7 @@ async function loadFlights(bbox, useMock) {
         aircraftManufacturer: f.aircraftManufacturer,
         aircraftModel: f.aircraftModel,
         aircraftCategory: f.aircraftCategory,
+        helicopter: f.helicopter,
         heading: f.heading,
         altitudeM: f.altitudeM,
         altitudeFt: f.altitudeFt,

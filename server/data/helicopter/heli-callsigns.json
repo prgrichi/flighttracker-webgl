@@ -1,0 +1,676 @@
+{
+  "3e0fef": {
+    "callsign": "CHX89",
+    "icao24": "3e0fef",
+    "raw_callsign": "CHX89",
+    "organisation": "DRF",
+    "name": "Christoph 89",
+    "location": "Universitätsklinikum Regensburg"
+  },
+  "3dfa59": {
+    "callsign": "EDL4",
+    "icao24": "3dfa59",
+    "raw_callsign": "EDL4",
+    "organisation": "Polizei Bayern",
+    "name": "Edelweiß 4",
+    "location": "Flughafen München"
+  },
+  "3e0f94": {
+    "callsign": "CHX18",
+    "icao24": "3e0f94",
+    "raw_callsign": "CHX18",
+    "organisation": "ADAC",
+    "name": "Christoph 18",
+    "location": "Ochsenfurt"
+  },
+  "3e1214": {
+    "callsign": "CHX1",
+    "icao24": "3e1214",
+    "raw_callsign": "CHX1",
+    "organisation": "ADAC",
+    "name": "Christoph 1",
+    "location": "München Harlaching"
+  },
+  "3ddc77": {
+    "callsign": "CHX62",
+    "icao24": "3ddc77",
+    "raw_callsign": "CHX62",
+    "organisation": "DRF",
+    "name": "Christoph 62",
+    "location": "Bautzen"
+  },
+  "3e0f90": {
+    "callsign": "CHX40",
+    "icao24": "3e0f90",
+    "raw_callsign": "CHX40",
+    "organisation": "ADAC",
+    "name": "Christoph 40",
+    "location": "Augsburg"
+  },
+  "3e0fe7": {
+    "callsign": "CHX87",
+    "icao24": "3e0fe7",
+    "raw_callsign": "CHX87",
+    "organisation": "DRF",
+    "name": "Christoph 87",
+    "location": "Klinikum München Großhadern"
+  },
+  "3e1689": {
+    "callsign": "CHX17",
+    "icao24": "3e1689",
+    "raw_callsign": "CHX17",
+    "organisation": "BMI",
+    "name": "Christoph 17",
+    "location": "Durach"
+  },
+  "3ddc79": {
+    "callsign": "CHX80",
+    "icao24": "3ddc79",
+    "raw_callsign": "CHX80",
+    "organisation": "DRF",
+    "name": "Christoph 80",
+    "location": "Latsch"
+  },
+  "3dfa5c": {
+    "callsign": "EDL7",
+    "icao24": "3dfa5c",
+    "raw_callsign": "EDL7",
+    "organisation": "Polizei Bayern",
+    "name": "Edelweiß 7",
+    "location": "Flughafen München"
+  },
+  "3e1204": {
+    "callsign": "CHX74",
+    "icao24": "3e1204",
+    "raw_callsign": "CHX74",
+    "organisation": "ADAC",
+    "name": "Christoph 74",
+    "location": "Murnau"
+  },
+  "3dfa5a": {
+    "callsign": "EDL5",
+    "icao24": "3dfa5a",
+    "raw_callsign": "EDL5",
+    "organisation": "Polizei Bayern",
+    "name": "Edelweiß 5",
+    "location": "Flughafen München"
+  },
+  "3e1210": {
+    "callsign": "CHX66",
+    "icao24": "3e1210",
+    "raw_callsign": "CHX66",
+    "organisation": "ADAC",
+    "name": "Christoph 66",
+    "location": "Eßweiler"
+  },
+  "3e0fee": {
+    "callsign": "CHX45",
+    "icao24": "3e0fee",
+    "raw_callsign": "CHX45",
+    "organisation": "DRF",
+    "name": "Christoph 45",
+    "location": "Friedrichshafen"
+  },
+  "3e0fe1": {
+    "callsign": "CHX41",
+    "icao24": "3e0fe1",
+    "raw_callsign": "CHX41",
+    "organisation": "DRF",
+    "name": "Christoph 41",
+    "location": "Leonberg"
+  },
+  "3e0f91": {
+    "callsign": "CHX32",
+    "icao24": "3e0f91",
+    "raw_callsign": "CHX32",
+    "organisation": "ADAC",
+    "name": "Christoph 32",
+    "location": "Ingolstadt"
+  },
+  "3ddc76": {
+    "callsign": "CHX51",
+    "icao24": "3ddc76",
+    "raw_callsign": "CHX51",
+    "organisation": "DRF",
+    "name": "Christoph 51",
+    "location": "Pattonville"
+  },
+  "3e0fe0": {
+    "callsign": "CHX11",
+    "icao24": "3e0fe0",
+    "raw_callsign": "CHX11",
+    "organisation": "DRF",
+    "name": "Christoph 11",
+    "location": "Villingen-Schwenningen"
+  },
+  "3deb83": {
+    "callsign": "CHX90",
+    "icao24": "3deb83",
+    "raw_callsign": "CHX90",
+    "organisation": "JUH",
+    "name": "Christoph 90",
+    "location": "Luftrettungszentrum Gießen"
+  },
+  "3e0fe9": {
+    "callsign": "CHX42",
+    "icao24": "3e0fe9",
+    "raw_callsign": "CHX42",
+    "organisation": "DRF",
+    "name": "Christoph 42",
+    "location": "Rendsburg"
+  },
+  "3e0fe8": {
+    "callsign": "CHX82",
+    "icao24": "3e0fe8",
+    "raw_callsign": "CHX82",
+    "organisation": "DRF",
+    "name": "Christoph 82",
+    "location": "Unfallkrankenhaus Berlin-Marzahn"
+  },
+  "3e1684": {
+    "callsign": "CHX2",
+    "icao24": "3e1684",
+    "raw_callsign": "CHX2",
+    "organisation": "BMI",
+    "name": "Christoph 2",
+    "location": "Frankfurt BG Unfallklinik"
+  },
+  "3ddc4b": {
+    "callsign": "CHX81",
+    "icao24": "3ddc4b",
+    "raw_callsign": "CHX81",
+    "organisation": "DRF",
+    "name": "Christoph 81",
+    "location": "Zentralklinikum Bad Berka"
+  },
+  "3e0f92": {
+    "callsign": "CHX46",
+    "icao24": "3e0f92",
+    "raw_callsign": "CHX46",
+    "organisation": "ADAC",
+    "name": "Christoph 46",
+    "location": "Zwickau"
+  },
+  "3e0176": {
+    "callsign": "CHX49",
+    "icao24": "3e0176",
+    "raw_callsign": "CHX49",
+    "organisation": "DRF",
+    "name": "Christoph 49",
+    "location": "Bad Saarow"
+  },
+  "3e1685": {
+    "callsign": "CHX3",
+    "icao24": "3e1685",
+    "raw_callsign": "CHX3",
+    "organisation": "BMI",
+    "name": "Christoph 3",
+    "location": "Köln Bonn Flughafen"
+  },
+  "3dff86": {
+    "callsign": "CHX25",
+    "icao24": "3dff86",
+    "raw_callsign": "CHX25",
+    "organisation": "ADAC",
+    "name": "Christoph 25",
+    "location": "Siegen"
+  },
+  "3e1209": {
+    "callsign": "CHX77",
+    "icao24": "3e1209",
+    "raw_callsign": "CHX77",
+    "organisation": "ADAC",
+    "name": "Christoph 77",
+    "location": "Mainz"
+  },
+  "3e1682": {
+    "callsign": "CHX29",
+    "icao24": "3e1682",
+    "raw_callsign": "CHX29",
+    "organisation": "BMI",
+    "name": "Christoph 29",
+    "location": "Hamburg Bundeswehr"
+  },
+  "3e0fe6": {
+    "callsign": "CHX85",
+    "icao24": "3e0fe6",
+    "raw_callsign": "CHX85",
+    "organisation": "DRF",
+    "name": "Christoph 85",
+    "location": "Halle-Oppin"
+  },
+  "3e1213": {
+    "callsign": "CHX26",
+    "icao24": "3e1213",
+    "raw_callsign": "CHX26",
+    "organisation": "ADAC",
+    "name": "Christoph 26",
+    "location": "Sanderbusch"
+  },
+  "3e1212": {
+    "callsign": "CHX76",
+    "icao24": "3e1212",
+    "raw_callsign": "CHX76",
+    "organisation": "ADAC",
+    "name": "Christoph 76",
+    "location": "Flughafen Münster-Osnabrück"
+  },
+  "4aaa16": {
+    "callsign": "POL5450",
+    "icao24": "4aaa16",
+    "raw_callsign": "POL5450",
+    "organisation": "",
+    "name": "",
+    "location": ""
+  },
+  "3e1683": {
+    "callsign": "CHX7",
+    "icao24": "3e1683",
+    "raw_callsign": "CHX7",
+    "organisation": "BMI",
+    "name": "Christoph 7",
+    "location": "Kassel Rotes Kreuz"
+  },
+  "48c5e6": {
+    "callsign": "SAR1921",
+    "icao24": "48c5e6",
+    "raw_callsign": "SAR1921",
+    "organisation": "",
+    "name": "",
+    "location": ""
+  },
+  "3e0f97": {
+    "callsign": "CHX65",
+    "icao24": "3e0f97",
+    "raw_callsign": "CHX65",
+    "organisation": "ADAC",
+    "name": "Christoph 65",
+    "location": "Dinkelsbühl"
+  },
+  "3e0fec": {
+    "callsign": "CHX83",
+    "icao24": "3e0fec",
+    "raw_callsign": "CHX83",
+    "organisation": "DRF",
+    "name": "Christoph 83",
+    "location": "Flughafen Dortmund"
+  },
+  "3e0ff1": {
+    "callsign": "CHXE5",
+    "icao24": "3e0ff1",
+    "raw_callsign": "CHXE5",
+    "organisation": "DRF",
+    "name": "Christoph Europa 5",
+    "location": "Niebüll"
+  },
+  "3ddc73": {
+    "callsign": "CHX53",
+    "icao24": "3ddc73",
+    "raw_callsign": "CHX53",
+    "organisation": "DRF",
+    "name": "Christoph 53",
+    "location": "Mannheim"
+  },
+  "3e0178": {
+    "callsign": "CHX38",
+    "icao24": "3e0178",
+    "raw_callsign": "CHX38",
+    "organisation": "DRF",
+    "name": "Christoph 38",
+    "location": "Dresden"
+  },
+  "3e017a": {
+    "callsign": "CHX36",
+    "icao24": "3e017a",
+    "raw_callsign": "CHX36",
+    "organisation": "DRF",
+    "name": "Christoph 36",
+    "location": "Magdeburg"
+  },
+  "3e0235": {
+    "callsign": "CHX08",
+    "icao24": "3e0235",
+    "raw_callsign": "CHX08",
+    "organisation": "ADAC",
+    "name": "Christoph 8",
+    "location": "Lünen St Marien"
+  },
+  "3e0ff0": {
+    "callsign": "CHX88",
+    "icao24": "3e0ff0",
+    "raw_callsign": "CHX88",
+    "organisation": "DRF",
+    "name": "Christoph 88",
+    "location": "Flughafen Nürnberg"
+  },
+  "3e0fe5": {
+    "callsign": "CHX54",
+    "icao24": "3e0fe5",
+    "raw_callsign": "CHX54",
+    "organisation": "DRF",
+    "name": "Christoph 54",
+    "location": "Freiburg"
+  },
+  "3ddc74": {
+    "callsign": "CHX84",
+    "icao24": "3ddc74",
+    "raw_callsign": "CHX84",
+    "organisation": "DRF",
+    "name": "Christoph 84",
+    "location": "Flugplatz Halle-Oppin"
+  },
+  "3e0175": {
+    "callsign": "CHX31",
+    "icao24": "3e0175",
+    "raw_callsign": "CHX31",
+    "organisation": "ADAC",
+    "name": "Christoph 31",
+    "location": "Berlin Charité"
+  },
+  "3de4b7": {
+    "callsign": "CHX63",
+    "icao24": "3de4b7",
+    "raw_callsign": "CHX63",
+    "organisation": "ADAC",
+    "name": "Christoph 63",
+    "location": "Dölzig"
+  },
+  "3e1681": {
+    "callsign": "CHX35",
+    "icao24": "3e1681",
+    "raw_callsign": "CHX35",
+    "organisation": "BMI",
+    "name": "Christoph 35",
+    "location": "Brandenburg"
+  },
+  "3e1687": {
+    "callsign": "CHX04",
+    "icao24": "3e1687",
+    "raw_callsign": "CHX04",
+    "organisation": "",
+    "name": "",
+    "location": ""
+  },
+  "3e0ff2": {
+    "callsign": "CHX86",
+    "icao24": "3e0ff2",
+    "raw_callsign": "CHX86",
+    "organisation": "DRF",
+    "name": "Christoph 86",
+    "location": "Flughafen Hannover-Langenhagen"
+  },
+  "3ddc04": {
+    "callsign": "CHX75",
+    "icao24": "3ddc04",
+    "raw_callsign": "CHX75",
+    "organisation": "ADAC",
+    "name": "Christoph 75",
+    "location": "Flughafen Köln-Bonn"
+  },
+  "3e0feb": {
+    "callsign": "CHX56",
+    "icao24": "3e0feb",
+    "raw_callsign": "CHX56",
+    "organisation": "",
+    "name": "",
+    "location": ""
+  },
+  "3e0179": {
+    "callsign": "CHX60",
+    "icao24": "3e0179",
+    "raw_callsign": "CHX60",
+    "organisation": "DRF",
+    "name": "Christoph 60",
+    "location": "Suhl"
+  },
+  "3e167b": {
+    "callsign": "CHX12",
+    "icao24": "3e167b",
+    "raw_callsign": "CHX12",
+    "organisation": "BMI",
+    "name": "Christoph 12",
+    "location": "Siblin"
+  },
+  "4404af": {
+    "callsign": "POLICER",
+    "icao24": "4404af",
+    "raw_callsign": "POLICER",
+    "organisation": "",
+    "name": "",
+    "location": ""
+  },
+  "3ddc6a": {
+    "callsign": "CHX43",
+    "icao24": "3ddc6a",
+    "raw_callsign": "CHX43",
+    "organisation": "DRF",
+    "name": "Christoph 43",
+    "location": "Karlsruhe Baden Airpark"
+  },
+  "3df80c": {
+    "callsign": "CHX61",
+    "icao24": "3df80c",
+    "raw_callsign": "CHX61",
+    "organisation": "ADAC",
+    "name": "Christoph 61",
+    "location": "Dölzig"
+  },
+  "3e017b": {
+    "callsign": "CHX44",
+    "icao24": "3e017b",
+    "raw_callsign": "CHX44",
+    "organisation": "DRF",
+    "name": "Christoph 44",
+    "location": "Göttingen"
+  },
+  "3e167d": {
+    "callsign": "CHX13",
+    "icao24": "3e167d",
+    "raw_callsign": "CHX13",
+    "organisation": "BMI",
+    "name": "Christoph 13",
+    "location": "Bielefeld"
+  },
+  "3e120e": {
+    "callsign": "CHX50",
+    "icao24": "3e120e",
+    "raw_callsign": "CHX50",
+    "organisation": "ADAC",
+    "name": "Christoph 50",
+    "location": "BG Unfallklinik Hamburg Boberg"
+  },
+  "3ddc70": {
+    "callsign": "CHX55",
+    "icao24": "3ddc70",
+    "raw_callsign": "CHX55",
+    "organisation": "DRF",
+    "name": "Christoph 55",
+    "location": "Flughafen Bremen"
+  },
+  "3e120a": {
+    "callsign": "CHX71",
+    "icao24": "3e120a",
+    "raw_callsign": "CHX71",
+    "organisation": "ADAC",
+    "name": "Christoph 71",
+    "location": "Luftrettungszentrum Senftenberg"
+  },
+  "3e1680": {
+    "callsign": "CHX34",
+    "icao24": "3e1680",
+    "raw_callsign": "CHX34",
+    "organisation": "BMI",
+    "name": "Christoph 34",
+    "location": "Güstrow"
+  },
+  "3e0fed": {
+    "callsign": "CHX100",
+    "icao24": "3e0fed",
+    "raw_callsign": "CHX100",
+    "organisation": "DRF",
+    "name": "Christoph 100",
+    "location": "Berlin Buch"
+  },
+  "3e0965": {
+    "callsign": "CHX33",
+    "icao24": "3e0965",
+    "raw_callsign": "CHX33",
+    "organisation": "ADAC",
+    "name": "Christoph 33",
+    "location": "Senftenberg"
+  },
+  "3e1688": {
+    "callsign": "CHX14",
+    "icao24": "3e1688",
+    "raw_callsign": "CHX14",
+    "organisation": "BMI",
+    "name": "Christoph 14",
+    "location": "Traunstein"
+  },
+  "3de0f8": {
+    "callsign": "CHX91",
+    "icao24": "3de0f8",
+    "raw_callsign": "CHX91",
+    "organisation": "JUH",
+    "name": "Christoph 91",
+    "location": "Reichelsheim"
+  },
+  "_missingIcao24": [
+    {
+      "callsign": "ARN",
+      "icao24": "",
+      "raw_callsign": "ARN",
+      "organisation": "JUH",
+      "name": "Air Rescue Nürburgring",
+      "location": "Nürburgring"
+    },
+    {
+      "callsign": "CHX92",
+      "icao24": "",
+      "raw_callsign": "CHX92",
+      "organisation": "JUH",
+      "name": "Christoph 92",
+      "location": "Klinikum Südstadt Rostock"
+    },
+    {
+      "callsign": "RESQ10",
+      "icao24": "",
+      "raw_callsign": "RESQ10",
+      "organisation": "Bundeswehr",
+      "name": "SAR 10",
+      "location": "Helgoland"
+    },
+    {
+      "callsign": "SAREX10",
+      "icao24": "",
+      "raw_callsign": "SAREX10",
+      "organisation": "Bundeswehr",
+      "name": "SAR 10",
+      "location": "Helgoland"
+    },
+    {
+      "callsign": "RESQ24",
+      "icao24": "",
+      "raw_callsign": "RESQ24",
+      "organisation": "Bundeswehr",
+      "name": "SAR 24",
+      "location": "Warnemünde"
+    },
+    {
+      "callsign": "SAREX24",
+      "icao24": "",
+      "raw_callsign": "SAREX24",
+      "organisation": "Bundeswehr",
+      "name": "SAR 24",
+      "location": "Warnemünde"
+    },
+    {
+      "callsign": "RESQ41",
+      "icao24": "",
+      "raw_callsign": "RESQ41",
+      "organisation": "Bundeswehr",
+      "name": "SAR 41",
+      "location": "Nörvenich"
+    },
+    {
+      "callsign": "SAREX41",
+      "icao24": "",
+      "raw_callsign": "SAREX41",
+      "organisation": "Bundeswehr",
+      "name": "SAR 41",
+      "location": "Nörvenich"
+    },
+    {
+      "callsign": "RESQ63",
+      "icao24": "",
+      "raw_callsign": "RESQ63",
+      "organisation": "Bundeswehr",
+      "name": "SAR 63",
+      "location": "Niederstetten"
+    },
+    {
+      "callsign": "SAREX63",
+      "icao24": "",
+      "raw_callsign": "SAREX63",
+      "organisation": "Bundeswehr",
+      "name": "SAR 63",
+      "location": "Niederstetten"
+    },
+    {
+      "callsign": "RESQ87",
+      "icao24": "",
+      "raw_callsign": "RESQ87",
+      "organisation": "Bundeswehr",
+      "name": "SAR 87",
+      "location": "Holzdorf"
+    },
+    {
+      "callsign": "SAREX87",
+      "icao24": "",
+      "raw_callsign": "SAREX87",
+      "organisation": "Bundeswehr",
+      "name": "SAR 87",
+      "location": "Holzdorf"
+    },
+    {
+      "callsign": "NHC01",
+      "icao24": "",
+      "raw_callsign": "NHC01",
+      "organisation": "NHC",
+      "name": "Northern Rescue 01",
+      "location": "St. Peter-Ording"
+    },
+    {
+      "callsign": "NHC02",
+      "icao24": "",
+      "raw_callsign": "NHC02",
+      "organisation": "NHC",
+      "name": "Northern Rescue 02",
+      "location": "Güttin"
+    },
+    {
+      "callsign": "NHC06",
+      "icao24": "",
+      "raw_callsign": "NHC06",
+      "organisation": "NHC",
+      "name": "Northern Rescue 06",
+      "location": "Emden"
+    },
+    {
+      "callsign": "WHSR1",
+      "icao24": "",
+      "raw_callsign": "WHSR1",
+      "organisation": "Wiking",
+      "name": "Wiking Rescue One",
+      "location": "JadeWeser Airport"
+    },
+    {
+      "callsign": "DHFJA",
+      "icao24": "",
+      "raw_callsign": "DHFJA",
+      "organisation": "Heli-Flight",
+      "name": "Rettung Dummerstorf",
+      "location": "Dummerstorf"
+    }
+  ]
+}

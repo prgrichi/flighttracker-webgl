@@ -50,6 +50,7 @@ export function mapOpenSkyState(s) {
     aircraftManufacturer: aircraft?.aircraftManufacturer ?? null,
     aircraftModel: aircraft?.aircraftModel ?? null,
     aircraftCategory: aircraft?.aircraftCategory ?? null,
+    helicopter: aircraft?.helicopter ?? null,
 
     lat,
     lon,

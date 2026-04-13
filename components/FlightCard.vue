@@ -1,29 +1,22 @@
 <template>
   <div class="absolute bottom-3 left-3 right-3 z-[1000]">
     <UCard
-      class="w-full rounded-3xl border border-slate-300 bg-white text-slate-950 shadow-md backdrop-blur-sm"
+      class="w-full rounded-3xl border border-slate-300 bg-white/95 text-slate-950 shadow-md backdrop-blur-sm"
     >
       <div class="relative">
         <div class="min-w-0">
-          <div class="mb-6 flex items-center gap-2">
-            <div class="min-w-0">
-              <div class="flex items-center gap-2">
+          <div class="mb-6 flex items-start gap-2 pr-10">
+            <div class="min-w-0 flex-1">
+              <div class="flex flex-wrap items-center gap-2 mt-2">
                 <div class="truncate text-base font-semibold text-slate-900">
                   {{ displayTitle }}
                 </div>
+                <span class="text-[10px] font-medium uppercase tracking-[0.18em] text-slate-400">
+                  {{ flight.icao24 }}
+                </span>
                 <span :class="statusBadgeClass">
                   {{ onGroundLabel }}
                 </span>
-                <span>{{ flight.icao24 }}</span>
-                <UButton
-                  icon="i-lucide-bookmark"
-                  color="primary"
-                  :variant="isCurrentFlightFavorite ? 'solid' : 'ghost'"
-                  class="transition-transform"
-                  :class="isCurrentFlightFavorite ? 'scale-110' : ''"
-                  square
-                  @click.stop="toggleCurrentFlightFavorite"
-                />
               </div>
             </div>
           </div>
@@ -43,18 +36,21 @@
             </div>
 
             <div class="min-w-0">
-              <p class="truncate text-sm font-semibold text-slate-900">
+              <p v-if="!isHelicopter" class="truncate text-sm font-semibold text-slate-900">
                 {{ flight.airlineName || 'Unknown airline' }}
               </p>
-              <div class="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-slate-600">
-                <p>category: {{ flight.aircraftCategory }}</p>
-                <br />
+
+              <div
+                class="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-medium text-slate-700"
+              >
                 <span>{{ flight.aircraftManufacturer || 'Unknown manufacturer' }}</span>
-                <span class="text-slate-300">•</span>
-                <span class="font-medium text-slate-700">
-                  {{ flight.aircraftModel || 'Unknown model' }}
-                </span>
+                <span class="text-slate-400">•</span>
+                <span>{{ flight.aircraftModel || 'Unknown model' }}</span>
               </div>
+
+              <p v-if="helicopterInfoText" class="mt-1 text-sm font-medium text-slate-700">
+                {{ helicopterInfoText }}
+              </p>
             </div>
           </div>
 
@@ -76,25 +72,43 @@
           </div>
         </div>
 
-        <UButton
-          icon="i-lucide-x"
-          color="neutral"
-          variant="ghost"
-          size="lg"
-          class="absolute right-0 top-0 flex h-9 w-9 items-center justify-center rounded-lg text-slate-600 transition"
-          @click.stop="emit('close')"
-        />
+        <div class="absolute right-0 top-0 flex items-center gap-1">
+          <UButton
+            variant="ghost"
+            size="lg"
+            class="h-10 w-10 rounded-xl transition-colors duration-200"
+            :class="isCurrentFlightFavorite ? 'bg-emerald-50 text-emerald-600' : 'text-slate-700'"
+            @click.stop="handleFavoriteClick"
+          >
+            <UIcon
+              :name="isCurrentFlightFavorite ? 'i-lucide-bookmark-check' : 'i-lucide-bookmark'"
+              class="h-[22px] w-[22px]"
+              :class="animateFavorite ? 'animate-fav-icon-pop' : ''"
+            />
+          </UButton>
+          <UButton
+            icon="i-lucide-x"
+            color="neutral"
+            variant="ghost"
+            size="lg"
+            class="flex h-9 w-9 items-center justify-center rounded-lg text-slate-600 transition"
+            @click.stop="emit('close')"
+          />
+        </div>
       </div>
     </UCard>
   </div>
 </template>
 
 <script setup>
-import { computed } from 'vue';
+import { ref, computed } from 'vue';
 import { useFavorites } from '@/composables/favorites/useFavorites';
 
 const props = defineProps({
-  flight: Object,
+  flight: {
+    type: Object,
+    required: true,
+  },
 });
 
 const emit = defineEmits(['close']);
@@ -109,7 +123,27 @@ const toggleCurrentFlightFavorite = () => {
   toggleFavorite(props.flight);
 };
 
+const animateFavorite = ref(false);
+
+const handleFavoriteClick = () => {
+  const willBeFavorite = !isCurrentFlightFavorite.value;
+
+  toggleCurrentFlightFavorite();
+
+  if (willBeFavorite) {
+    animateFavorite.value = true;
+
+    setTimeout(() => {
+      animateFavorite.value = false;
+    }, 350);
+  }
+};
+
 const displayTitle = computed(() => props.flight?.callsign || props.flight?.icao24 || 'Flight');
+
+const isHelicopter = computed(() => {
+  return props.flight?.aircraftCategory === 'helicopter' || Boolean(props.flight?.helicopter);
+});
 
 const onGroundLabel = computed(() => {
   if (props.flight?.onGround == null) return '—';
@@ -154,4 +188,35 @@ const formatVerticalRate = rate => {
   const rounded = Math.round(rate * 10) / 10;
   return `${rounded > 0 ? '+' : ''}${rounded} m/s`;
 };
+
+const helicopterInfoText = computed(() => {
+  if (!isHelicopter.value) return null;
+
+  const parts = [
+    props.flight?.helicopter?.organization,
+    props.flight?.helicopter?.name,
+    props.flight?.helicopter?.location,
+  ].filter(Boolean);
+
+  return parts.length ? parts.join(' • ') : 'Unknown operator';
+});
 </script>
+
+<style scoped>
+@keyframes fav-icon-pop {
+  0% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(1.35);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-fav-icon-pop {
+  animation: fav-icon-pop 0.35s ease-out;
+  transform-origin: center;
+}
+</style>
