@@ -31,6 +31,7 @@ export function getAircraftInfo(icao24) {
       aircraftLabel: null,
       aircraftManufacturer: null,
       aircraftModel: null,
+      aircraftCategory: null,
     };
   }
 
@@ -56,5 +57,6 @@ export function getAircraftInfo(icao24) {
     aircraftLabel: typeInfo?.label ?? rawTypecode ?? null,
     aircraftManufacturer: typeInfo?.manufacturer ?? null,
     aircraftModel: typeInfo?.model ?? null,
+    aircraftCategory: typeInfo?.category ?? null,
   };
 }

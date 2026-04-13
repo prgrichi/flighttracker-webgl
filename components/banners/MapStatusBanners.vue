@@ -45,8 +45,6 @@
 import PinOffIcon from '@/components/icons/IconPinOff.vue';
 import WifiOffIcon from '@/components/icons/IconWifiOff.vue';
 import CloudOffIcon from '@/components/icons/IconCloudOff.vue';
-import { useFavoriteState } from '@/composables/favorites/useFavoriteState';
-import { useFavorites } from '@/composables/favorites/useFavorites';
 
 const { isOffline, showOnlineRecovery } = useNetworkStatus();
 
@@ -60,36 +58,25 @@ const {
   refresh: refreshFlights,
 } = useFlightsState();
 
-const { favorites } = useFavorites();
-
-const {
-  pending: favoritesPending,
-  hasLiveDataError: favoritesError,
-  hasLiveDataErrorMsg: favoritesErrorMsg,
-  showRecoveryBanner: favoritesRecoveryBanner,
-  refresh: refreshFavorites,
-} = useFavoriteState(favorites);
-
 const showAnyRecoveryBanner = computed(() => {
-  return flightsRecoveryBanner.value || favoritesRecoveryBanner.value;
+  return flightsRecoveryBanner.value;
 });
 
 const hasAnyLiveDataError = computed(() => {
-  return flightsError.value || favoritesError.value;
+  return flightsError.value;
 });
 
 const liveDataErrorMsg = computed(() => {
   if (flightsError.value) return flightsErrorMsg.value;
-  if (favoritesError.value) return favoritesErrorMsg.value;
   return '';
 });
 
 const isAnyLiveDataPending = computed(() => {
-  return flightsPending.value || favoritesPending.value;
+  return flightsPending.value;
 });
 
 const refreshAll = async () => {
-  await Promise.allSettled([refreshFlights(), refreshFavorites()]);
+  await refreshFlights();
 };
 
 watch(showOnlineRecovery, value => {

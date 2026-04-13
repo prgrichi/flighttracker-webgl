@@ -70,7 +70,7 @@ export const useFlightsState = (initialRegion = 'bavaria') => {
 
     // fallback auf status
     if (err.statusCode === 429) {
-      return 'Rate limit erreicht.';
+      return 'Rate Limit erreicht.';
     }
 
     if (err.statusCode >= 500) {

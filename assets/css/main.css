@@ -3,6 +3,7 @@
 @import '@nuxt/ui';
 
 @import './ui.css';
+@import './maplibre-overrides.css';
 
 @font-face {
   font-family: 'Open Sans';

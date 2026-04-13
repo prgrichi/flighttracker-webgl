@@ -456,7 +456,7 @@
   },
   "EC45": {
     "manufacturer": "Airbus",
-    "model": "H145  (EC145)",
+    "model": "H145 (EC145)",
     "label": "Airbus H145 (EC145)",
     "category": "helicopter"
   },
@@ -1716,5 +1716,59 @@
     "model": "Yak-42",
     "label": "Yakovlev Yak-42",
     "category": "regional"
+  },
+  "H130": {
+    "manufacturer": "Airbus",
+    "model": "H130 (EC130)",
+    "label": "Airbus H130 (EC130)",
+    "category": "helicopter"
+  },
+  "EC30": {
+    "manufacturer": "Airbus",
+    "model": "EC130",
+    "label": "Airbus EC130",
+    "category": "helicopter"
+  },
+  "AW169": {
+    "manufacturer": "Leonardo",
+    "model": "AW169",
+    "label": "Leonardo AW169",
+    "category": "helicopter"
+  },
+  "AW189": {
+    "manufacturer": "Leonardo",
+    "model": "AW189",
+    "label": "Leonardo AW189",
+    "category": "helicopter"
+  },
+  "KA32": {
+    "manufacturer": "Kamov",
+    "model": "Ka-32",
+    "label": "Kamov Ka-32",
+    "category": "helicopter"
+  },
+  "AH64": {
+    "manufacturer": "Boeing",
+    "model": "AH-64 Apache",
+    "label": "Apache",
+    "category": "military"
+  },
+  "EC65": {
+    "manufacturer": "Airbus",
+    "model": "H160",
+    "label": "Airbus H160",
+    "category": "helicopter"
+  },
+  "MI8": {
+    "manufacturer": "Mil",
+    "model": "Mi-8 / Mi-17",
+    "label": "Mil Mi-8/17",
+    "category": "helicopter"
+  },
+  "MI24": {
+    "manufacturer": "Mil",
+    "model": "Mi-24 Hind",
+    "label": "Mil Mi-24",
+    "category": "military"
   }
 }

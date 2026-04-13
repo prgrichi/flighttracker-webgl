@@ -47,6 +47,8 @@
                 {{ flight.airlineName || 'Unknown airline' }}
               </p>
               <div class="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-slate-600">
+                <p>category: {{ flight.aircraftCategory }}</p>
+                <br />
                 <span>{{ flight.aircraftManufacturer || 'Unknown manufacturer' }}</span>
                 <span class="text-slate-300">•</span>
                 <span class="font-medium text-slate-700">

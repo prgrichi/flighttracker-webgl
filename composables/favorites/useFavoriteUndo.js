@@ -1,7 +1,7 @@
 import { computed, ref, onBeforeUnmount } from 'vue';
 
 export const useFavoriteUndo = removeFavorite => {
-  const REMOVE_DELAY = 5000;
+  const REMOVE_DELAY = 3000;
   const PROGRESS_TICK = 100;
 
   const pendingRemoval = ref(null);
