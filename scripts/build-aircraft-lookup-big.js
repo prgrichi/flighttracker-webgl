@@ -2,7 +2,7 @@ import fs from 'fs';
 import csv from 'csv-parser';
 
 const inputFile = './server/data/aircraftDatabase.csv';
-const outputFile = './server/data/aircraft-lookup-big.json';
+const outputFile = './server/data/aircraft-lookup.json';
 
 const lookup = {};
 
