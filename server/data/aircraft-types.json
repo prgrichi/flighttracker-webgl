@@ -799,6 +799,12 @@
     "label": "ATR 42-600",
     "category": "turboprop"
   },
+  "AT75": {
+    "manufacturer": "ATR",
+    "model": "72-500",
+    "label": "ATR 72-500",
+    "category": "turboprop"
+  },
   "A30B": {
     "manufacturer": "Airbus",
     "model": "A300",

@@ -9,7 +9,6 @@ import { incrementRequestStat } from '@/server/utils/requestStats.js';
 let regionCache = {};
 
 async function loadFlights(bbox, useMock) {
-  incrementRequestStat('flightsOpenSkyRequests');
   console.log('🔴 FETCHING FROM OPENSKY');
 
   let raw;
@@ -19,6 +18,7 @@ async function loadFlights(bbox, useMock) {
       raw = mockData;
     } else {
       const token = await fetchOpenSkyToken();
+      incrementRequestStat('flightsOpenSkyRequests');
 
       const url = `https://opensky-network.org/api/states/all?lamin=${bbox.lamin}&lamax=${bbox.lamax}&lomin=${bbox.lomin}&lomax=${bbox.lomax}`;
 

@@ -1,38 +1,68 @@
 [
   {
     "icao24": "3dd2f6",
-    "callisgn": "RDF1",
+    "callsign": "RDF1",
     "model": "",
     "typecode": "EC45"
   },
   {
     "icao24": "4bc8d5",
-    "callisgn": "PGT8BW",
+    "callsign": "PGT8BW",
     "model": "Airbus A321-251NX",
     "typecode": "A21N"
   },
   {
     "icao24": "300a7b",
-    "callisgn": "DLA1YC",
+    "callsign": "DLA1YC",
     "model": "Embraer E915LR",
     "typecode": "E195"
   },
   {
     "icao24": "4aca88",
-    "callisgn": "NOZ77Y",
+    "callsign": "NOZ77Y",
     "model": "Boeing 737 MAX 8",
     "typecode": "B38M"
   },
   {
     "icao24": "3c6522",
-    "callisgn": "LHX27W",
+    "callsign": "LHX27W",
     "model": "Airbus A320-251N",
     "typecode": "A20N"
   },
   {
     "icao24": "39e694",
-    "callisgn": "AFR1623",
+    "callsign": "AFR1623",
     "model": "Airbus A220-300",
     "typecode": "BCS3"
+  },
+  {
+    "icao24": "48c5f9",
+    "callsign": "SAR1975",
+    "model": "ATR 72-500",
+    "typecode": "AT75"
+  },
+  {
+    "icao24": "471db6",
+    "callsign": "WZZ1UN",
+    "model": "Airbus A321-271NX",
+    "typecode": "A21N"
+  },
+  {
+    "icao24": "3cce71",
+    "callsign": "FCK2FT",
+    "model": "Beech King Air 350",
+    "typecode": "B350"
+  },
+  {
+    "icao24": "4caee6",
+    "callsign": "RYR866X",
+    "model": "Boeing 737 Max 8-200",
+    "typecode": "B38M"
+  },
+  {
+    "icao24": "4bcd85",
+    "callsign": "SXS8RZ",
+    "model": "Boeing 737 Max 8-200",
+    "typecode": "B38M"
   }
 ]

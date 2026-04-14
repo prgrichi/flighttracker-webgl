@@ -73,6 +73,7 @@
   "QTR": "Qatar Airways",
 
   "RYR": "Ryanair",
+  "SAR": "SprintAir",
   "NOZ": "Norwegian Air Shuttle",
 
   "SAS": "Scandinavian Airlines",
@@ -174,7 +175,6 @@
   "RLU": "RusLine",
   "ROT": "Tarom",
   "RJA": "Royal Jordanian",
-  "OCN": "Discover Airlines",
 
   "NJE": "NetJets Europe",
   "SXS": "SunExpress",
@@ -276,5 +276,8 @@
 
   "POW": "Portugalia (TAP Express)",
 
-  "SWU": "SkyWest Europe"
+  "SWU": "SkyWest Europe",
+
+  "FCK": "Flight Calibration Services",
+  "OCN": "Discover Airlines"
 }
