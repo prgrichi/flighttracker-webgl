@@ -1,6 +1,6 @@
 import { mapOpenSkyState } from '../utils/mapOpenSky.js';
 import { fetchOpenSkyToken } from '@/server/utils/openSky.js';
-import { incrementRequestStat } from '@/server/utils/requestStats.js';
+import { incrementRequestStat } from '@/server/utils/stats/requestStats.js';
 
 const FAVORITES_CACHE_TTL_MS = 30_000;
 

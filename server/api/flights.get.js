@@ -4,7 +4,7 @@ import mockData from '../data/mockFlights.json';
 import { fetchOpenSkyToken } from '@/server/utils/openSky.js';
 import { scanCallSigns } from '@/server/utils/logger/scanCallSigns.js';
 import { logToFile } from '@/server/utils/logger/logToFile.js';
-import { incrementRequestStat } from '@/server/utils/requestStats.js';
+import { incrementRequestStat } from '@/server/utils/stats/requestStats.js';
 
 let regionCache = {};
 

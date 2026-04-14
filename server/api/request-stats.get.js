@@ -1,4 +1,4 @@
-import { getRequestStats } from '@/server/utils/requestStats.js';
+import { getRequestStats } from '@/server/utils/stats/requestStats.js';
 
 export default defineEventHandler(() => {
   return getRequestStats();

@@ -5,16 +5,6 @@ export async function fetchOpenSkyToken() {
   const config = useRuntimeConfig();
   const now = Date.now();
 
-  console.log('openskyClientId length', config.openskyClientId?.length);
-  console.log('openskyClientSecret length', config.openskyClientSecret?.length);
-  console.log('openskyClientId prefix', config.openskyClientId?.slice(0, 6));
-  console.log('openskyClientSecret prefix', config.openskyClientSecret?.slice(0, 6));
-
-  console.log('env client id length', process.env.OPENSKY_CLIENT_ID?.length);
-  console.log('env client secret length', process.env.OPENSKY_CLIENT_SECRET?.length);
-  console.log('env client id prefix', process.env.OPENSKY_CLIENT_ID?.slice(0, 6));
-  console.log('env client secret prefix', process.env.OPENSKY_CLIENT_SECRET?.slice(0, 6));
-
   // Wenn Token noch gültig ist, direkt zurückgeben
   if (cachedToken && now < tokenExpiresAt) {
     return cachedToken;
