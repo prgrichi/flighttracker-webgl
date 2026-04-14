@@ -7,12 +7,13 @@ export function scanCallSigns(states = []) {
       if (!callsign) return null;
 
       const interesting =
-        callsign.includes('CHX') ||
-        callsign.includes('EDL') ||
-        callsign.includes('POL') ||
-        callsign.includes('SAR') ||
-        callsign.includes('ADAC') ||
-        callsign.includes('DRF');
+        // callsign.includes('CHX') ||
+        // callsign.includes('EDL') ||
+        // callsign.includes('POL') ||
+        // callsign.includes('SAR') ||
+        // callsign.includes('ADAC') ||
+        // callsign.includes('DRF');
+        callsign.includes('CHX14');
 
       if (!interesting) return null;
 
