@@ -7,16 +7,26 @@
         <div class="min-w-0">
           <div class="mb-6 flex items-start gap-2 pr-10">
             <div class="min-w-0 flex-1">
-              <div class="flex flex-wrap items-center gap-2 mt-2">
-                <div class="truncate text-base font-semibold text-slate-900">
-                  {{ displayTitle }}
+              <div class="flex items-center justify-between gap-3">
+                <!-- Left: ICAO + Title -->
+                <div class="min-w-0">
+                  <!-- ICAO24 -->
+                  <div class="text-[10px] font-medium uppercase tracking-[0.2em] text-slate-400">
+                    {{ flight.icao24 }}
+                  </div>
+
+                  <!-- Title + Badge Row -->
+                  <div class="flex items-center gap-2">
+                    <div class="truncate text-base font-semibold tracking-[0.02em] text-slate-900">
+                      {{ displayTitle }}
+                    </div>
+
+                    <!-- Status Badge -->
+                    <span :class="statusBadgeClass">
+                      {{ onGroundLabel }}
+                    </span>
+                  </div>
                 </div>
-                <span class="text-[10px] font-medium uppercase tracking-[0.18em] text-slate-400">
-                  {{ flight.icao24 }}
-                </span>
-                <span :class="statusBadgeClass">
-                  {{ onGroundLabel }}
-                </span>
               </div>
             </div>
           </div>

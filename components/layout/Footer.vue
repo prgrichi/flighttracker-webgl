@@ -1,5 +1,8 @@
 <template>
-  <div class="absolute bottom-3 inset-x-0 mx-auto w-[95%] z-20 pointer-events-none">
+  <div
+    :class="!selectedFlight ? 'translate-y-0' : 'translate-y-[calc(100%+12px)]'"
+    class="absolute bottom-3 inset-x-0 mx-auto z-20 w-[95%] transform transition-all duration-200 ease-out"
+  >
     <footer class="h-10 rounded-lg border border-border bg-surface/70 backdrop-blur-md shadow-md">
       <div class="flex h-full items-center justify-between px-4 text-sm">
         <div class="flex items-center gap-2">
@@ -30,6 +33,7 @@
 
 <script setup>
 const { flightsCount, hasLoadedFlights, region } = useFlightsState();
+const { selectedFlight } = useSelectedFlight();
 
 const formattedRegion = computed(() => {
   const r = region.value;
