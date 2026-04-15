@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="!selectedFlight ? 'translate-y-0' : 'translate-y-[calc(100%+12px)]'"
+    :class="selectedFlight || selectedLocation ? 'translate-y-[calc(100%+12px)]' : 'translate-y-0'"
     class="absolute bottom-3 inset-x-0 mx-auto z-20 w-[95%] transform transition-all duration-200 ease-out"
   >
     <footer class="h-10 rounded-lg border border-border bg-surface/70 backdrop-blur-md shadow-md">
@@ -34,6 +34,7 @@
 <script setup>
 const { flightsCount, hasLoadedFlights, region } = useFlightsState();
 const { selectedFlight } = useSelectedFlight();
+const { selectedLocation } = useSelectedLocation();
 
 const formattedRegion = computed(() => {
   const r = region.value;
