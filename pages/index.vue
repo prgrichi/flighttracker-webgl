@@ -66,7 +66,7 @@ import { useAirportsState } from '@/composables/airports/useAirportsState';
 
 const mapContainer = ref(null);
 
-const { decoratedGeoJson, region } = useFlightsState();
+const { geoJson, region } = useFlightsState();
 const { selectedFlight, closeSelectedFlightCard } = useSelectedFlight();
 const { selectedLocation } = useSelectedLocation();
 const { currentMapType, MAP_TYPES, setMapType } = useMapType();
@@ -107,10 +107,10 @@ useAirportLayer({
   showHeliports,
 });
 
-useFlightLayer(decoratedGeoJson);
+useFlightLayer(geoJson);
 
 watch(
-  [map, isLoaded, decoratedGeoJson, pendingNavigation],
+  [map, isLoaded, geoJson, pendingNavigation],
   ([mapInstance, mapLoaded, geoJson, pendingTarget]) => {
     if (!mapInstance || !mapLoaded || !pendingTarget) return;
 
