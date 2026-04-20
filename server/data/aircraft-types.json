@@ -436,6 +436,12 @@
     "label": "Airbus H135 (EC135)",
     "category": "helicopter"
   },
+  "EC55": {
+    "manufacturer": "Airbus",
+    "model": "H155",
+    "label": "Airbus H155",
+    "category": "helicopter"
+  },
   "BK17": {
     "manufacturer": "Airbus",
     "model": "H145 (EC145)",
@@ -1605,14 +1611,14 @@
   },
   "P28B": {
     "manufacturer": "Piper",
-    "model": "PA-28 (above 200 hp)",
-    "label": "Piper PA-28 (above 200 hp)",
+    "model": "PA-28",
+    "label": "Piper PA-28",
     "category": "ga"
   },
   "P28A": {
     "manufacturer": "Piper",
-    "model": "PA-28 (up to 180 hp)",
-    "label": "Piper PA-28 (up to 180 hp)",
+    "model": "PA-28",
+    "label": "Piper PA-28",
     "category": "ga"
   },
   "PA31": {

@@ -64,5 +64,35 @@
     "callsign": "SXS8RZ",
     "model": "Boeing 737 Max 8-200",
     "typecode": "B38M"
+  },
+  {
+    "icao24": "3009b3",
+    "callsign": "DLA8MM",
+    "model": "Embraer E190",
+    "typecode": "E190"
+  },
+  {
+    "icao24": "4bcdb0",
+    "callsign": "SXS1ZM",
+    "model": "Boeing 737 Max 8",
+    "typecode": "B38M"
+  },
+  {
+    "icao24": "40815b",
+    "callsign": "EZY41XL",
+    "model": "Airbus A320-251N",
+    "typecode": "A20N"
+  },
+  {
+    "icao24": "33fca2",
+    "callsign": "IAM3140",
+    "model": "Gulfstream VC-650A",
+    "typecode": "GLF6"
+  },
+  {
+    "icao24": "896623",
+    "callsign": "UAE9H",
+    "model": "Airbus A350-941",
+    "typecode": "A359"
   }
 ]
