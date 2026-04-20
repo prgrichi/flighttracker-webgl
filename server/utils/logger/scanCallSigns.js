@@ -8,7 +8,7 @@ export function scanCallSigns(states = []) {
 
       const interesting =
         // callsign.includes('CHX') ||
-        // callsign.includes('EDL') ||
+        callsign.includes('EDL') ||
         // callsign.includes('POL') ||
         // callsign.includes('SAR') ||
         // callsign.includes('ADAC') ||

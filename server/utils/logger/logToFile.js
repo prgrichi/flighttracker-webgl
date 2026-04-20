@@ -6,7 +6,7 @@ export async function logToFile(entries) {
 
   try {
     const dir = join(process.cwd(), 'logs');
-    const file = join(dir, 'chx14-scan.ndjson');
+    const file = join(dir, 'chx14-edl-scan.ndjson');
 
     // 👉 Ordner sicherstellen
     await fs.mkdir(dir, { recursive: true });
