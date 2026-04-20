@@ -29,11 +29,16 @@
             />
 
             <h1
-              class="m-0 flex flex-col uppercase text-black text-[2rem] font-bold tracking-[0.15rem] leading-[2.3rem] animate-[splash-text-in_150ms_ease-out]"
+              class="m-0 flex flex-col uppercase text-black text-[2rem] font-bold tracking-[0.15rem] leading-[2.3rem]"
             >
               <span class="font-semibold tracking-[0.5rem]"> Flight </span>
               <span class="font-light tracking-[0.18rem] ml-[-0.2rem]"> Tracker </span>
             </h1>
+
+            <!-- Loader -->
+            <div class="mt-8 h-[2px] w-24 overflow-hidden rounded-full bg-black/10">
+              <div class="splash-line"></div>
+            </div>
           </div>
         </div>
       </transition>
@@ -49,6 +54,7 @@
 import { ref, onMounted } from 'vue';
 
 const visibleSplash = ref(true);
+
 onMounted(() => {
   setTimeout(() => {
     visibleSplash.value = false;
@@ -66,12 +72,21 @@ onMounted(() => {
 .splash-fade-leave-to {
   opacity: 0;
 }
-@keyframes splash-text-in {
-  from {
-    opacity: 0.96;
+
+.splash-line {
+  height: 100%;
+  width: 40%;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.6), transparent);
+  animation: splash-line-flow 1.2s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes splash-line-flow {
+  0% {
+    transform: translateX(-120%);
   }
-  to {
-    opacity: 1;
+  100% {
+    transform: translateX(260%);
   }
 }
 </style>
